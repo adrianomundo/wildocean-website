@@ -30,9 +30,9 @@ body {
 
 /* Style all font awesome icons */
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 10px;
+  font-size: 10px;
+  width: 35px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
@@ -65,3 +65,5 @@ body {
   background: #125688;
   color: white;
 }
+
+
