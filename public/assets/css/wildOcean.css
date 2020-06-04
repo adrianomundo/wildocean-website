@@ -7,6 +7,11 @@ body {
   padding-top: 56px;
 }
 
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+}
+
 .carousel-item {
   height: 65vh;
   min-height: 300px;
