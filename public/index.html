@@ -25,11 +25,11 @@
 
 
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar- bg-white fixed-top">
+  <nav class="navbar fixed-top navbar-expand-lg navbar- bg-white navbar-light fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="/public/assets/img/logo.png" alt="Logo" width="110" height="100"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="index.html"><img src="/public/assets/img/logo.png" alt="Logo" width="110" height="100"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
@@ -48,7 +48,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/public/pages/contact.html" style="color:black">Contact</a>
           </li>
-            <input type="text" placeholder="Search..">
+           <li class="nav-item">
+                <form class="form-inline">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+               </form>
+          </li>
         </ul>
       </div>
     </div>

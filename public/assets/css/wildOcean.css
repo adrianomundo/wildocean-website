@@ -6,14 +6,18 @@ body {
 
 
 .navbar-nav > li{
-  padding-left:40px;
-  padding-right:40px;
-  font-size: 18pt;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 15pt;
   font-weight: bold;
+
 }
 
 .navbar-brand {
-    left: 10%;
+   top:3%;
+   left:8%;
 }
 
 .carousel-item {
@@ -74,4 +78,8 @@ body {
   color: white;
 }
 
-
+@media (max-width: 1135px) {
+   .collapse {
+       display: none !important;
+   }
+}
