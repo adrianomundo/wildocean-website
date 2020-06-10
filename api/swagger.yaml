@@ -1,0 +1,599 @@
+---
+swagger: "2.0"
+info:
+  description: "This is the OpenAPI specification for the RESTful API of the WildOcean\
+    \ web app  developed as project for the Hypermedia Web and Application course\
+    \ at Polimi A.Y. 2019-2020. \n"
+  version: "1.0.0"
+  title: "WildOcean API"
+  contact:
+    email: "adrianomundo23@gmail.com"
+host: "wildocean.herokuapp.com"
+basePath: "/v1"
+tags:
+  - name: "Person"
+    description: "People of the association"
+  - name: "Services"
+    description: "Services of the association"
+  - name: "Events"
+    description: "Events organized by the association"
+  - name: "Testimonials"
+    description: "Testimonials of the association"
+  - name: "Text"
+    description: "Text descriptions of the website"
+schemes:
+  - "https"
+paths:
+  /person:
+    get:
+      tags:
+        - "Person"
+      summary: "get all the people available in the association"
+      description: "returns all the people involved in the association"
+      operationId: "getPeople"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "limit"
+          in: "query"
+          description: "maximum number of items per page"
+          required: false
+          type: "integer"
+        - name: "offset"
+          in: "query"
+          description: "pagination offset, default is 0"
+          required: false
+          type: "integer"
+      responses:
+        "200":
+          description: "Successful operation, a group of people"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Person"
+        "404":
+          description: "No people founded"
+      x-swagger-router-controller: "Person"
+  /person/{matricola}:
+    get:
+      tags:
+        - "Person"
+      summary: "get a person by matricola code"
+      description: "returns a single person filtered by its matricola code"
+      operationId: "getPersonbyMatricola"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "matricola"
+          in: "path"
+          description: "matricola  of the person to return"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, the person is retrieved"
+          schema:
+            $ref: "#/definitions/Person"
+        "400":
+          description: "Invalid matricola supplied"
+        "404":
+          description: "Person not found"
+      x-swagger-router-controller: "Person"
+  /person/{matricola}/event:
+    get:
+      tags:
+        - "Person"
+      summary: "get the event organized by a person"
+      description: "returns the event organized by the person retrieved from the matricola\
+        \ code"
+      operationId: "getEventbyPerson"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "matricola"
+          in: "path"
+          description: "matricola  of the person to return"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, the event is retrieved"
+          schema:
+            $ref: "#/definitions/Event"
+        "400":
+          description: "Invalid matricola supplied"
+        "404":
+          description: "Event not found"
+      x-swagger-router-controller: "Person"
+  /person/{matricola}/services:
+    get:
+      tags:
+        - "Person"
+      summary: "get the services organized by a person"
+      description: "returns a list of services organized by the person retrieved from\
+        \ the matricola code"
+      operationId: "getServicesbyPerson"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "matricola"
+          in: "path"
+          description: "matricola of the person to return"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, services are retrieved"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+        "400":
+          description: "Invalid matricola supplied"
+        "404":
+          description: "Services not found"
+      x-swagger-router-controller: "Person"
+  /services:
+    get:
+      tags:
+        - "Services"
+      summary: "get all the services available of the association"
+      description: "returns all the services offered by the association"
+      operationId: "getServices"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "limit"
+          in: "query"
+          description: "maximum number of items per page"
+          required: false
+          type: "integer"
+        - name: "offset"
+          in: "query"
+          description: "pagination offset, default is 0"
+          required: false
+          type: "integer"
+      responses:
+        "200":
+          description: "Successful operation, a group of people"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+        "404":
+          description: "No services founded"
+      x-swagger-router-controller: "Services"
+  /services/{title}:
+    get:
+      tags:
+        - "Services"
+      summary: "get the service by title"
+      description: "returns a service filtered by its title"
+      operationId: "getServicebyTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "title"
+          in: "path"
+          description: "title of the service to find"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Successful operation, the service is retrieved"
+          schema: {}
+        "400":
+          description: "Invalid title supplied"
+        "404":
+          description: "Service not found"
+      x-swagger-router-controller: "Services"
+  /services/{title}/event:
+    get:
+      tags:
+        - "Services"
+      summary: "get the event related to the service"
+      description: "returns the event which is presented in the service filtered by\
+        \ tht title"
+      operationId: "getEventbyService"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "title"
+          in: "path"
+          description: "title of the service to find"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Successful operation, the event is retrieved"
+          schema: {}
+        "400":
+          description: "Invalid title supplied"
+        "404":
+          description: "Event not found"
+      x-swagger-router-controller: "Services"
+  /services/{title}/people:
+    get:
+      tags:
+        - "Services"
+      summary: "get the people related to the service"
+      description: "returns all the people who are involved in the service filtered\
+        \ by tht title"
+      operationId: "getPeoplebyService"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "title"
+          in: "path"
+          description: "title of the service to find"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Successful operation, people are retrieved"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Person"
+        "400":
+          description: "Invalid title supplied"
+        "404":
+          description: "Event not found"
+      x-swagger-router-controller: "Services"
+  /events:
+    get:
+      tags:
+        - "Events"
+      summary: "get all the events organized by the association"
+      description: "returns a list of all the events organized by the association"
+      operationId: "getEvents"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "limit"
+          in: "query"
+          description: "maximum number of items per page"
+          required: false
+          type: "integer"
+        - name: "offset"
+          in: "query"
+          description: "pagination offset, default is 0"
+          required: false
+          type: "integer"
+      responses:
+        "200":
+          description: "Successful operation, a group of people"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+        "404":
+          description: "No events founded"
+      x-swagger-router-controller: "Events"
+  /events/{eventId}:
+    get:
+      tags:
+        - "Events"
+      summary: "get the event by ID"
+      description: "returns the event filtered by its ID"
+      operationId: "getEventbyId"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "eventId"
+          in: "path"
+          description: "ID of the event to find"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, the event is retrieved"
+          schema: {}
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Event not found"
+      x-swagger-router-controller: "Events"
+  /events/{eventId}/person:
+    get:
+      tags:
+        - "Events"
+      summary: "get the organizer of the event"
+      description: "returns the person in charge of organizing the event filtered\
+        \ by its ID"
+      operationId: "getPersonOfEvent"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "eventId"
+          in: "path"
+          description: "ID of the event to find"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, the person is retrieved"
+          schema: {}
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Person not found"
+      x-swagger-router-controller: "Events"
+  /events/{eventId}/service:
+    get:
+      tags:
+        - "Events"
+      summary: "get the service associated with the event"
+      description: "returns the service related to the event filtered by its ID"
+      operationId: "getServiceOfEvent"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "eventId"
+          in: "path"
+          description: "ID of the event to find"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        "200":
+          description: "Successful operation, the service is retrieved"
+          schema: {}
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Service not found"
+      x-swagger-router-controller: "Events"
+  /testimonials:
+    get:
+      tags:
+        - "Testimonials"
+      summary: "get all the testimonials of the association"
+      description: "returns a list of all the testimonials with all the data"
+      operationId: "getTestimonials"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "limit"
+          in: "query"
+          description: "maximum number of items per page"
+          required: false
+          type: "integer"
+        - name: "offset"
+          in: "query"
+          description: "pagination offset, default is 0"
+          required: false
+          type: "integer"
+      responses:
+        "200":
+          description: "Successful operation, a list of testimonials"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Testimonial"
+        "404":
+          description: "No testimonials founded"
+      x-swagger-router-controller: "Testimonials"
+  /text:
+    get:
+      tags:
+        - "Text"
+      summary: "get all the texts of the website"
+      description: "returns a list of all the texts with metadata"
+      operationId: "getTexts"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "limit"
+          in: "query"
+          description: "maximum number of items per page"
+          required: false
+          type: "integer"
+        - name: "offset"
+          in: "query"
+          description: "pagination offset, default is 0"
+          required: false
+          type: "integer"
+      responses:
+        "200":
+          description: "Successful operation, a list of texts"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Text"
+        "404":
+          description: "No texts founded"
+      x-swagger-router-controller: "Text"
+  /text/{page}:
+    get:
+      tags:
+        - "Text"
+      summary: "get the texts of a page"
+      description: "returns a list of the texts of a page"
+      operationId: "getTextOfPage"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "page"
+          in: "path"
+          description: "name of the page"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Successful operation, texts are retrieved"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Text"
+        "400":
+          description: "Invalid page supplied"
+        "404":
+          description: "Text not found"
+      x-swagger-router-controller: "Text"
+definitions:
+  Person:
+    type: "object"
+    required:
+      - "description"
+      - "img"
+      - "name"
+      - "surname"
+    properties:
+      matricola:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      surname:
+        type: "string"
+      description:
+        type: "string"
+      img:
+        type: "string"
+      role:
+        type: "string"
+      phone:
+        type: "string"
+      mail:
+        type: "string"
+      nationality:
+        type: "string"
+      id_event:
+        type: "integer"
+        format: "int64"
+    example:
+      matricola: 0
+      name: "Boyan"
+      surname: "Slat"
+      description: "Boyan is a Dutch investor and entrepeneur"
+      img: "da mettere il path"
+      role: "CEO and Founder"
+      phone: "3357698654"
+      mail: "boyanslat@gmail.com"
+      nationality: "dutch"
+      id_event: 0
+  Event:
+    type: "object"
+    required:
+      - "date"
+      - "end_h"
+      - "img"
+      - "location"
+      - "long_description"
+      - "phone"
+      - "start_h"
+      - "title"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      title:
+        type: "string"
+      location:
+        type: "string"
+      long_description:
+        type: "string"
+      short_description:
+        type: "string"
+      start_h:
+        type: "string"
+      end_h:
+        type: "string"
+      img:
+        type: "string"
+      phone:
+        type: "string"
+      date:
+        type: "string"
+      matricola_person:
+        type: "integer"
+        format: "int64"
+      service_title:
+        type: "string"
+    example:
+      id: 0
+      title: "Beach Clean"
+      location: "holkam beach"
+      long_description: "long description"
+      short_description: "short description"
+      start_h: "9.00"
+      end_h: "11.00"
+      img: "add img path"
+      phone: "3365476889"
+      date: "23-10-2020"
+      matricola_person: 0
+      service_title: "trash free seas"
+  Service:
+    type: "object"
+    required:
+      - "img"
+      - "long_description"
+      - "practical_info"
+      - "team"
+      - "title"
+    properties:
+      title:
+        type: "string"
+      long_description:
+        type: "string"
+      short_description:
+        type: "string"
+      img:
+        type: "string"
+      practical_info:
+        type: "string"
+      id_event:
+        type: "integer"
+      team:
+        type: "array"
+        uniqueItems: true
+        items:
+          $ref: "#/definitions/Person"
+    example:
+      title: "cleaning the ocean"
+      long_description: "long_description"
+      short_description: "short_description"
+      img: "add url img"
+      practical_info: "add practical_info"
+      id_event: 0
+      team: {}
+  Testimonial:
+    type: "object"
+    required:
+      - "name"
+      - "review"
+      - "surname"
+    properties:
+      name:
+        type: "string"
+      surname:
+        type: "string"
+      review:
+        type: "string"
+    example:
+      name: "Elon"
+      surname: "Musk"
+      review: "What a wonderful association"
+  Text:
+    type: "object"
+    required:
+      - "name"
+      - "section"
+      - "txt"
+    properties:
+      name:
+        type: "string"
+      section:
+        type: "string"
+      txt:
+        type: "string"
+    example:
+      name: "Home"
+      section: "About Us"
+      txt: "trallalero"
