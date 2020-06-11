@@ -1,8 +1,5 @@
 'use strict';
 
-let sqlDb;
-let { setupDataLayer } = require("./service/DataLayer");
-
 var fs = require('fs'),
     path = require('path'),
     http = require('http');
@@ -13,7 +10,7 @@ var jsyaml = require('js-yaml');
 var serverPort = process.env.PORT || 8080;
 
 let serveStatic = require("serve-static");
-
+let { setupDataLayer } = require("./service/DataLayer");
 
 // swaggerRouter configuration
 var options = {
@@ -42,7 +39,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerUi());
 
   // Serve the static assets 
-  app.use(serveStatic(__dirname + "/www"));
+  app.use(serveStatic(__dirname + "/public"));
 
   // Start the server
   setupDataLayer().then(() => {
