@@ -13,7 +13,6 @@ let sqlDb = sqlDbFactory({
   client: "pg",
   connection: process.env.DATABASE_URL || 'postgres://gxpewqsagzalsw:509246f285e759b9580c8d5252499832b1b5ca01adce09786f94cc23eb4e78ba@ec2-54-246-87-132.eu-west-1.compute.amazonaws.com:5432/db5d7snatsbdbk?ssl=true',
   ssl: true,
-  debug: true
 });
 
 function setupDataLayer() {

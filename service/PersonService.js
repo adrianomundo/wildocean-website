@@ -45,13 +45,13 @@ exports.getEventbyPerson = function(matricola) {
  * returns List
  **/
 exports.getPeople = function(limit,offset) {
-  return sqlDb("person")
-    .limit(limit)
-    .offset(offset)
-    .then(data => { 
+  //return sqlDb("person")
+  //  .limit(limit)
+    //.offset(offset)
+    //.then(data => {
 
     
-  });
+  //});
 };
 
 
