@@ -41,7 +41,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerUi());
 
   // Serve the static assets 
-  app.use(serveStatic(__dirname + "/www"));
+  app.use(serveStatic(__dirname + "/public"));
 
   // Start the server
   setupDataLayer().then(() => {
