@@ -8,12 +8,17 @@ exports.textDbSetup = function(database) {
   return sqlDb.schema.hasTable("text").then(exists => {
     if (!exists) {
       console.log("The table TEXT does not exist, creating it");
+      let textJson = require('../utils/text.json');
       return sqlDb.schema.createTable("text", table => {
         table.string("name").notNullable();
         table.string("section").notNullable();
         table.text("txt").notNullable();
         table.primary(["name", "section"]);
+      }).then( () => { return sqlDb("text").insert(textJson);
       });
+    }
+    else {
+      console.log("TEXT table already exists");
     }
   });
 };

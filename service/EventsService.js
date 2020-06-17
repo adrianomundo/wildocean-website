@@ -8,6 +8,7 @@ exports.eventDbSetup = function(database) {
   return sqlDb.schema.hasTable("event").then(exists => {
     if (!exists) {
       console.log("The table EVENT does not exist, creating it");
+      let eventJson = require('../utils/event.json');
       return sqlDb.schema.createTable("event", table => {
         table.increments("event_id");
         table.string("title").notNullable();
@@ -19,7 +20,11 @@ exports.eventDbSetup = function(database) {
         table.time("end_h").notNullable();
         table.date("date").notNullable();
         table.string("phone");
+      }).then( () => { return sqlDb("event").insert(eventJson);
       });
+    }
+    else {
+      console.log("EVENT Table already exists");
     }
   });
 };

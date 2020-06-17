@@ -1,0 +1,38 @@
+[
+  {
+    "event_id": 1,
+    "title": "Beach Clean",
+    "location": "Palo Alto, USA",
+    "long_description": "bla to do",
+    "short_description": "bla to do",
+    "img": "insertpath",
+    "start_h": "09:00:00",
+    "end_h": "11:00:00",
+    "date": "2020-07-08",
+    "phone": "+393271877654"
+  },
+  {
+    "event_id": 2,
+    "title": "Bungee Jumping",
+    "location": "Roma, IT",
+    "long_description": "bla to do",
+    "short_description": "bla to do",
+    "img": "insertpath",
+    "start_h": "09:00:00",
+    "end_h": "11:00:00",
+    "date": "2020-07-15",
+    "phone": "+393456767552"
+  },
+  {
+    "event_id": 3,
+    "title": "Zero Gravity",
+    "location": "Milano, IT",
+    "long_description": "bla to do",
+    "short_description": "bla to do",
+    "img": "insertpath",
+    "start_h": "15:00:00",
+    "end_h": "20:00:00",
+    "date": "2020-08-23",
+    "phone": "+393271877666"
+  }
+]

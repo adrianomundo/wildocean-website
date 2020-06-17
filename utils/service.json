@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Football Training",
+    "long_description": "longdescr",
+    "short_description": "shortdescription",
+    "img": "imgpath",
+    "practical_info": "practical_info",
+    "event_id": 1
+  },
+  {
+    "title": "Tennis Training",
+    "long_description": "longdescr",
+    "short_description": "shortdescription",
+    "img": "imgpath",
+    "practical_info": "practical_info",
+    "event_id": 2
+  }
+]

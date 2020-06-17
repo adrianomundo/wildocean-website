@@ -8,15 +8,20 @@ exports.serviceDbSetup = function(database) {
   return sqlDb.schema.hasTable("service").then(exists => {
     if (!exists) {
       console.log("The table SERVICE does not exist, creating it");
+      let serviceJson = require('../utils/service.json');
       return sqlDb.schema.createTable("service", table => {
-        table.string("title");
+        table.string("title").notNullable().unique();
         table.text("long_description").notNullable();
         table.text("short_description").notNullable();
         table.text("img").notNullable();
         table.text("practical_info").notNullable();
         table.integer("event_id").references("event.event_id").onUpdate("CASCADE").onDelete("CASCADE");
         table.primary(["title"]);
+      }).then( () => { return sqlDb("service").insert(serviceJson);
       });
+    }
+    else {
+      console.log("SERVICE Table already exists");
     }
   });
 };
@@ -24,14 +29,19 @@ exports.serviceDbSetup = function(database) {
 exports.servicePersonDbSetup = function(database) {
   sqlDb = database
   console.log("Check if service_person table exists");
+  let servicePersonJson = require('../utils/service_person.json');
   return sqlDb.schema.hasTable("service_person").then(exists => {
     if (!exists) {
       console.log("The table SERVICE_PERSON does not exist, creating it");
       return sqlDb.schema.createTable("service_person", table => {
         table.string("title").references("service.title").onUpdate("CASCADE").onDelete("CASCADE");
-        table.integer("matricola").references("person.title").onUpdate("CASCADE").onDelete("CASCADE");
+        table.integer("matricola").references("person.matricola").onUpdate("CASCADE").onDelete("CASCADE");
         table.primary(["title", "matricola"]);
+      }).then( () => { return sqlDb("service").insert(servicePersonJson);
       });
+    }
+    else {
+      console.log("SERVICE_PERSON table already exists");
     }
   });
 };

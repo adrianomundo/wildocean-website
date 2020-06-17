@@ -8,12 +8,17 @@ exports.testimonialDbSetup = function(database) {
   return sqlDb.schema.hasTable("testimonial").then(exists => {
     if (!exists) {
       console.log("The table TESTIMONIAL does not exist, creating it");
+      let testimonialJson = require('../utils/testimonial.json');
       return sqlDb.schema.createTable("testimonial", table => {
         table.string("name").notNullable();
         table.string("surname").notNullable();
         table.text("review").notNullable();
         table.primary(["name", "surname", "review"]);
+      }).then(() => { return sqlDb("testimonial").insert(testimonialJson);
       });
+    }
+    else {
+      console.log("TESTIMONIAL table already exists");
     }
   });
 };

@@ -1,0 +1,26 @@
+[
+  {
+    "matricola": 1,
+    "name": "Boyan",
+    "surname": "Slut",
+    "description": "Dutch founder and CEO decise everything for all the people",
+    "img": "imgpath",
+    "role": "CEO",
+    "phone": "+39 3454567621",
+    "mail": "boyan.slut@wildocean.com",
+    "nationality": "Dutch",
+    "event_id": 3
+  },
+  {
+    "matricola": 2,
+    "name": "Adriano",
+    "surname": "Mundo",
+    "description": "Italian maaaan",
+    "img": "imgpath",
+    "role": "CTO",
+    "phone": "+39 3487766980",
+    "mail": "adriano.mundo@wildocean.com",
+    "nationality": "Italian",
+    "event_id": 2
+  }
+]
