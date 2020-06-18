@@ -4,6 +4,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.navbar-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 .navbar-nav > li{
   padding-left:40px;
   padding-right:40px;
