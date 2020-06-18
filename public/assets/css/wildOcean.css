@@ -4,10 +4,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.nav-line {
-    opacity: 0;
-}
-
 .navbar-nav > li{
   padding-left:40px;
   padding-right:40px;
@@ -17,21 +13,37 @@ body {
   font-weight: bold;
 }
 
-.navbar-brand {
-   top:3%;
-   padding-left:20px;
+.nav-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
 }
 
-.navbar-nav > li > a:hover {
-    color:  #0077C0 !important;
-    transition: .5s ease-in-out;
-
-
+.nav-link:hover {
+  color:  #0077C0 !important;
 }
 
-.navbar-nav > li > a:hover+img {
-    transition: .7s ease-in-out;
-    opacity: 1;
+.nav-link::before {
+  transition: 300ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: #0077C0;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 85%;
+}
+
+.nav-link-ltr#sub::before {
+  width: 85%;
+  bottom: 10px;
 }
 
 .carousel-item {
