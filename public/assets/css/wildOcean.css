@@ -1,7 +1,16 @@
 
 body {
-  padding-top: 56px;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
+}
+
+.bg-dark {
+    transition: 300ms;
+    background: transparent !important;
+}
+
+.bg-dark.scrolled {
+    background: white !important;
 }
 
 .navbar-brand {
