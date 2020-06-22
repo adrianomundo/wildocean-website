@@ -125,6 +125,29 @@ h2 {
   color: white;
 }
 
+#home-im1 {
+    width: 85%;
+    padding: 50px;
+}
+
+.item {
+    padding: 25px;
+}
+
+.row {
+    padding: 25px;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #0077C0 !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: #0077C0 !important;
+    border-color: #0077C0 !important;
+}
+
 @media (min-width: 1270px){
     .navbar-expand-custom {
         flex-direction: row;
