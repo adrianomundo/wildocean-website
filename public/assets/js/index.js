@@ -16,10 +16,15 @@ async function getTestimonials() {
                 //}
                 return response.json();
              }).then(function (json) {
-                 testimonials = document.createElement("h1");
-                 testimonials.innerHTML = `${json.name}`;
+                 for (var i = 0; i < json.length; i++) {
+                     var listTestimonial = document.createElement("h1");
+                     let { name, surname, review } = json[i];
+                     listTestimonial.innerHTML = `${name} - ${surname} - ${review}`
+                 }
+                 //testimonials = document.createElement("h1");
+                 //testimonials.innerHTML = `${json.name}`;
                  console.log(json);
-         })
+         });
 
     }
     catch (e) {
