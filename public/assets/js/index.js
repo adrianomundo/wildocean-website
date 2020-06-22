@@ -17,9 +17,9 @@ async function getTestimonials() {
                 return response.json();
              }).then(function (json) {
                  for (var i = 0; i < json.length; i++) {
-                     var listTestimonial = document.createElement("h1");
+                     var listTestimonial = document.createElement("li");
                      let { name, surname, review } = json[i];
-                     listTestimonial.innerHTML = `${name} - ${surname} - ${review}`
+                     listTestimonial.innerHTML = `${name} - ${surname} - ${review}`;
                  }
                  //testimonials = document.createElement("h1");
                  //testimonials.innerHTML = `${json.name}`;
