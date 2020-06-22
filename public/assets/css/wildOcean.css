@@ -4,6 +4,13 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+    color: #0077C0;
+}
+
+h2 {
+    color: #0077C0;
+}
 .bg-dark {
     transition: 300ms;
     background: transparent !important;
