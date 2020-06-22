@@ -10,12 +10,12 @@ exports.eventDbSetup = function(database) {
       console.log("The table EVENT does not exist, creating it");
       let eventJson = require('../utils/event.json');
       return sqlDb.schema.createTable("event", table => {
-        table.increments("event_id");
+        table.increments("event_id").unique().notNullable();
         table.string("title").notNullable();
         table.string("location").notNullable();
         table.text("long_description").notNullable();
         table.text("short_description").notNullable();
-        table.text("img").notNullable();
+        table.string("img").notNullable();
         table.time("start_h").notNullable();
         table.time("end_h").notNullable();
         table.date("date").notNullable();
@@ -37,7 +37,7 @@ exports.eventDbSetup = function(database) {
  * eventId Long ID of the event to find
  * returns Object
  **/
-exports.getEventbyId = function(eventId) {
+exports.getEventbyId = function(event_id) {
 
 
 };
@@ -60,10 +60,10 @@ exports.getEvents = function(limit, offset) {
  * get the organizer of the event
  * returns the person in charge of organizing the event filtered by its ID
  *
- * eventId Long ID of the event to find
- * returns Object
+ * event_id Long ID of the event to find
+ * returns Person
  **/
-exports.getPersonOfEvent = function(eventId) {
+exports.getPersonByEvent = function(event_id) {
 
 };
 
@@ -72,9 +72,9 @@ exports.getPersonOfEvent = function(eventId) {
  * get the service associated with the event
  * returns the service related to the event filtered by its ID
  *
- * eventId Long ID of the event to find
- * returns Object
+ * event_id Long ID of the event to find
+ * returns Service
  **/
-exports.getServiceOfEvent = function(eventId) {
+exports.getServiceByEvent = function(event_id) {
 
 };

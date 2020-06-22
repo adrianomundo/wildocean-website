@@ -1,62 +1,62 @@
 [
   {
-    "name": "about",
+    "page": "about",
     "section": "about us",
     "txt": "Every year, millions of tons of plastic enter the oceans primarily from rivers. The plastic afloat across the oceans – legacy plastic – isn’t going away by itself. Therefore, solving ocean plastic pollution requires a combination of stemming the inflow and cleaning up what has already accumulated. Wild Ocean, a non-profit organization, is developing advanced technologies to rid the world’s oceans of plastic."
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "our vision",
     "txt": "The ocean is at the center of who we are. Even  if you’ve neverseen the ocean, you’re touched  by it every single day. It produces half the air you and I breathe every day, the food we eat and the water we drink. This is what we’re fighting to protect."
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "our mission",
     "txt": "Wild Ocean is working with you to protect the ocean from today's greatest global challenges. Toghether, we create science-based solutions for a healthy ocean and the wildlife and communities that depend on it."
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "data-driven",
     "txt": "We validate our work with science and numbers"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "think big",
     "txt": "We start by tackling the big problems and solve the smaller ones along the way"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "work with nature",
     "txt": "Technology should be symbiotic with the environment"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "highly focused",
     "txt": "Trying to do everything often leads to accomplishing nothing"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "strive for simplicity",
     "txt": "We avoid interdependency for faster iteration cycles"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "iterative",
     "txt": "We test often and fast – to learn as we go and adapt when needed"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "build with expertise",
     "txt": "… but not without questioning it"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "non-profit",
     "txt": "Wild Ocean is a project that has a strict deadline; once the oceans are clean, our project is complete"
   },
   {
-    "name": "about",
+    "page": "about",
     "section": "our impact",
     "txt": "Our models indicate that a full-scale system roll-out could clean up 50% of the Great Pacific Garbage Patch in 5 years. Research shows the majority of plastic in the gyres by mass is currently in the larger debris. By removing the plastic while most of it is still large, we prevent it from breaking down into dangerous microplastics. Combining the cleanup with source reduction on land paves the road towards a plastic-free ocean by 2050."
-  },
+  }
 ]

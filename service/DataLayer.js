@@ -5,6 +5,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 let { personDbSetup } = require("./PersonService");
 let { serviceDbSetup } = require("./ServicesService");
 let { servicePersonDbSetup } = require("./ServicesService");
+let { serviceImgDbSetup } = require("./ServicesService")
 let { eventDbSetup } = require("./EventsService");
 let { testimonialDbSetup } = require("./TestimonialsService");
 let { textDbSetup } = require("./TextService");
@@ -21,6 +22,7 @@ function setupDataLayer() {
          personDbSetup(sqlDb) &&
          serviceDbSetup(sqlDb) &&
          servicePersonDbSetup(sqlDb) &&
+         serviceImgDbSetup(sqlDb) &&
          testimonialDbSetup(sqlDb) &&
          textDbSetup(sqlDb);
 }

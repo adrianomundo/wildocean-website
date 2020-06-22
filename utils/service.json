@@ -14,5 +14,12 @@
     "img": "imgpath",
     "practical_info": "practical_info",
     "event_id": 2
+  },
+  {
+    "title": "Daje Giovani",
+    "long_description": "longdescr",
+    "short_description": "shortdescription",
+    "img": "imgpath",
+    "practical_info": "practical_info"
   }
 ]

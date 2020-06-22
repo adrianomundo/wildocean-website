@@ -31,7 +31,7 @@ exports.testimonialDbSetup = function(database) {
  * offset Integer pagination offset, default is 0 (optional)
  * returns List
  **/
-exports.getTestimonials = function() {
+exports.getTestimonials = function(limit, offset) {
 
 };
 

@@ -10,10 +10,10 @@ exports.textDbSetup = function(database) {
       console.log("The table TEXT does not exist, creating it");
       let textJson = require('../utils/text.json');
       return sqlDb.schema.createTable("text", table => {
-        table.string("name").notNullable();
+        table.string("page").notNullable();
         table.string("section").notNullable();
         table.text("txt").notNullable();
-        table.primary(["name", "section"]);
+        table.primary(["page", "section"]);
       }).then( () => { return sqlDb("text").insert(textJson);
       });
     }
@@ -30,7 +30,7 @@ exports.textDbSetup = function(database) {
  * page String name of the page
  * returns List
  **/
-exports.getTextOfPage = function() {
+exports.getTextOfPage = function(page) {
 
 };
 
@@ -43,7 +43,7 @@ exports.getTextOfPage = function() {
  * offset Integer pagination offset, default is 0 (optional)
  * returns List
  **/
-exports.getTexts = function() {
+exports.getTexts = function(limit, offset) {
 
 };
 
