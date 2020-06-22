@@ -10,7 +10,7 @@ $(document).ready( () => {
 async function getTestimonials() {
     let testimonials;
     try {
-         fetch("ap1/v1/testimonials").then(function (response) {
+         fetch("api/v1/testimonials").then(function (response) {
                 if (!response.ok) {
                     throw new Error("HTTPS API Error, status = " + response.status);
                 }
