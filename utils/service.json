@@ -1,25 +1,22 @@
 [
   {
-    "title": "Football Training",
-    "long_description": "longdescr",
-    "short_description": "shortdescription",
-    "img": "imgpath",
-    "practical_info": "practical_info",
+    "title": "Cleaning the Ocean",
+    "long_description": "The ocean is big. Cleaning up the Great Pacific Garbage Patch using conventional methods – vessels and nets – would take thousands of years and tens of billions of dollars to complete. Our passive systems are estimated to remove 50% of the Great Pacific Garbage patch in just five years, and at a fraction of the cost. This is how it works: CREATE A COASTLINE WHERE THERE ARE NONE The challenge of cleaning up the gyres is that plastic pollution is spread across millions of square kilometers and travels in all directions. Our cleanup technology has been designed to do the hard job of concentrating the plastic first, before it can be effectively removed from the ocean. The system consists of a long floater that sits at the surface of the water and skirt that hangs beneath it. The floater provides buoyancy to the entire system, while the skirt prevents debris from escaping underneath and leads it into the retention system, or cod end. A cork line above the skirt prevents overtopping and keeps the skirt afloat.",
+    "short_description": "The ocean is big. Cleaning up the Great Pacific Garbage Patch using conventional methods – vessels and nets – would take thousands of years and tens of billions of dollars to complete.",
+    "practical_info": "In order to join us contact one of the featured crew.",
     "event_id": 1
   },
   {
-    "title": "Tennis Training",
-    "long_description": "longdescr",
-    "short_description": "shortdescription",
-    "img": "imgpath",
-    "practical_info": "practical_info",
+    "title": "Sustainable Fisheries",
+    "long_description": "Healthy Fish for a Healthy Ocean. Fish are some of our most familiar ocean residents. From tiny anchovy to the largest sharks, a damselfish on a tropical coral reef to icefish living in the freezing waters off of Antarctica, fish can be found in almost every corner of the ocean. Fish never fail to inspire us with the incredible ways they carry out their underwater lives. Fish are key players in ocean ecosystems, and they are also important for people and economies around the world. Fisheries put seafood on the table for billions of people and offer jobs and livelihoods for millions. Many people fish for fun and as a way to connect with the ocean, and subsistence fishing is a key component of food security and culture. Fishing traditions stretch back to time immemorial, and fishing is deeply interwoven into culture and history. In short, much of the world depends on fish. Whether we fish, live in a coastal town or just like to eat seafood, we all depend on healthy, sustainable fisheries. For over 25 years, Wild Ocean has worked to find practical solutions to the challenging problems facing our fisheries. Our vision is this—healthy fish populations and resilient ocean ecosystems that support people through thriving fishing businesses, provide ample fishing opportunities and deliver nutritious protein to the dinner plates of families throughout America and around the world for generations to come.",
+    "short_description": "Fish are some of our most familiar ocean residents. From tiny anchovy to the largest sharks, a damselfish on a tropical coral reef to icefish living in the freezing waters off of Antarctica, fish can be found in almost every corner of the ocean.",
+    "practical_info": "In order to join us contact one of the featured crew.",
     "event_id": 2
   },
   {
-    "title": "Daje Giovani",
-    "long_description": "longdescr",
-    "short_description": "shortdescription",
-    "img": "imgpath",
-    "practical_info": "practical_info"
+    "title": "Trash Free Seas",
+    "long_description": "Have you ever walked along a beautiful beach and been surprised to find a piece of plastic at your feet? You might be even more surprised to learn that together with volunteers like you, we’ve picked up more than 220 million pounds of trash in the last 30 years. And the problem goes deeper than what you’re seeing on the beaches. Scientists estimate that more than 8 million metric tons of plastic is entering our ocean every year. If we don’t act now, there could be a pound of plastic for every 3 pounds of fish in the ocean within the next decade. Wild Ocean has been at the forefront of the trash free seas challenge for more than 30 years. Trash in the ocean has serious consequences for all of us, but there is hope. With your help, we can solve the ocean plastic crisis together. Ocean trash affects the health of wildlife, people and local economies. Trash in the water and on the shore can be mistaken as food by wildlife, or entangle animals with lethal consequences. Plastic also attracts and concentrates other pollutants from surrounding seawater, posing a contamination risk to those species that then eat it. Scientists are studying the impacts of that contamination on fish and shellfish and as well as the possible impact it may have on human health as well. Tackling the problem of plastic in the ocean begins on land. Reduction in plastics use, especially of single-use disposable products, and the collection and recycling of plastics in developing countries can help to reduce the amount of plastic waste that enters the ocean.",
+    "short_description": "Have you ever walked along a beautiful beach and been surprised to find a piece of plastic at your feet? You might be even more surprised to learn that together with volunteers like you, we’ve picked up more than 220 million pounds of trash in the last 30 years.",
+    "practical_info": "In order to join us contact one of the featured crew."
   }
 ]

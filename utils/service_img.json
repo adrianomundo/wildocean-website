@@ -1,14 +1,22 @@
 [
   {
     "service_id": 1,
-    "imgpath": "imgpath0"
+    "imgpath": "public/assets/img/service/cleaning the ocean service1.jpg"
   },
   {
     "service_id": 1,
-    "imgpath": "imgpath01"
+    "imgpath": "public/assets/img/service/cleaning the ocean service2.jpg"
   },
   {
     "service_id": 2,
-    "imgpath": "imgpath2"
+    "imgpath": "public/assets/img/service/sustainable fish service1.jpg"
+  },
+  {
+    "service_id": 2,
+    "imgpath": "public/assets/img/service/sustainable fish service2.jpg"
+  },
+  {
+    "service_id": 3,
+    "imgpath": "public/assets/img/service/trash free seas services.jpg"
   }
 ]
