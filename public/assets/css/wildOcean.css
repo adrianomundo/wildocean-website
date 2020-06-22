@@ -139,13 +139,15 @@ h2 {
 }
 
 .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
-    background-color: #0077C0 !important;
+    background-color: #2F97EF !important;
     color: white !important;
+    border-color: white !important;
 }
 
 .btn-outline-primary {
     color: #0077C0 !important;
     border-color: #0077C0 !important;
+    border-radius: 20px;
 }
 
 @media (min-width: 1270px){
