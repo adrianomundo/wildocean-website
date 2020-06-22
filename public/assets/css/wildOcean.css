@@ -145,9 +145,11 @@ h2 {
 }
 
 .btn-outline-primary {
-    color: #0077C0 !important;
+    background-color: #0077C0 !important;
+    color: white !important;
     border-color: #0077C0 !important;
     border-radius: 20px;
+    width: 150px;
 }
 
 @media (min-width: 1270px){
