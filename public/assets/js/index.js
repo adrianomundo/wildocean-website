@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready( () => {
+$(document).ready( function() {
 
     getTestimonials();
 
@@ -10,10 +10,10 @@ $(document).ready( () => {
 async function getTestimonials() {
     let testimonials;
     try {
-         fetch("api/v1/testimonials").then(function (response) {
-                if (!response.ok) {
-                    throw new Error("HTTPS API Error, status = " + response.status);
-                }
+         fetch("https://wildocean.herokuapp.com/api/v1/testimonials").then(function (response) {
+                //if (!response.ok) {
+                //    throw new Error("HTTPS API Error, status = " + response.status);
+                //}
                 return response.json();
              }).then(function (json) {
                  testimonials = document.createElement("h1");
