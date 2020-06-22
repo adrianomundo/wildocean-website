@@ -31,6 +31,7 @@ exports.textDbSetup = function(database) {
  * returns List
  **/
 exports.getTextOfPage = function(page) {
+  return sqlDb.select().where("page", page);
 
 };
 
@@ -44,6 +45,6 @@ exports.getTextOfPage = function(page) {
  * returns List
  **/
 exports.getTexts = function(limit, offset) {
-
+  return sqlDb.select().table("text");
 };
 

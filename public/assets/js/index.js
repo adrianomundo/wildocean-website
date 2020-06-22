@@ -10,10 +10,10 @@ $(document).ready( function() {
 async function getTestimonials() {
     let testimonials;
     try {
-         fetch("https://wildocean.herokuapp.com/api/v1/testimonials").then(function (response) {
-                //if (!response.ok) {
-                //    throw new Error("HTTPS API Error, status = " + response.status);
-                //}
+         fetch("api/v1/testimonials").then(function (response) {
+                if (!response.ok) {
+                    console.log("HTTPS API Error, status = " + response.status);
+                }
                 return response.json();
              }).then(function (json) {
                  var trial = document.getElementById("testimonial");

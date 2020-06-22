@@ -14,7 +14,6 @@ exports.serviceDbSetup = function(database) {
         table.string("title").notNullable();
         table.text("long_description").notNullable();
         table.text("short_description").notNullable();
-        table.string("img").notNullable();
         table.text("practical_info").notNullable();
         table.integer("event_id").references("event.event_id");
       }).then( () => { return sqlDb("service").insert(serviceJson);
@@ -34,8 +33,8 @@ exports.servicePersonDbSetup = function(database) {
     if (!exists) {
       console.log("The table SERVICE_PERSON does not exist, creating it");
       return sqlDb.schema.createTable("service_person", table => {
-        table.integer("service_id").references("service.service_id").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
-        table.integer("matricola").references("person.matricola").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        table.integer("service_id").references("service.service_id").notNullable();
+        table.integer("matricola").references("person.matricola").notNullable();
         table.primary(["service_id", "matricola"]);
       }).then( () => { return sqlDb("service_person").insert(servicePersonJson);
       });
@@ -54,7 +53,7 @@ exports.serviceImgDbSetup = function(database) {
     if (!exists) {
       console.log("The table SERVICE_IMG does not exist, creating it");
       return sqlDb.schema.createTable("service_img", table => {
-        table.integer("service_id").references("service.service_id").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        table.integer("service_id").references("service.service_id").notNullable();
         table.string("imgpath").notNullable();
         table.primary(["service_id", "imgpath"]);
       }).then( () => { return sqlDb("service_img").insert(serviceImgJson);
