@@ -17,7 +17,7 @@ async function getTestimonials() {
                 return response.json();
              }).then(function (json) {
                  var trial = document.getElementById("testimonial");
-                 let { name, surname, review } = json[i];
+                 let { name, surname, review } = json[0];
                  trial.innerHTML = `${name} - ${surname} - ${review}`;
                  //testimonials = document.createElement("h1");
                  //testimonials.innerHTML = `${json.name}`;
