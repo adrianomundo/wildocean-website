@@ -10,13 +10,13 @@ exports.serviceDbSetup = function(database) {
       console.log("The table SERVICE does not exist, creating it");
       let serviceJson = require('../utils/service.json');
       return sqlDb.schema.createTable("service", table => {
-        table.string("title").notNullable().unique();
+        table.increments("service_id").notNullable().unique();
+        table.string("title").notNullable();
         table.text("long_description").notNullable();
         table.text("short_description").notNullable();
-        table.text("img").notNullable();
+        table.string("img").notNullable();
         table.text("practical_info").notNullable();
-        table.integer("event_id").references("event.event_id").onUpdate("CASCADE").onDelete("CASCADE");
-        table.primary(["title"]);
+        table.integer("event_id").references("event.event_id");
       }).then( () => { return sqlDb("service").insert(serviceJson);
       });
     }
@@ -34,10 +34,10 @@ exports.servicePersonDbSetup = function(database) {
     if (!exists) {
       console.log("The table SERVICE_PERSON does not exist, creating it");
       return sqlDb.schema.createTable("service_person", table => {
-        table.string("title").references("service.title").onUpdate("CASCADE").onDelete("CASCADE");
-        table.integer("matricola").references("person.matricola").onUpdate("CASCADE").onDelete("CASCADE");
-        table.primary(["title", "matricola"]);
-      }).then( () => { return sqlDb("service").insert(servicePersonJson);
+        table.integer("service_id").references("service.service_id").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        table.integer("matricola").references("person.matricola").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        table.primary(["service_id", "matricola"]);
+      }).then( () => { return sqlDb("service_person").insert(servicePersonJson);
       });
     }
     else {
@@ -46,38 +46,58 @@ exports.servicePersonDbSetup = function(database) {
   });
 };
 
+exports.serviceImgDbSetup = function(database) {
+  sqlDb = database
+  console.log("Check if service_img table exists");
+  let serviceImgJson = require('../utils/service_img.json');
+  return sqlDb.schema.hasTable("service_img").then(exists => {
+    if (!exists) {
+      console.log("The table SERVICE_IMG does not exist, creating it");
+      return sqlDb.schema.createTable("service_img", table => {
+        table.integer("service_id").references("service.service_id").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        table.string("imgpath").notNullable();
+        table.primary(["service_id", "imgpath"]);
+      }).then( () => { return sqlDb("service_img").insert(serviceImgJson);
+      });
+    }
+    else {
+      console.log("SERVICE_IMG table already exists");
+    }
+  });
+};
+
 /**
  * get the event related to the service
- * returns the event which is presented in the service filtered by tht title
+ * returns the event which is presented in the service filtered by service ID
  *
- * title String title of the service to find
- * returns Object
+ * service_id String ID of the service to find
+ * returns Event
  **/
-exports.getEventbyService = function(title) {
+exports.getEventbyService = function(service_id) {
 
 };
 
 
 /**
  * get the people related to the service
- * returns all the people who are involved in the service filtered by tht title
+ * returns all the people who are involved in the service filtered by service ID
  *
- * title String title of the service to find
+ * service_id String ID of the service to find
  * returns List
  **/
-exports.getPeoplebyService = function(title) {
+exports.getPeoplebyService = function(service_id) {
 
 }
 
 
 /**
- * get the service by title
- * returns a service filtered by its title
+ * get the service by its ID
+ * returns a service filtered by its ID
  *
- * title String title of the service to find
- * returns Object
+ * service_id String ID of the service to find
+ * returns Service
  **/
-exports.getServicebyTitle = function(title) {
+exports.getServicebyId = function(service_id) {
 
 };
 

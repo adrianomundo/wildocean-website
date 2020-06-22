@@ -1,10 +1,10 @@
 [
   {
-    "title":"Football Training",
+    "service_id":1,
     "matricola": 1
   },
   {
-    "title": "Tennis Training",
+    "service_id": 2,
     "matricola": 2
   }
 ]

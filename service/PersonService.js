@@ -10,16 +10,16 @@ exports.personDbSetup = function(database) {
       console.log("The table PERSON does not exist, creating it");
       let personJson = require('../utils/person.json')
       return sqlDb.schema.createTable("person", table => {
-        table.increments("matricola");
+        table.increments("matricola").unique().notNullable();
         table.string("name").notNullable();
         table.string("surname").notNullable();
         table.text("description").notNullable();
-        table.text("img").notNullable();
+        table.string("img").notNullable();
         table.string("role");
         table.string("phone");
         table.string("mail");
         table.string("nationality");
-        table.integer("event_id").references("event.event_id").onUpdate("CASCADE").onDelete("CASCADE");
+        table.integer("event_id").references("event.event_id");
       }).then( () => { return sqlDb("person").insert(personJson);
       });
     }
