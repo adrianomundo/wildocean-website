@@ -32,6 +32,6 @@ exports.testimonialDbSetup = function(database) {
  * returns List
  **/
 exports.getTestimonials = function(limit, offset) {
-
+  return sqlDb("testimonial");
 };
 
