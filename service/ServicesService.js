@@ -98,11 +98,29 @@ exports.getPeoplebyService = function(service_id) {
  * returns Service
  **/
 exports.getServicebyId = function(service_id) {
-  let service = sqlDb.select().table("service").where("service_id", service_id);
-  let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
-  let data = service[0];
-  data.images = images.map(p => { return p.imgpath});
-  return data;
+  return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
+      .then( function (response) {
+        let images = response;
+        return sqlDb.select().table("service").where("service_id", service_id)
+            .then(function (response) {
+                for (let i = 0; i < response.length; i++) {
+                  let imgArr = new Array();
+                  for (let j = 0; j < images.length; j++) {
+                    if (response[i].service_id == images[j].service_id){
+                        imgArr.push(images[i].imgpath);
+                    }
+                  }
+                  response[i].img = imgArr;
+                }
+                return response;
+
+            })
+      })
+  //let service = sqlDb.select().table("service").where("service_id", service_id);
+  //let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
+  //let data = service[0];
+  //data.images = images.map(p => { return p.imgpath});
+  //return data;
   //data.img = images.map (a => { return a.service_img });
   //return data;
   //return sqlDb.select().table("service").where("service_id", service_id)
@@ -118,9 +136,10 @@ exports.getServicebyId = function(service_id) {
  * returns List
  **/
 exports.getServices = function(limit, offset) {
-  let images = sqlDb.select()
-  return sqlDb.select("*")
-      .from("service")
-      .join("service_img", "service_id", "service_id");
+  return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
+      .then( function (response) {
+        let images = response;
+        return sqlDb.select().table("service").where("service_id", service_id)
+      } )
 };
 
