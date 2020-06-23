@@ -101,25 +101,12 @@ exports.getServicebyId = async function (service_id) {
 
   let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
   let service = await sqlDb.select().table("service").where("service_id", service_id);
-  //return service[1];
   let imgArray = [];
   for (let i = 0; i < images.length; i++) {
     imgArray.push(images[i].imgpath);
   }
   service[0].img = imgArray;
   return service;
-
-  //return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
-   //   .then(function (response) {
-    //    let images = response;
-     //   return sqlDb.select().table("service").where("service_id", service_id)
-      //      .then(function (response) {
-       //       for (let i = 0; i < images.length; i++) {
-        //        response.img[i] = images[i];
-         //     }
-          //    return response;
-          //  })
-     // })
 };
 
 
@@ -131,24 +118,17 @@ exports.getServicebyId = async function (service_id) {
  * offset Integer pagination offset, default is 0 (optional)
  * returns List
  **/
-exports.getServices = function(limit, offset) {
+exports.getServices = async function(limit, offset) {
 
-  return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
-      .then( function (response) {
-        let images = response;
-        return sqlDb.select().table("service").then(function (response) {
-              for (let i = 0; i < response.length; i++) {
-                let imgArr = new Array();
-                for (let j = 0; j < images.length; j++) {
-                  if (response[i].service_id == images[j].service_id){
-                    imgArr.push(images[i].imgpath);
-                  }
-                }
-                response[i].img = imgArr;
-              }
-              return response;
-
-            })
-      })
+  let service = await sqlDb.select().table("service");
+  for (let i = 0; i < service.length; i++) {
+    let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service[i].service_id);
+    let imgArray = [];
+    for (let j = 0; j < images.length; j++) {
+      imgArray.push(images[j].imgpath)
+    }
+    service[i].img = imgArray;
+  }
+  return service;
 };
 
