@@ -99,27 +99,27 @@ exports.getPeoplebyService = function(service_id) {
  **/
 exports.getServicebyId = function(service_id) {
 
-  let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
-  let service = sqlDb.select().table("service").where("service_id", service_id);
+  //let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
+  //let service = sqlDb.select().table("service").where("service_id", service_id);
   //return service[1];
-  let imgArray = [];
-  for (let i = 0; i < images.length; i++) {
-    imgArray.push(images[i]);
-  }
-  service[0].img = imgArray;
-  return images;
+  //let imgArray = [];
+  //for (let i = 0; i < images.length; i++) {
+  //  imgArray.push(images[i]);
+  //}
+  //service[0].img = imgArray;
+  //return images;
 
-  //return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
-  //    .then( function (response) {
-  //        let images = response;
-  //        return sqlDb.select().table("service").where("service_id", service_id)
-  //            .then(function (response) {
-  //                for (let i = 0; i < images.length; i++) {
-  //                  response.img[i] = images[i];
-  //                }
-  //              return response;
-   //         })
-   //   })
+  return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
+      .then( function (response) {
+          let images = response;
+          return sqlDb.select().table("service").where("service_id", service_id)
+              .then(function (response) {
+                  for (let i = 0; i < images.length; i++) {
+                    response[0].img[i] = images[i];
+                  }
+                return response;
+              })
+      })
 };
 
 
