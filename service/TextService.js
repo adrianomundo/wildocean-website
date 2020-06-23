@@ -31,7 +31,7 @@ exports.textDbSetup = function(database) {
  * returns List
  **/
 exports.getTextOfPage = function(page) {
-  return sqlDb.select().where("page", page);
+  return sqlDb.select().table("text").where("page", page);
 
 };
 
