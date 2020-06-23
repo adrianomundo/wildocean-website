@@ -97,29 +97,29 @@ exports.getPeoplebyService = function(service_id) {
  * service_id String ID of the service to find
  * returns Service
  **/
-exports.getServicebyId = function(service_id) {
+exports.getServicebyId = async function (service_id) {
 
-  //let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
-  //let service = sqlDb.select().table("service").where("service_id", service_id);
+  let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
+  let service = await sqlDb.select().table("service").where("service_id", service_id);
   //return service[1];
-  //let imgArray = [];
-  //for (let i = 0; i < images.length; i++) {
-  //  imgArray.push(images[i]);
-  //}
-  //service[0].img = imgArray;
-  //return images;
+  let imgArray = [];
+  for (let i = 0; i < images.length; i++) {
+    imgArray.push(images[i]);
+  }
+  service[0].img = imgArray;
+  return service;
 
-  return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
-      .then( function (response) {
-          let images = response;
-          return sqlDb.select().table("service").where("service_id", service_id)
-              .then(function (response) {
-                  for (let i = 0; i < images.length; i++) {
-                    response.img[i] = images[i];
-                  }
-                return response;
-              })
-      })
+  //return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
+   //   .then(function (response) {
+    //    let images = response;
+     //   return sqlDb.select().table("service").where("service_id", service_id)
+      //      .then(function (response) {
+       //       for (let i = 0; i < images.length; i++) {
+        //        response.img[i] = images[i];
+         //     }
+          //    return response;
+          //  })
+     // })
 };
 
 
