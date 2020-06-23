@@ -37,7 +37,9 @@ exports.personDbSetup = function(database) {
  * returns Event
  **/
 exports.getEventbyPerson = function(matricola) {
-  return sqlDb.select().table("event").where("event_id", matricola);
+  let event =  sqlDb.select("event_id").from("person").where("matricola", matricola);
+  console.log(event)
+  return sqlDb.select().table("event").where("event_id", event);
   //return sqlDb.select("person")
      // .join("event", "person.event_id", "=", "event.event_id")
 };
