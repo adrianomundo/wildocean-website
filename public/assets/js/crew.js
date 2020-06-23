@@ -8,6 +8,7 @@ $(document).ready( function() {
 });
 
 async function getPerson() {
+
     try {
         fetch("https://wildocean.herokuapp.com/api/v1/services/1").then(function (response) {
             if (!response.ok) {
@@ -15,8 +16,8 @@ async function getPerson() {
             }
             return response.json();
         }).then(function (json) {
-            json[0].images = "string";
-            console.log(json[0]);
+
+            console.log(json);
         });
 
     }
