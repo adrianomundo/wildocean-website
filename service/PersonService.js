@@ -50,13 +50,7 @@ exports.getEventbyPerson = function(matricola) {
  * returns List
  **/
 exports.getPeople = function(limit,offset) {
-  //return sqlDb("person")
-  //  .limit(limit)
-    //.offset(offset)
-    //.then(data => {
-
-    
-  //});
+  return sqlDb.select().table("person");
 };
 
 
@@ -68,6 +62,7 @@ exports.getPeople = function(limit,offset) {
  * returns Person
  **/
 exports.getPersonbyMatricola = function(matricola) {
+  return sqlDb.select().table("person").where("matricola", matricola);
 
 };
 
@@ -80,6 +75,6 @@ exports.getPersonbyMatricola = function(matricola) {
  * returns List
  **/
 exports.getServicesbyPerson = function(matricola) {
-
+  return sqlDb.select("event_id").table("person").where("matricola", matricola);
 };
 

@@ -38,8 +38,7 @@ exports.eventDbSetup = function(database) {
  * returns Object
  **/
 exports.getEventbyId = function(event_id) {
-
-
+  return sqlDb.select().table("event").where("event_id", event_id);
 };
 
 
@@ -52,7 +51,7 @@ exports.getEventbyId = function(event_id) {
  * returns List
  **/
 exports.getEvents = function(limit, offset) {
-
+  return sqlDb.select().table("event");
 };
 
 

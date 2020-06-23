@@ -2,15 +2,15 @@
 
 $(document).ready( function() {
 
-    getTestimonials("about");
+    getTestimonials();
 
 
 });
 
-async function getTestimonials(page) {
+async function getTestimonials() {
     let testimonials;
     try {
-         fetch("https://wildocean.herokuapp.com/api/v1/text/page").then(function (response) {
+         fetch("https://wildocean.herokuapp.com/api/v1/text/about").then(function (response) {
                 if (!response.ok) {
                     console.log("HTTPS API Error, status = " + response.status);
                 }

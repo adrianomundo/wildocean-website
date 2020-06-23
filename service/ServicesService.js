@@ -73,7 +73,7 @@ exports.serviceImgDbSetup = function(database) {
  * returns Event
  **/
 exports.getEventbyService = function(service_id) {
-
+  return sqlDb.select("event_id").table("service").where("service_id", service_id);
 };
 
 
@@ -97,7 +97,7 @@ exports.getPeoplebyService = function(service_id) {
  * returns Service
  **/
 exports.getServicebyId = function(service_id) {
-
+  return sqlDb.select().table("service").where("service_id", service_id);
 };
 
 
@@ -110,6 +110,6 @@ exports.getServicebyId = function(service_id) {
  * returns List
  **/
 exports.getServices = function(limit, offset) {
-
+  return sqlDb.select().table("service");
 };
 
