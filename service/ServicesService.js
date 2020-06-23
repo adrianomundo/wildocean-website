@@ -111,7 +111,7 @@ exports.getServicebyId = function(service_id) {
  * returns List
  **/
 exports.getServices = function(limit, offset) {
-  return sqlDb.select()
+  return sqlDb.select("*")
       .from("service")
       .join("service_img", "service_id", "service_id");
 };
