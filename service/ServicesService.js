@@ -104,7 +104,7 @@ exports.getServicebyId = async function (service_id) {
   //return service[1];
   let imgArray = [];
   for (let i = 0; i < images.length; i++) {
-    imgArray.push(images[i]);
+    imgArray.push(images[i].imgpath);
   }
   service[0].img = imgArray;
   return service;
