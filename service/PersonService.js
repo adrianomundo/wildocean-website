@@ -37,7 +37,8 @@ exports.personDbSetup = function(database) {
  * returns Event
  **/
 exports.getEventbyPerson = function(matricola) {
-
+  return sqlDb.select("person")
+      .join("event", "person.event_id", "=", "event.event_id")
 };
 
 
@@ -75,6 +76,5 @@ exports.getPersonbyMatricola = function(matricola) {
  * returns List
  **/
 exports.getServicesbyPerson = function(matricola) {
-  return sqlDb.select("event_id").table("person").where("matricola", matricola);
 };
 
