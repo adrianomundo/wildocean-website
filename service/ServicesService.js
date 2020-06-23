@@ -101,9 +101,11 @@ exports.getServicebyId = function(service_id) {
 
   let images = sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
   let service = sqlDb.select().table("service").where("service_id", service_id);
+  let imgArray = [];
   for (let i = 0; i < images.length; i++) {
-    service.img[i] = images[i];
+    imgArray.push(images[i].imgpath);
   }
+  service[0].img = imgArray;
   return service;
 
   //return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
