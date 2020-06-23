@@ -63,7 +63,7 @@ exports.getEvents = function(limit, offset) {
  * returns Person
  **/
 exports.getPersonByEvent = function(event_id) {
-
+  return sqlDb.select().table("person").where("event_id", event_id);
 };
 
 

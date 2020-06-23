@@ -9,7 +9,7 @@ $(document).ready( function() {
 
 async function getPerson() {
     try {
-        fetch("https://wildocean.herokuapp.com/api/v1/person/1").then(function (response) {
+        fetch("https://wildocean.herokuapp.com/api/v1/person/1/event").then(function (response) {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
             }
