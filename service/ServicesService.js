@@ -102,7 +102,7 @@ exports.getServicebyId = function(service_id) {
   let data = services[0];
   let images = sqlDb.select("imgpath").from("service_img").where("service_id", data.service_id);
   data.img = images.map (a => { return a.service_img });
-  resolve(data);
+  return data;
   //return sqlDb.select().table("service").where("service_id", service_id)
 };
 
