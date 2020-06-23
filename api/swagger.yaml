@@ -596,11 +596,11 @@ definitions:
   Text:
     type: "object"
     required:
-      - "name"
+      - "page"
       - "section"
       - "txt"
     properties:
-      name:
+      page:
         type: "string"
       section:
         type: "string"
