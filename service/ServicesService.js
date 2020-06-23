@@ -99,8 +99,10 @@ exports.getPeoplebyService = function(service_id) {
  **/
 exports.getServicebyId = function(service_id) {
   let services = sqlDb.select().table("service").where("service_id", service_id);
-  services.img  = sqlDb.select().table("service_img").where("service_id", service_id);
-  return services;
+  let data = services[0];
+  let images = sqlDb.select().table("service_img").where("service_id", data.id);
+  data.img = images.map (response => { return response.service_img });
+  resolve(data);
   //return sqlDb.select().table("service").where("service_id", service_id)
 };
 
