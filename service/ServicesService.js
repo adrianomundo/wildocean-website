@@ -98,7 +98,11 @@ exports.getPeoplebyService = function(service_id) {
  * returns Service
  **/
 exports.getServicebyId = function(service_id) {
-  return sqlDb.select().table("service").where("service_id", service_id);
+  let services = sqlDb.select().table("service").where("service_id", service_id);
+  let images = sqlDb.select().table("service_img").where("service_id", service_id);
+  console.log(services);
+  console.log(images);
+  //return sqlDb.select().table("service").where("service_id", service_id)
 };
 
 
@@ -111,6 +115,7 @@ exports.getServicebyId = function(service_id) {
  * returns List
  **/
 exports.getServices = function(limit, offset) {
+  let images = sqlDb.select()
   return sqlDb.select("*")
       .from("service")
       .join("service_img", "service_id", "service_id");
