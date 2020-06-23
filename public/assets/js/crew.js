@@ -9,14 +9,14 @@ $(document).ready( function() {
 
 async function getPerson() {
     try {
-        fetch("https://wildocean.herokuapp.com/api/v1/person/1").then(function (response) {
+        fetch("https://wildocean.herokuapp.com/api/v1/services/1").then(function (response) {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
             }
             return response.json();
         }).then(function (json) {
-
-            console.log(json);
+            json[0].images = "string";
+            console.log(json[0]);
         });
 
     }
