@@ -107,7 +107,7 @@ exports.getServicebyId = function(service_id) {
     imgArray.push(images[i]);
   }
   service[0].img = imgArray;
-  return service;
+  return images;
 
   //return sqlDb.select("imgpath").from("service_img").where("service_id", service_id)
   //    .then( function (response) {
