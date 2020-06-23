@@ -102,6 +102,7 @@ exports.getServicebyId = function(service_id) {
   let images = sqlDb.select().table("service_img").where("service_id", service_id);
   console.log(services);
   console.log(images);
+  return services;
   //return sqlDb.select().table("service").where("service_id", service_id)
 };
 
