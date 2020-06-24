@@ -16,15 +16,16 @@ async function getPerson() {
             }
             return response.json();
         }).then(function (json) {
-            let html = ""
+            let html = '<div class="row"> '
             for (let s of json) {
                let n = s.name
                let su = s.surname
                let img = s.img
-               let id = s.role
-               html += create(img, n, su, id)
+               let role = s.role
+               html += create(img, n, su, role)
               //  console.log(json);
             }
+            html += '</div>'
             $('#people-row').append(html)
             console.log(json);
         });
@@ -36,14 +37,14 @@ async function getPerson() {
     }
 
 }
-  function create(img, n, su, id) {
+  function create(img, n, su, role) {
       return '<div class="col-lg-4 mb-4">'+
           '<div class="card h-100 text-center">'+
-          '<img class="card-img-top" src='+ img + 'alt="Missing">' +
+          '<img class="card-img-top" src='+ img + ' '+ 'alt="Missing" class="responsive"> ' +
           '<div class="card-body">' +
           '<h4 class="card-title">'+ n + ' '+ su + '</h4>' +
-          '<p class="card-text">' + id + '</p>' +
-          '<button type="button" class="btn btn-link">SEE MORE</button>' +
+          '<p class="card-text">' + role + '</p>' +
+          '<button type="button" class="btn btn-link" >SEE MORE</button>' +
           '</div>' +
           '</div>' +
           '</div>'
