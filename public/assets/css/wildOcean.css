@@ -1,13 +1,26 @@
+.prova {
+    background-image: url("../img/Home.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
 }
 
 h1 {
     color: #0077C0;
 }
-
+-
 h2 {
     color: #0077C0;
 }
