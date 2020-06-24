@@ -24,8 +24,9 @@ async function getPageText(page) {
             $("#focused").text(json[6].txt);
             $("#strive").text(json[7].txt);
             $("#iterative").text(json[8].txt);
-            $("#profit").text(json[9].txt);
-            $("#impact").text(json[10].txt);
+            $("#build").text(json[9].txt);
+            $("#profit").text(json[10].txt);
+            $("#impact").text(json[11].txt);
             console.log(json);
         });
     }
