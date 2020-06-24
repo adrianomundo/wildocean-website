@@ -21,9 +21,13 @@ async function getPerson() {
                let n = s.name
                let su = s.surname
                let img = s.img
+                let img_circle = img.split(".jpg");
+               img_circle += '_rounded.svg'
                let role = s.role
-               html += create(img, n, su, role)
-              //  console.log(json);
+                console.log(img);
+               html += create(img_circle, n, su, role)
+               console.log(img_circle);
+
             }
             html += '</div>'
             $('#people-row').append(html)
@@ -37,10 +41,10 @@ async function getPerson() {
     }
 
 }
-  function create(img, n, su, role) {
+  function create(img_circle, n, su, role) {
       return '<div class="col-lg-4 mb-4">'+
-          '<div class="card h-100 text-center">'+
-          '<img class="card-img-top" src='+ img + ' '+ 'alt="Missing" class="responsive"> ' +
+          '<div class="card h-100 text-center" style="border-radius: 30px>"'+
+          '<img class="card-img-top" src='+ img_circle + ' '+ 'alt="Missing" height="250" style="padding-top: 20px"> ' +
           '<div class="card-body">' +
           '<h4 class="card-title">'+ n + ' '+ su + '</h4>' +
           '<p class="card-text">' + role + '</p>' +
