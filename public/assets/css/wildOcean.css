@@ -1,13 +1,30 @@
-.prova {
-    background-image: url("../img/Home.jpg");
+.bg {
+    position: relative;
+    text-align: center;
+}
 
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.btn-slider {
+    display: block;
+    width: 58px;
+    height: 35px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    padding: 9px 10px 10px;
+    margin-left: -29px;
+    z-index: 10;
+    background-color: rgba(58,58,58,.3);
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    animation: pointDown 1s infinite ease-out;
+    transition: background-color .3s ease-out;
+}
+.write {
+    position: absolute;
+    color: white;
+    bottom: 0%;
+    left: 47%;
 }
 
 
@@ -20,7 +37,7 @@ body {
 h1 {
     color: #0077C0;
 }
--
+
 h2 {
     color: #0077C0;
 }
