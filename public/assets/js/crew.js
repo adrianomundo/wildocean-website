@@ -10,22 +10,23 @@ $(document).ready( function() {
 async function getPerson() {
 
     try {
-        fetch("https://wildocean.herokuapp.com/api/v1/services/1").then(function (response) {
+        fetch("https://wildocean.herokuapp.com/api/v1/person").then(function (response) {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
             }
             return response.json();
         }).then(function (json) {
-            for (let s of json){
-                let n = s.name
-                let su = s.surname
-                let img = s.img
-                let id = s.role
-                $('#people-row').append(create(img, n, su, id))
-
+            let html = ""
+            for (let s of json) {
+               let n = s.name
+               let su = s.surname
+               let img = s.img
+               let id = s.role
+               html += create(img, n, su, id)
+              //  console.log(json);
             }
-
-            //console.log(json);
+            $('#people-row').append(html)
+            console.log(json);
         });
 
     }
