@@ -87,12 +87,14 @@ exports.getEventbyService = function(service_id) {
  **/
 exports.getPeoplebyService = async function(service_id) {
   let people = await sqlDb.select("matricola").from("service_person").where("service_id", service_id);
-  let personArray = []
-  for (let i = 0; i < people.length; i++) {
-    let person = await sqlDb.select().table("person").where("matricola", people[i].matricola);
-    personArray.push(person);
-  }
-  return personArray;
+  //let personArray = []
+  //for (let i = 0; i < people.length; i++) {
+  //  let person = await sqlDb.select().table("person").where("matricola", people[i].matricola);
+      //  personArray.push(person);
+  //}
+  //return personArray;
+
+  return sqlDb.select().from("person").whereIn("matricola", people);
 }
 
 
