@@ -73,7 +73,7 @@ exports.serviceImgDbSetup = function(database) {
  * returns Event
  **/
 exports.getEventbyService = function(service_id) {
-  let event = sqlDb.select("event_id").table("service").where("service_id", service_id);
+  let event = sqlDb.select("event_id").from("service").where("service_id", service_id);
   return sqlDb.select().table("event").where("event_id", event);
 };
 
@@ -85,8 +85,14 @@ exports.getEventbyService = function(service_id) {
  * service_id String ID of the service to find
  * returns List
  **/
-exports.getPeoplebyService = function(service_id) {
-
+exports.getPeoplebyService = async function(service_id) {
+  let people = await sqlDb.select("matricola").from("service_person").where("service_id", service_id);
+  let personArray = []
+  for (let i = 0; i < people.length; i++) {
+    let person = await sqlDb.select().table("person").where("matricola", people[i].matricola);
+    personArray.push(person);
+  }
+  return personArray;
 }
 
 

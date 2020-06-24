@@ -75,8 +75,8 @@ exports.getPersonByEvent = function(event_id) {
  * returns Service
  **/
 exports.getServiceByEvent = function(event_id) {
-  let service_id = sqlDb.select("service_id").from("service").where("event_id", event_id);
-  let service = sqlDb.select().table("service").where("service_id", service_id);
-  return sqlDb.select().table("service").where("event_id", event_id);
+  //let service_id = sqlDb.select("service_id").from("service").where("event_id", event_id);
+  //let service = sqlDb.select().table("service").where("service_id", service_id);
+  //return sqlDb.select().table("service").where("event_id", event_id);
 
 };
