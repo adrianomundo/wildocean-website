@@ -85,8 +85,8 @@ exports.getEventbyService = function(service_id) {
  * service_id String ID of the service to find
  * returns List
  **/
-exports.getPeoplebyService = async function(service_id) {
-  let people = await sqlDb.select("matricola").from("service_person").where("service_id", service_id);
+exports.getPeoplebyService = function(service_id) {
+  let people = sqlDb.select("matricola").from("service_person").where("service_id", service_id);
   //let personArray = []
   //for (let i = 0; i < people.length; i++) {
   //  let person = await sqlDb.select().table("person").where("matricola", people[i].matricola);
