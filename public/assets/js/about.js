@@ -18,6 +18,14 @@ async function getPageText(page) {
             $("#about").text(json[0].txt);
             $("#vision").text(json[1].txt);
             $("#mission").text(json[2].txt);
+            $("#data").text(json[3].txt);
+            $("#think").text(json[4].txt);
+            $("#nature").text(json[5].txt);
+            $("#focused").text(json[6].txt);
+            $("#strive").text(json[7].txt);
+            $("#iterative").text(json[8].txt);
+            $("#profit").text(json[9].txt);
+            $("#impact").text(json[10].txt);
             console.log(json);
         });
     }

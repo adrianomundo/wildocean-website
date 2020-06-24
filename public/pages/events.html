@@ -12,13 +12,13 @@
 
   <link rel="icon"
       type="image/png"
-      href="/public/assets/img/favicon.png" />
+      href="../assets/img/favicon.png" />
 
   <!-- Bootstrap core CSS -->
-  <link href="/public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="/public/assets/css/wildOcean.css" rel="stylesheet">
+  <link href="../assets/css/wildOcean.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -28,26 +28,26 @@
 
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-custom navbar- bg-white navbar-light" role="navigation" aria-label="main navigation">
-        <a class="navbar-brand" href="/public/index.html"><img src="/public/assets/img/logo.png" alt="Logo" width="110" height="100"></a>
+        <a class="navbar-brand" href="../index.html"><img src=../assets/img/logo.png" alt="Logo" width="110" height="100"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse" id="navbarResponsive">
         <ul class="navbar-nav w-100 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" href="/public/pages/about.html" style="color:black" >About</a>
+            <a class="nav-link nav-link-ltr" href="about.html" style="color:black" >About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" href="/public/pages/services.html" style="color:black">Services</a>
+            <a class="nav-link nav-link-ltr" href="services.html" style="color:black">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" href="/public/pages/crew.html" style="color:black">Crew</a>
+            <a class="nav-link nav-link-ltr" href="crew.html" style="color:black">Crew</a>
           </li>
            <li class="nav-item">
             <a class="nav-link nav-link-ltr" id="sub" style="color:#0077C0">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" href="/public/pages/contact.html" style="color:black">Contact</a>
+            <a class="nav-link nav-link-ltr" href="contact.html" style="color:black">Contact</a>
           </li>
            <li class="nav-item">
                 <form class="form-inline">
@@ -59,7 +59,7 @@
       </div>
   </nav>
 
-    <img src="/public/assets/img/event.jpg" alt="Event" class="responsive">
+    <img src="../assets/img/event.jpg" alt="Event" class="responsive">
   <!-- Page Content -->
   <div class="container">
 
@@ -67,18 +67,26 @@
 
 
         <!--Button Section -->
-    <div class="row">
-
-      <div class="col-lg-6 text-right">
-
-        <button type="button">ALL</button>
-        </div>
-
-      <div class="col-lg-6">
-        <button type="button" >BY MONTH</button>
-        </div>
-
-    </div>
+      <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Events
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">All Events</a>
+              <a class="dropdown-item" href="#">January</a>
+              <a class="dropdown-item" href="#">February</a>
+              <a class="dropdown-item" href="#">March</a>
+              <a class="dropdown-item" href="#">April</a>
+              <a class="dropdown-item" href="#">May</a>
+              <a class="dropdown-item" href="#">June</a>
+              <a class="dropdown-item" href="#">July</a>
+              <a class="dropdown-item" href="#">August</a>
+              <a class="dropdown-item" href="#">September</a>
+              <a class="dropdown-item" href="#">October</a>
+              <a class="dropdown-item" href="#">November</a>
+              <a class="dropdown-item" href="#">December</a>
+          </div>
+      </div>
     <!-- /.row -->
 
 
