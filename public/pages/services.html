@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -14,12 +13,10 @@
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/wildOcean.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 
 <body>
-
-
 
   <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-custom navbar- bg-white navbar-light" role="navigation" aria-label="main navigation">
@@ -54,19 +51,19 @@
       </div>
   </nav>
 
-  <!-- SERVICES SLIDER -->
+  <!-- SLIDER + BREADCRUMB SECTION -->
   <section id="services_slider">
       <div class="bg">
           <img src="../assets/img/Services.jpg" alt="Services" class="img-fluid">
       </div>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page" style="color: #0077C0">Services</li>
+          </ol>
+      </nav>
   </section>
 
-  <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page" style="color: #0077C0">Services</li>
-      </ol>
-  </nav>
-
+  <!-- WHAT WE DO SECTION -->
   <section id="statement">
       <div class="container" style="text-align: center">
           <h1 class="custom_heading align-center"><b>What we do</b></h1>
@@ -79,25 +76,29 @@
       </div>
   </section>
 
-  <section id="services">
+  <!-- OUR SERVICES SECTION -->
+  <section id="services_section">
+
       <div class="container" style="text-align: center">
-          <h1 class="custom_heading align-center"><b>Our Services</b></h1>
+          <h1 class="custom_heading align-center" style="text-align: center"><b>Our Services</b></h1>
+      </div>
+      <div class="container" id="services" style="text-align: center">
 
           <div class="card lg-4 mb-4">
               <div class="row no-gutters">
                   <div class="col-md-5">
-                      <img src="../assets/img/service/cleaning%20the%20ocean%20service2.jpg" class="card-img" alt="service_1_img">
+                      <img src="../assets/img/service/cleaning-the-ocean-service2.jpg" class="card-img" alt="service_1_img">
                   </div>
                   <div class="col-md-7">
                       <div class="card-body">
                           <h2 class="card-title" style="text-align: left; color: #0077C0; margin-bottom: 15px; margin-left: 30px;"><strong>Cleaning the ocean</strong></h2>
                           <p class="card-text" style="text-align: left; margin-left: 30px;">The ocean is big. Cleaning up the Great Pacific Garbage Patch using conventional methods –
                               vessels and nets – would take thousands of years and tens of billions of dollars to complete.</p>
-                          <div class="row nopadding" style="margin-left: 10px;">
-                              <div class="col-md-1 col-sm-1">
+                          <div class="row nopadding" style="margin-top: 0; margin-left: 0">
+                              <div class="col-2">
                                   <i class="fa fa-map-signs" style="font-size: 36px;"></i>
                               </div>
-                              <div class="col-md-4 col-sm-4">
+                              <div class="col-2">
                                   <i class="fa fa-hand-grab-o" style="font-size: 36px;"></i>
                               </div>
                           </div>
@@ -111,17 +112,6 @@
 
       </div>
   </section>
-
-
-
-        <!-- Services Section -->
-
-    <!-- /.row -->
-
-
-
-  </div>
-  <!-- /.container -->
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
