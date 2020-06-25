@@ -19,12 +19,13 @@ async function getEvents() {
             for (let s of json) {
                 let t = s.title
                 let d = s.date
+                let di = d.substr(0, 10)
                 let img = s.img
                 let st = s.start_h
-                let e = s.end_t
+                let e = s.end_h
                 let l = s.location
                 //console.log(img);
-                html += create(img, t, d, st, e, l)
+                html += create(img, t, di, st, e, l)
                 //console.log(img_circle);
 
             }
@@ -48,7 +49,7 @@ function create(img, t, d, st, e, l) {
         '<div class="card-body">' +
         '<h4 class="card-title">'+ t + '</h4>' +
         '<p class="card-text">' + d + '</p>' +
-        '<p class="card-text">' + st + ' ' + e + '</p>' +
+        '<p class="card-text">' + st + ' - ' + e + '</p>' +
         '<p class="card-text">' + l + '</p>' +
         '<button type="button" class="btn btn-link" >FIND OUT MORE</button>' +
         '</div>' +

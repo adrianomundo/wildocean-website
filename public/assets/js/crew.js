@@ -21,7 +21,7 @@ async function getPerson() {
                let n = s.name
                let su = s.surname
                let img = s.img
-                let img_circle = img.split(".jpg");
+                let img_circle = img.substr(0, 28);
                img_circle += '_rounded.svg'
                let role = s.role
                 //console.log(img);
