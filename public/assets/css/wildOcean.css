@@ -227,7 +227,7 @@ body {
     background-color: rgba(47,151,239,.15);
 }
 
-@media (min-width: 1270px){
+@media (min-width: 1310px){
     .navbar-expand-custom {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -245,5 +245,12 @@ body {
     }
     .navbar-expand-custom .navbar-toggler {
         display: none;
+    }
+}
+
+@media (max-width: 800px){
+
+.navbar-brand > img {
+        width: 50px;
     }
 }
