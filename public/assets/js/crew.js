@@ -22,11 +22,12 @@ async function getPerson() {
                let su = s.surname
                let img = s.img
                 let img_circle = img.substr(0, 28);
+                console.log(img_circle);
                img_circle += '_rounded.svg'
                let role = s.role
                 //console.log(img);
                html += create(img_circle, n, su, role)
-               //console.log(img_circle);
+               console.log(img_circle);
 
             }
             html += '</div>'

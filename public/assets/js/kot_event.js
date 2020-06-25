@@ -9,7 +9,7 @@ $(document).ready( function() {
 
 async function getOrganizer() {
     try {
-        fetch("https://wildocean.herokuapp.com/api/v1/").then(function (response) {
+        fetch("https://wildocean.herokuapp.com/api/v1/events/").then(function (response) {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
             }
