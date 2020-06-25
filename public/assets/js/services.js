@@ -38,8 +38,7 @@ async function fetchServices() {
 
 function serviceCard(service_id, title, short_descr, image) {
 
-    let id = String(service_id)
-
+    let id = service_id;
     return `<div class="card lg-4 mb-4" style="border-radius: 10px;">
               <div class="row no-gutters">
                   <div class="col-md-5">
@@ -58,7 +57,7 @@ function serviceCard(service_id, title, short_descr, image) {
                               </div>
                           </div>
                           <div class="text-left" style="margin-top: 20px; margin-left: 30px">
-                              <a href="../assets/pages/service.html?id='+ id +'" class="btn btn-outline-primary"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>
+                              <a href="service.html?id=`+service_id+`" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>
                           </div>
                       </div>
                   </div>
