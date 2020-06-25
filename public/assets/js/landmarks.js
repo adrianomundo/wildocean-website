@@ -14,7 +14,7 @@ function loadFooter() {
     <div class="container-full" >
         <div class="row">
             <div class="col md-6">
-                <img src="./public/assets/img/logo.png" alt="Logo"  width="110" height="100">
+                <img src="../assets/img/logo.png" alt="Logo"  width="110" height="100">
             </div>
             <div class="col md-6">
                 <p><span style="font-size: 13px">Via Edoardo Sagrada,46</span></p>
@@ -28,13 +28,13 @@ function loadFooter() {
                 <div  class="fa fa-youtube"></div>
             </div>
             <div class="col sm-6">
-                <p style="padding: 10px;"><a class="footer-link" href="./public/pages/about.html"><b>About</b></a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="./public/pages/services.html"><b>Services</b></a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="./public/pages/crew.html"><b>Crew</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="about.html"><b>About</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="services.html"><b>Services</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="crew.html"><b>Crew</b></a></p>
             </div>
             <div class="col sm-6">
-                <p style="padding: 10px;"><a class="footer-link" href="./public/pages/events.html"><b>Events</b></a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="./public/pages/contact.html"><b>Contact</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="events.html"><b>Events</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="contact.html"><b>Contact</b></a></p>
             </div>
             <div class="col sm-6">
                 <p style="padding: 5px;">Privacy Policy</p>
