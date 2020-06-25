@@ -9,7 +9,7 @@ $(document).ready( () => {
 async function fetchServices() {
 
     try {
-        let promise = fetch("https://wildocean.herokuapp.com/api/v1/services").then( (response) => {
+        fetch("https://wildocean.herokuapp.com/api/v1/services").then( (response) => {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
             }
