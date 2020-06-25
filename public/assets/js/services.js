@@ -16,18 +16,14 @@ async function fetchServices() {
             return response.json();
         }).then( (json) => {
             let html = "";
-            let service_id, title, short_descr, images;
+            let service_id, title, short_descr, images, first_img;
             for(let s of json) {
                 service_id = s.service_id;
                 title = s.title;
                 short_descr = s.short_description;
                 images = s.img;
-                html += serviceCard()
-                console.log(service_id);
-                console.log(title);
-                console.log(short_descr);
-                console.log(images);
-                console.log(images[0]);
+                first_img = images[0];
+                html += serviceCard(service_id, title, short_descr, first_img)
             }
             $('#services').append(html);
             console.log(json);
@@ -40,18 +36,17 @@ async function fetchServices() {
 
 }
 
-function serviceCard() {
+function serviceCard(service_id, title, short_descr, image) {
 
     return `<div class="card lg-4 mb-4">
               <div class="row no-gutters">
                   <div class="col-md-5">
-                      <img src="../assets/img/service/cleaning-the-ocean-service2.jpg" class="card-img" alt="service_1_img">
+                      <img src="`+ image +`" class="card-img" alt="service_img">
                   </div>
                   <div class="col-md-7">
                       <div class="card-body">
-                          <h2 class="card-title" style="text-align: left; color: #0077C0; margin-bottom: 15px; margin-left: 30px;"><strong>Cleaning the ocean</strong></h2>
-                          <p class="card-text" style="text-align: left; margin-left: 30px;">The ocean is big. Cleaning up the Great Pacific Garbage Patch using conventional methods –
-                              vessels and nets – would take thousands of years and tens of billions of dollars to complete.</p>
+                          <h2 class="card-title" style="text-align: left; color: #0077C0; margin-bottom: 15px; margin-left: 30px;"><strong>`+ title +`</strong></h2>
+                          <p class="card-text" style="text-align: left; margin-left: 30px;">`+ short_descr +`</p>
                           <div class="row nopadding" style="margin-top: 0; margin-left: 0">
                               <div class="col-2">
                                   <i class="fa fa-map-signs" style="font-size: 36px;"></i>
@@ -67,8 +62,5 @@ function serviceCard() {
                   </div>
               </div>
           </div>
-    `
-
-    //console.log($("div")[0]);
-
+    `;
 }
