@@ -1,22 +1,22 @@
 [
   {
     "service_id": 1,
-    "imgpath": "../assets/img/service/cleaning the ocean service1.jpg"
+    "imgpath": "../assets/img/service/cleaning-the-ocean-service1.jpg"
   },
   {
     "service_id": 1,
-    "imgpath": "../assets/img/service/cleaning the ocean service2.jpg"
+    "imgpath": "../assets/img/service/cleaning-the-ocean-service2.jpg"
   },
   {
     "service_id": 2,
-    "imgpath": "../assets/img/service/sustainable fish service1.jpg"
+    "imgpath": "../assets/img/service/sustainable-fish-service1.jpg"
   },
   {
     "service_id": 2,
-    "imgpath": "../assets/img/service/sustainable fish service2.jpg"
+    "imgpath": "../assets/img/service/sustainable-fish-service2.jpg"
   },
   {
     "service_id": 3,
-    "imgpath": "../assets/img/service/trash free seas services.jpg"
+    "imgpath": "../assets/img/service/trash-free-seas-services.jpg"
   }
 ]
