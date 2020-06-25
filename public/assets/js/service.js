@@ -2,11 +2,22 @@
 
 $(document).ready( () => {
 
-    serviceToDisplay();
+    fetchService();
 
 });
 
-async function fetchServices() {
+async function fetchService() {
+
+    let service_id = serviceToDisplay();
+
+    let service = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + service_id)).json();
+    let event = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + service_id + "/event")).json();
+    let people = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + service_id + "/people")).json();
+
+    console.log(service);
+    console.log(event);
+    console.log(people);
+
 
 }
 
@@ -14,7 +25,7 @@ function serviceToDisplay() {
 
     console.log("Getting service_id to display");
     let searchParams = new URLSearchParams(window.location.search);
-    let service_id = parseInt(searchParams.get("id"));
-    console.log(service_id);
+    return parseInt(searchParams.get("id"));
+
 
 }
