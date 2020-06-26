@@ -49,9 +49,11 @@ async function getPerson() {
           '<div class="card-body">' +
           '<h4 class="card-title">'+ n + ' '+ su + '</h4>' +
           '<p class="card-text">' + role + '</p>' +
-          '<button type="button" class="btn btn-link" >SEE MORE</button>' +
+          '<div class="text-center" style="margin-top: 20px;">' +
+          '<a href="service.html?id=`+person_id+`" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
           '</div>' +
           '</div>' +
-          '</div>'
+          '</div>' +
+          '</div>';
 
   }
