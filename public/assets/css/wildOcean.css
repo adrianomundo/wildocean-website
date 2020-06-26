@@ -125,6 +125,7 @@ body {
 .bg-dark {
     transition: 300ms;
     background: white !important;
+    background: white !important;
 }
 
 .bg-dark.scrolled {
@@ -171,6 +172,10 @@ body {
 
 .nav-link-ltr:hover::before {
   width: 85%;
+}
+
+.sub{
+    color: #0077C0 !important;
 }
 
 .sub::before {

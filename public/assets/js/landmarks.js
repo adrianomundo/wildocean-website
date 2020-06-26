@@ -4,7 +4,9 @@
 
 $(document).ready( () => {
 
+    loadNavbar();
     loadFooter();
+    getSub();
 
 });
 
@@ -47,4 +49,65 @@ function loadFooter() {
 </footer>`;
 
     $("#footer").append(html);
+}
+
+function loadNavbar() {
+
+    let html = `<nav class="navbar fixed-top navbar-expand-custom navbar- bg-white navbar-light" role="navigation" aria-label="main navigation">
+        <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" alt="Logo" width="100" height="auto"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarResponsive">
+        <ul class="navbar-nav w-100 justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-ltr" id="about" href="about.html" style="color:black" >About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-ltr" id="services" href="services.html" style="color:black">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-ltr" id="crew" href="crew.html" style="color:black">Crew</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link nav-link-ltr" id="events" href="events.html" style="color:black">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-ltr" id="contact" href="contact.html" style="color:black">Contact</a>
+          </li>
+           <li class="nav-item">
+                <form class="form-inline">
+                <i class="fa fa-search" aria-hidden="true" style="color:black"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+               </form>
+          </li>
+        </ul>
+      </div>
+  </nav>`;
+
+    $("#navbar").append(html);
+}
+
+function getSub() {
+    var title = document.title;
+    if (title == 'About') {
+        var element = document.getElementById("about");
+        element.classList.add("sub");
+    }
+    if (title == 'Services' || title == 'Service') {
+        var element = document.getElementById("services");
+        element.classList.add("sub");
+    }
+    if (title == 'Crew' || title == 'Person') {
+        var element = document.getElementById("crew");
+        element.classList.add("sub");
+    }
+    if (title == 'Events' || title == 'Event') {
+        var element = document.getElementById("events");
+        element.classList.add("sub");
+    }
+    if (title == 'Contact') {
+        var element = document.getElementById("contact");
+        element.classList.add("sub");
+    }
 }
