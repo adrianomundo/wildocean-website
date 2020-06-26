@@ -82,7 +82,7 @@ exports.getServicesbyPerson = async function(matricola) {
   let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   let services = await sqlDb.select().from("service").whereIn("service_id", services_id);
 
-  return services;
+  return services[0];
 
 /*
   let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
