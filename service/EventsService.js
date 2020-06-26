@@ -75,8 +75,7 @@ exports.getPersonByEvent = function(event_id) {
  * returns Service
  **/
 exports.getServiceByEvent = async function(event_id) {
-  // TODO sistemare query per far tornare la lista delle img
-  //return sqlDb.select().table("service").where("event_id", event_id);
+  //old query --> return sqlDb.select().table("service").where("event_id", event_id);
   let service = await sqlDb.select().table("service").where("event_id", event_id);
   let service_id = service[0].service_id;
   let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service_id);

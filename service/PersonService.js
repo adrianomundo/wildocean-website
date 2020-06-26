@@ -74,10 +74,23 @@ exports.getPersonbyMatricola = function(matricola) {
  * matricola Long matricola of the person to return
  * returns List
  **/
-exports.getServicesbyPerson = function(matricola) {
-  // TODO sistemare query per far tornare la lista delle img
-  let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
-  return sqlDb.select().from("service").whereIn("service_id", services);
+exports.getServicesbyPerson = async function(matricola) {
+  // old query
+  //let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  //return sqlDb.select().from("service").whereIn("service_id", services);
+
+  let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  let services = await sqlDb.select().from("service").whereIn("service_id", services_id);
+
+  for (let i = 0; i < services.length; i++) {
+    let images = await sqlDb.select("imgpath").from("service_img").where("service_id", services[i].service_id);
+    let imgArray = [];
+    for (let j = 0; j < images.length; j++) {
+      imgArray.push(images[j].imgpath)
+    }
+    services[i].img = imgArray;
+  }
+  return services;
 
 };
 
