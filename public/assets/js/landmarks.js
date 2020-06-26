@@ -61,19 +61,19 @@ function loadNavbar() {
       <div class="navbar-collapse collapse" id="navbarResponsive">
         <ul class="navbar-nav w-100 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" id="about" href="about.html" style="color:black" >About</a>
+            <a class="nav-link nav-link-ltr" id="navAbout" href="about.html" style="color:black" >About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" id="services" href="services.html" style="color:black">Services</a>
+            <a class="nav-link nav-link-ltr" id="navServices" href="services.html" style="color:black">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" id="crew" href="crew.html" style="color:black">Crew</a>
+            <a class="nav-link nav-link-ltr" id="navCrew" href="crew.html" style="color:black">Crew</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link nav-link-ltr" id="events" href="events.html" style="color:black">Events</a>
+            <a class="nav-link nav-link-ltr" id="navEvents" href="events.html" style="color:black">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr" id="contact" href="contact.html" style="color:black">Contact</a>
+            <a class="nav-link nav-link-ltr" id="navContact" href="contact.html" style="color:black">Contact</a>
           </li>
            <li class="nav-item">
                 <form class="form-inline">
@@ -91,23 +91,23 @@ function loadNavbar() {
 function getSub() {
     var title = document.title;
     if (title == 'About') {
-        var element = document.getElementById("about");
+        var element = document.getElementById("navAbout");
         element.classList.add("sub");
     }
     if (title == 'Services' || title == 'Service') {
-        var element = document.getElementById("services");
+        var element = document.getElementById("navServices");
         element.classList.add("sub");
     }
     if (title == 'Crew' || title == 'Person') {
-        var element = document.getElementById("crew");
+        var element = document.getElementById("navCrew");
         element.classList.add("sub");
     }
     if (title == 'Events' || title == 'Event') {
-        var element = document.getElementById("events");
+        var element = document.getElementById("navEvents");
         element.classList.add("sub");
     }
     if (title == 'Contact') {
-        var element = document.getElementById("contact");
+        var element = document.getElementById("navContact");
         element.classList.add("sub");
     }
 }
