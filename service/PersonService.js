@@ -75,9 +75,12 @@ exports.getPersonbyMatricola = function(matricola) {
  * returns List
  **/
 exports.getServicesbyPerson = async function(matricola) {
-  // old query/
-  return sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  // old query
+  //let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   //return sqlDb.select().from("service").whereIn("service_id", services);
+  let services = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  let service = await sqlDb.select().from("service").whereIn("service_id", services);
+  return service;
 
   //let services = [];
   //let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
