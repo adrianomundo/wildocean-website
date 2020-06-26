@@ -82,14 +82,19 @@ exports.getServicesbyPerson = function(matricola) {
   //let services = [];
   let services_id = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   //for (let i = 0; i < services_id.length; i++) {
-    let service = sqlDb.select().table("service").whereIn("service_id", services_id);
-    //let images = await sqlDb.select("imgpath").from("service_img").where("service_id", services_id[i]);
-    //let imgArray = [];
-    //for (let j = 0; j < images.length; j++) {
-    //  imgArray.push(images[j].imgpath);
-    //}
-    //service[0].img = imgArray;
+  let service = sqlDb.select().table("service").whereIn("service_id", services_id);
+  let images = sqlDb.select("imgpath").from("service_img").where("service_id", service[0].service_id);
+  let imgArray = [];
+
+  for (let j = 0; j < images.length; j++) {
+      imgArray.push(images[j].imgpath);
+    }
+
+    service[0].img = imgArray;
+
     return service;
+
+
   //  services.push(service[i]);
   //}
   //return services;
