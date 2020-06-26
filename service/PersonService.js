@@ -78,18 +78,14 @@ exports.getServicesbyPerson = async function(matricola) {
   // old query
   //let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   //return sqlDb.select().from("service").whereIn("service_id", services);
-  let services = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
-  let service = await sqlDb.select().from("service").whereIn("service_id", services);
-  return service;
 
-  //let services = [];
-  //let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
-  //for (let i = 0; i < services_id.length; i++) {
-  //  let service = await sqlDb.select().from("service").whereIn("service_id", services_id[i].service_id);
-  //  services.push(service);
-  //}
-
-  //return services;
+  let services = [];
+  let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  for (let i = 0; i < services_id.length; i++) {
+    let service = await sqlDb.select().from("service").where("service_id", services_id[i]);
+    services.push(service);
+  }
+  return services;
 
 /*
   let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
