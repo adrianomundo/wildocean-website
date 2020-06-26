@@ -74,6 +74,16 @@ exports.getPersonByEvent = function(event_id) {
  * event_id Long ID of the event to find
  * returns Service
  **/
-exports.getServiceByEvent = function(event_id) {
-  return sqlDb.select().table("service").where("event_id", event_id);
+exports.getServiceByEvent = async function(event_id) {
+  // TODO sistemare query per far tornare la lista delle img
+  //return sqlDb.select().table("service").where("event_id", event_id);
+  let service = await sqlDb.select().table("service").where("event_id", event_id);
+  let service_id = service[0].service_id;
+  let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service_id);
+  let imgArray = [];
+  for (let i = 0; i < images.length; i++) {
+    imgArray.push(images[i].imgpath);
+  }
+  service[0].img = imgArray;
+  return service;
 };

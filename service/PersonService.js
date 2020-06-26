@@ -75,6 +75,7 @@ exports.getPersonbyMatricola = function(matricola) {
  * returns List
  **/
 exports.getServicesbyPerson = function(matricola) {
+  // TODO sistemare query per far tornare la lista delle img
   let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   return sqlDb.select().from("service").whereIn("service_id", services);
 
