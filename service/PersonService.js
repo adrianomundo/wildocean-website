@@ -74,21 +74,21 @@ exports.getPersonbyMatricola = function(matricola) {
  * matricola Long matricola of the person to return
  * returns List
  **/
-exports.getServicesbyPerson = async function(matricola) {
+exports.getServicesbyPerson = function(matricola) {
   // old query
   //let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   //return sqlDb.select().from("service").whereIn("service_id", services);
 
   //let services = [];
-  let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  let services_id = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   //for (let i = 0; i < services_id.length; i++) {
-    let service = await sqlDb.select().table("service").where("service_id", services_id[i]);
-    let images = await sqlDb.select("imgpath").from("service_img").where("service_id", services_id[i]);
-    let imgArray = [];
-    for (let j = 0; j < images.length; j++) {
-      imgArray.push(images[j].imgpath);
-    }
-    service[0].img = imgArray;
+    let service = sqlDb.select().table("service").whereIn("service_id", services_id);
+    //let images = await sqlDb.select("imgpath").from("service_img").where("service_id", services_id[i]);
+    //let imgArray = [];
+    //for (let j = 0; j < images.length; j++) {
+    //  imgArray.push(images[j].imgpath);
+    //}
+    //service[0].img = imgArray;
     return service;
   //  services.push(service[i]);
   //}
