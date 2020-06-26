@@ -80,6 +80,12 @@ exports.getServicesbyPerson = async function(matricola) {
   //return sqlDb.select().from("service").whereIn("service_id", services);
 
   let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
+  let services = await sqlDb.select().from("service").whereIn("service_id", services);
+
+  return services;
+
+/*
+  let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   let services = [];
   for (let i = 0; i < services_id.length; i++) {
     let service = await sqlDb.select().from("service").whereIn("service_id", services_id[i]);
@@ -92,6 +98,7 @@ exports.getServicesbyPerson = async function(matricola) {
     services.push(service[i]);
   }
   return services;
+  */
 
 };
 
