@@ -82,7 +82,7 @@ exports.getServicesbyPerson = async function(matricola) {
   let services = [];
   let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   for (let i = 0; i < services_id.length; i++) {
-    let service = await sqlDb.select().from("service").whereIn("service_id", services_id[i]);
+    let service = await sqlDb.select().from("service").whereIn("service_id", services_id[i].service_id);
     services.push(service);
   }
 
