@@ -2,12 +2,12 @@
 
 $(document).ready( function() {
 
-    getOrganizer();
+    fetchEvent();
 
 
 });
 
-async function getOrganizer() {
+async function fetchEvent() {
     let event_id = eventToDisplay();
 
     let response = (await fetch("https://wildocean.herokuapp.com/api/v1/events/" + event_id));

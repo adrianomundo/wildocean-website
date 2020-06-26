@@ -23,7 +23,7 @@ async function fetchServices() {
                 short_descr = s.short_description;
                 images = s.img;
                 first_img = images[0];
-                html += serviceCard(service_id, title, short_descr, first_img)
+                html += displayServiceCard(service_id, title, short_descr, first_img)
             }
             $('#services').append(html);
             console.log(json);
@@ -36,7 +36,7 @@ async function fetchServices() {
 
 }
 
-function serviceCard(service_id, title, short_descr, image) {
+function displayServiceCard(service_id, title, short_descr, image) {
 
     return `<div class="card lg-4 mb-4" style="border-radius: 10px;">
               <div class="row no-gutters">
