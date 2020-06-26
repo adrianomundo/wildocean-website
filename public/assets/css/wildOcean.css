@@ -124,7 +124,7 @@ body {
 
 .bg-dark {
     transition: 300ms;
-    background: transparent !important;
+    background: white !important;
 }
 
 .bg-dark.scrolled {
@@ -285,6 +285,9 @@ body {
     }
     .navbar-expand-custom .navbar-toggler {
         display: none;
+    }
+    .bg-dark {
+        background: transparent !important;
     }
 }
 
