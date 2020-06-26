@@ -38,7 +38,6 @@ async function fetchServices() {
 
 function serviceCard(service_id, title, short_descr, image) {
 
-    let id = service_id;
     return `<div class="card lg-4 mb-4" style="border-radius: 10px;">
               <div class="row no-gutters">
                   <div class="col-md-5">

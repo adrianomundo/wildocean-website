@@ -7,6 +7,56 @@ h2, h1 {
     color:  #0077C0 !important;
 }
 
+#carousel_service {
+    width: 100vw;
+}
+.img-slider {
+    height: calc(110vh - 116px);
+    min-width: 100vw;
+}
+
+.scroll a {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    transition: opacity .3s;
+}
+.scroll a:hover {
+    opacity: .5;
+}
+#learn_more a {
+    padding-top: 60px;
+}
+#learn_more a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb04 2s infinite;
+    animation: sdb04 2s infinite;
+    box-sizing: border-box;
+}
+@-webkit-keyframes sdb04 {
+    0% {-webkit-transform: rotate(-45deg) translate(0, 0);}
+    20% {-webkit-transform: rotate(-45deg) translate(-10px, 10px);}
+    40% {-webkit-transform: rotate(-45deg) translate(0, 0);}
+}
+@keyframes sdb04 {
+    0% {transform: rotate(-45deg) translate(0, 0);}
+    20% {transform: rotate(-45deg) translate(-10px, 10px);}
+    40% {transform: rotate(-45deg) translate(0, 0);}
+}
+
 .btn-slider {
     display: block;
     width: 58px;
@@ -128,16 +178,6 @@ body {
   bottom: 10px;
 }
 
-.carousel-item {
-  height: 65vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 .portfolio-item {
   margin-bottom: 30px;
 }
@@ -200,7 +240,7 @@ body {
     padding: 25px;
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+.btn-outline-primary:hover, .btn-outline-primary:active {
     background-color: #2F97EF !important;
     color: white !important;
     border-color: white !important;

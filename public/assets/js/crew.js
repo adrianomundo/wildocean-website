@@ -44,7 +44,7 @@ async function getPerson() {
 }
   function create(img, n, su, role) {
       return '<div class="col-lg-4 mb-4">'+
-          '<div class="card h-100 text-center" style="border-radius: 30px>"> ' +
+          '<div class="card h-100 text-center" style="border-radius: 15px"> ' +
           '<img class="card-img-top" alt="Missing" src='+ img + ' '+ 'height="250" style="padding-top: 20px">' +
           '<div class="card-body">' +
           '<h4 class="card-title">'+ n + ' '+ su + '</h4>' +
