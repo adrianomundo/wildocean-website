@@ -3,31 +3,26 @@
 $(document).ready( function() {
 
     fetchServices();
-
+    fetchTestimonials()
 });
 
 async function fetchTestimonials() {
-    let testimonials;
-    try {
-         fetch("https://wildocean.herokuapp.com/api/v1/testimonials").then(function (response) {
-                if (!response.ok) {
-                    console.log("HTTPS API Error, status = " + response.status);
-                }
-                return response.json();
-             }).then(function (json) {
-                 for(let review of json) {
+    let response = (await fetch("https://wildocean.herokuapp.com/api/v1/testimonials"));
+    let testimonials = await response.json();
+    console.log(testimonials);
+    let html = '<div class="slideshow-container">'
 
-                 }
-                 let { page, section, txt } = json[0];
-                 console.log(json);
-         });
-
-    }
-    catch (e) {
-        location.replace("../pages/404.html");
-        console.log(e);
+    for ( let i = 0; i < testimonials.length; i++ ) {
+        console.log(testimonials[i])
+        html += create(testimonials[i]);
     }
 
+    html += ' <a class="prev" onclick="plusSlides(-1)">&#10094;</a>' +
+        '  <a class="next" onclick="plusSlides(1)">&#10095;</a>' +
+        '</div>' +
+        '<br>'
+
+    $('#testimonial').append(html)
 }
 
 async function fetchServices() {
@@ -56,4 +51,21 @@ async function fetchServices() {
 function displayServices(service_id, title, description) {
     $("#title" + service_id).text(title);
     $("#description" + service_id).text(description);
+}
+
+function createSlide(testimonial) {
+    return '<div class="carousel-item active" style="background:#ffffff">' +
+        '          <div class="carousel-caption d-none d-md-block">' +
+        '            <h3>'+ testimonial.review +'</h3>' +
+        '            <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '          </div>' +
+        '        </div>'
+}
+
+function create(testimonial) {
+    return '<div class="mySlides fade" style="background:#ffffff">' +
+        '        <h3>'+ testimonial.review +'</h3>' +
+        '        <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '  </div>'
+
 }
