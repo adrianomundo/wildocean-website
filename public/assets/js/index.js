@@ -10,17 +10,10 @@ async function fetchTestimonials() {
     let response = (await fetch("https://wildocean.herokuapp.com/api/v1/testimonials"));
     let testimonials = await response.json();
     console.log(testimonials);
-    let html = '<div class="container-fluid nopadding" style="background-color: rgba(47,151,239,.15)">' +
-        '          <div id="carousel_testimonial" class="carousel slide" data-ride="carousel">' +
-        '              <ol class="carousel-indicators">' +
-        '                  <li data-target="#carousel_testimonial" data-slide-to="0" class="active"></li>'
-        for ( let i = 0; i < testimonials.length-1; i++ ) {
-            html += '<li data-target="#carousel_testimonial" data-slide-to="' + (i + 1) + '"></li> ';
-        }
-       // '                  <li data-target="#carousel_service" data-slide-to="1"></li>' +
-        //'                  <li data-target="#carousel_service" data-slide-to="2"></li>' +
-        //'                  <li data-target="#carousel_service" data-slide-to="3"></li>' +
-        html += ' </ol>' + '<div class="carousel-inner" role="listbox">'
+    let html = '<div class="container-fluid nopadding" >' +
+        '          <div id="carousel_testimonial" class="carousel slide" data-ride="carousel">'
+
+        html +=  '<div class="carousel-inner" role="listbox">'
 
         for ( let i = 0; i < testimonials.length; i++ ) {
           console.log(testimonials[i])
@@ -30,11 +23,11 @@ async function fetchTestimonials() {
 
         html +=
 
-        '          <a class="carousel-control-prev" href="#carousel_service" role="button" data-slide="prev">' +
+        '          <a class="carousel-control-prev" href="carousel_testimonial" role="button" data-slide="prev">' +
         '              <span class="carousel-control-prev-icon" aria-hidden="true"></span>' +
         '              <span class="sr-only">Previous</span>' +
         '          </a>' +
-        '          <a class="carousel-control-next" href="#carousel_service" role="button" data-slide="next">' +
+        '          <a class="carousel-control-next" href="#carousel_testimonial" role="button" data-slide="next">' +
         '              <span class="carousel-control-next-icon" aria-hidden="true"></span>' +
         '              <span class="sr-only">Next</span>' +
         '          </a>' +
@@ -89,23 +82,16 @@ function displayServices(service_id, title, description) {
 
 function createSlide(testimonial) {
     return '<div class="carousel-item  text-center"  style="height: 300px; padding-top: 100px"> '+
-        '       <h3>'+ testimonial.review +'</h3>' +
+        '      <div class="container"> <h3>'+ testimonial.review + '</h3> </div>'  +
         //'        <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
-        '       <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '       <h4>' + testimonial.name + ' ' + testimonial.surname + '</h4>' +
         '    </div>';
 }
 
 function createSlideFirst(testimonial) {
-    return '<div class="carousel-item active text-center"  style="height: 300px; padding-top: 150px"> '+
-        '       <h3>'+ testimonial.review +'</h3>' +
+    return '<div class="carousel-item active text-center"  style="height: 300px; padding-top: 100px"> '+
+        '      <div class="container"> <h3>'+ testimonial.review + '</h3> </div>'  +
         //'          <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
-        '        <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '        <h4>' + testimonial.name + ' ' + testimonial.surname + '</h4>' +
         '    </div>';
-}
-function create(testimonial) {
-    return '<div class="mySlides fade" style="background:#ffffff">' +
-        '        <div class="text" style="color: #1b1e21">'+ testimonial.review +'</div>' +
-        '        <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
-        '  </div>'
-
 }
