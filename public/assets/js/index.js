@@ -10,17 +10,52 @@ async function fetchTestimonials() {
     let response = (await fetch("https://wildocean.herokuapp.com/api/v1/testimonials"));
     let testimonials = await response.json();
     console.log(testimonials);
-    let html = '<div class="slideshow-container">'
+    let html = '<div class="container-fluid nopadding">' +
+        '          <div id="carousel_testimonial" class="carousel slide" data-ride="carousel">' +
+        '              <ol class="carousel-indicators">' +
+        '                  <li data-target="#carousel_service" data-slide-to="0" class="active"></li>'
+        for ( let i = 0; i < testimonials.length-1; i++ ) {
+            html += '<li data-target="#carousel_service" data-slide-to="' + (i + 1) + '"></li> '
+        }
+       // '                  <li data-target="#carousel_service" data-slide-to="1"></li>' +
+        //'                  <li data-target="#carousel_service" data-slide-to="2"></li>' +
+        //'                  <li data-target="#carousel_service" data-slide-to="3"></li>' +
+        html += '              </ol>' +
+        '          <div class="carousel-inner" role="listbox">'
 
-    for ( let i = 0; i < testimonials.length; i++ ) {
-        console.log(testimonials[i])
-        html += create(testimonials[i]);
-    }
+        for ( let i = 0; i < testimonials.length; i++ ) {
+          console.log(testimonials[i])
+            if (i == 0) html += createSlideFirst(testimonials[i]);
+            else html += createSlide(testimonials[i]);
+        }
 
-    html += ' <a class="prev" onclick="plusSlides(-1)">&#10094;</a>' +
-        '  <a class="next" onclick="plusSlides(1)">&#10095;</a>' +
-        '</div>' +
-        '<br>'
+        html +=
+
+        '          <a class="carousel-control-prev" href="#carousel_service" role="button" data-slide="prev">' +
+        '              <span class="carousel-control-prev-icon" aria-hidden="true"></span>' +
+        '              <span class="sr-only">Previous</span>' +
+        '          </a>' +
+        '          <a class="carousel-control-next" href="#carousel_service" role="button" data-slide="next">' +
+        '              <span class="carousel-control-next-icon" aria-hidden="true"></span>' +
+        '              <span class="sr-only">Next</span>' +
+        '          </a>' +
+        '          </div>'
+
+    //for ( let i = 0; i < testimonials.length; i++ ) {
+      //  console.log(testimonials[i])
+      //  html += createSlide(testimonials[i]);
+   // }
+
+    //html += '</div>' +
+       /* '  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">' +
+        '    <span class="carousel-control-prev-icon" aria-hidden="true"></span>' +
+        '    <span class="sr-only">Previous</span>' +
+        '  </a>' +
+        '  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">' +
+        '    <span class="carousel-control-next-icon" aria-hidden="true"></span>' +
+        '    <span class="sr-only">Next</span>' +
+        '  </a>' +*/
+       // '</div>'
 
     $('#testimonial').append(html)
 }
@@ -54,17 +89,25 @@ function displayServices(service_id, title, description) {
 }
 
 function createSlide(testimonial) {
-    return '<div class="carousel-item active" style="background:#ffffff">' +
-        '          <div class="carousel-caption d-none d-md-block">' +
+    return '<div class="carousel-item  text-center"  style="height: 300px; padding-top: 100px"> '+
         '            <h3>'+ testimonial.review +'</h3>' +
-        '            <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        //'          <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
+        '           <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
         '          </div>' +
         '        </div>'
 }
 
+function createSlideFirst(testimonial) {
+    return '<div class="carousel-item active text-center"  style="height: 300px; padding-top: 150px"> '+
+        '            <h3>'+ testimonial.review +'</h3>' +
+        //'          <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
+        '           <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '          </div>' +
+        '        </div>'
+}
 function create(testimonial) {
     return '<div class="mySlides fade" style="background:#ffffff">' +
-        '        <h3>'+ testimonial.review +'</h3>' +
+        '        <div class="text" style="color: #1b1e21">'+ testimonial.review +'</div>' +
         '        <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
         '  </div>'
 
