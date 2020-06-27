@@ -311,6 +311,18 @@ body {
     .bg-dark {
         background: transparent !important;
     }
+    .nav-link-home {
+        color: white !important;
+/*      text-shadow: 1px 1px 2px #000000;*/
+    }
+    .navLogoI {
+        content:  url("/public/assets/img/logoW.png");
+        width: 100;
+        height: auto;
+    }
+    .whiteI {
+        color: white !important;
+    }
 }
 
 @media (max-width: 800px){
