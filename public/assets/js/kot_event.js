@@ -66,7 +66,7 @@ function createPerson(person) {
         '<div class="card-body">' +
         '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
         '<p class="card-text">' + person.role + '</p>' +
-        '<button type="button" class="btn btn-link" >SEE MORE</button>' +
+        '<a href="person.html?id='+ person.matricola +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>SEE MORE</b></span></a>' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -128,3 +128,5 @@ function correctDate(date) {
     return date.substr(0, 10);
 
 }
+
+
