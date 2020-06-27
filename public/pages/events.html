@@ -36,23 +36,23 @@
 
         <!--Button Section -->
       <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Events
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">All Events</a>
-              <a class="dropdown-item" href="#">January</a>
-              <a class="dropdown-item" href="#">February</a>
-              <a class="dropdown-item" href="#">March</a>
-              <a class="dropdown-item" href="#">April</a>
-              <a class="dropdown-item" href="#">May</a>
-              <a class="dropdown-item" href="#">June</a>
-              <a class="dropdown-item" href="#">July</a>
-              <a class="dropdown-item" href="#">August</a>
-              <a class="dropdown-item" href="#">September</a>
-              <a class="dropdown-item" href="#">October</a>
-              <a class="dropdown-item" href="#">November</a>
-              <a class="dropdown-item" href="#">December</a>
+              <a class="dropdown-item"  href="#00" onclick="getMonth('00')">All Events</a>
+              <a class="dropdown-item" onclick="getMonth('01')" href="#01">January</a>
+              <a class="dropdown-item" onclick="getMonth('02')" href="#02">February</a>
+              <a class="dropdown-item" onclick="getMonth('03')" href="#03">March</a>
+              <a class="dropdown-item" onclick="getMonth('04')" href="#04">April</a>
+              <a class="dropdown-item" onclick="getMonth('05')" href="#05">May</a>
+              <a class="dropdown-item" onclick="getMonth('06')" href="#06">June</a>
+              <a class="dropdown-item" onclick="getMonth('07')" href="#07">July</a>
+              <a class="dropdown-item" onclick="getMonth('08')" href="#08">August</a>
+              <a class="dropdown-item" onclick="getMonth('09')" href="#09">September</a>
+              <a class="dropdown-item" onclick="getMonth('10')" href="#10">October</a>
+              <a class="dropdown-item" onclick="getMonth('11')" href="#11">November</a>
+              <a class="dropdown-item" onclick="getMonth('12')" href="#12">December</a>
           </div>
       </div>
     <!-- /.row -->
@@ -61,7 +61,7 @@
 
      <!-- /.container -->
 
-  <div class="container" id="all-events"> </div>
+  <div class="container"> <div class = row id="all-events">  </div> </div>
 
       <!-- Footer -->
   <div id="footer"></div>
