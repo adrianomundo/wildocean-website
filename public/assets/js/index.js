@@ -2,7 +2,7 @@
 
 $(document).ready( function() {
 
-    fetchServices();
+    //fetchServices();
     fetchTestimonials()
 });
 
@@ -10,18 +10,17 @@ async function fetchTestimonials() {
     let response = (await fetch("https://wildocean.herokuapp.com/api/v1/testimonials"));
     let testimonials = await response.json();
     console.log(testimonials);
-    let html = '<div class="container-fluid nopadding">' +
+    let html = '<div class="container-fluid nopadding" style="background-color: rgba(47,151,239,.15)">' +
         '          <div id="carousel_testimonial" class="carousel slide" data-ride="carousel">' +
         '              <ol class="carousel-indicators">' +
-        '                  <li data-target="#carousel_service" data-slide-to="0" class="active"></li>'
+        '                  <li data-target="#carousel_testimonial" data-slide-to="0" class="active"></li>'
         for ( let i = 0; i < testimonials.length-1; i++ ) {
-            html += '<li data-target="#carousel_service" data-slide-to="' + (i + 1) + '"></li> '
+            html += '<li data-target="#carousel_testimonial" data-slide-to="' + (i + 1) + '"></li> ';
         }
        // '                  <li data-target="#carousel_service" data-slide-to="1"></li>' +
         //'                  <li data-target="#carousel_service" data-slide-to="2"></li>' +
         //'                  <li data-target="#carousel_service" data-slide-to="3"></li>' +
-        html += '              </ol>' +
-        '          <div class="carousel-inner" role="listbox">'
+        html += ' </ol>' + '<div class="carousel-inner" role="listbox">'
 
         for ( let i = 0; i < testimonials.length; i++ ) {
           console.log(testimonials[i])
@@ -90,20 +89,18 @@ function displayServices(service_id, title, description) {
 
 function createSlide(testimonial) {
     return '<div class="carousel-item  text-center"  style="height: 300px; padding-top: 100px"> '+
-        '            <h3>'+ testimonial.review +'</h3>' +
-        //'          <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
-        '           <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
-        '          </div>' +
-        '        </div>'
+        '       <h3>'+ testimonial.review +'</h3>' +
+        //'        <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
+        '       <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '    </div>';
 }
 
 function createSlideFirst(testimonial) {
     return '<div class="carousel-item active text-center"  style="height: 300px; padding-top: 150px"> '+
-        '            <h3>'+ testimonial.review +'</h3>' +
+        '       <h3>'+ testimonial.review +'</h3>' +
         //'          <div class="row text-center">' + testimonial.name + ' ' + testimonial.surname + '</div>'  +
-        '           <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
-        '          </div>' +
-        '        </div>'
+        '        <p>' + testimonial.name + ' ' + testimonial.surname + '</p>' +
+        '    </div>';
 }
 function create(testimonial) {
     return '<div class="mySlides fade" style="background:#ffffff">' +
