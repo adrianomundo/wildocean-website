@@ -44,7 +44,6 @@ function loadFooter() {
                 <p style="padding: 5px;">Terms & Conditions</p>
             </div>
         </div>
-        <p class="m-0 text-center text-black"> &copy;<span style="font-size: 13px"> Wild Ocean | 21/04/2013</span></p>
     </div>
 </footer>`;
 
