@@ -351,3 +351,16 @@ body {
     font-size: 55px;
     color: #0077C0;
 }
+
+/* Style the list */
+.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #ffffff;
+}
+
+.breadcrumb li a {
+    color: #000000;
+    text-decoration: none;
+}
+
