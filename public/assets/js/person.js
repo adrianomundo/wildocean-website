@@ -2,72 +2,108 @@
 
 $(document).ready( function() {
 
-    get();
+    fetchPerson();
 
 
 });
 
-async function get() {
+async function fetchPerson() {
+
     let matricola = matricolaToDisplay();
 
-    let response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola));
-    let person = await response.json();
+    let person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola));
+    if (!person_response.ok) {
+        console.log("HTTPS API Error, status = " + person_response.status);
+        location.replace("../assets/pages/404.html");
+    }
+    let person = await person_response.json();
 
-    let response1 = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
-    let event = await response1.json();
+    let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
+    if (!event_response.ok) {
+        console.log("HTTPS API Error, status = " + event_response.status);
+        location.replace("../assets/pages/404.html");
+    }
+    let event = await event_response.json();
 
-    let response2 = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/services"));
-    let services = await response2.json();
+    let services_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/services"));
+    if (!services_response.ok) {
+        console.log("HTTPS API Error, status = " + services_response.status);
+        location.replace("../assets/pages/404.html");
+    }
+    let services = await services_response.json();
 
-    //console.log(events);
     console.log(event);
     console.log(person);
     console.log(services);
 
-    let html = '<ol class="breadcrumb"  >\n' +
-        '      <li class="breadcrumb-item">\n' +
-        '        <a href="crew.html">Crew</a>\n' +
-        '      </li>\n' +
-        '      <li class="breadcrumb-item active">' + person[0].name + ' ' + person[0].surname + '</li>\n' +
-        '    </ol>'
+    pageTitle(person[0]);
 
-    html += createPerson(person[0])
+    let html = "";
+    html += displayOrientation(person[0]);
+    html += displayPerson(person[0]);
 
     let ap = "'";
-    html += '<div class="row"><h2>' +person[0].name + ap + 's Activities</h2></div>'
-    for (let s of services) {
-        let response4 = (await fetch("https://wildocean.herokuapp.com/api/v1/services/"+ s.service_id));
-        let serv = await response4.json();
+    html += '<div class="row" style="text-align: center">' +
+        '<div class="container" style="text-align: center">' +
+        '<h3 class="custom_heading align-center">' + person[0].name + ap + 's Activities</h3>' +
+        '</div>' + '</div>';
 
-        console.log(serv);
-        html += createService(serv[0]);
+    for (let i = 0; i < services.length; i++) {
+
+        let service_response = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + services[i].service_id));
+        if (!service_response.ok) {
+            console.log("HTTPS API Error, status = " + service_response.status);
+            location.replace("../assets/pages/404.html");
+        }
+        let service = await service_response.json();
+        html += displayPersonServices(person[0], service[0]);
     }
+
     if (event.length > 0 ) {
-        html += '<div class="row text-center"><h2><u>' + person[0].name + ap + 's organising</u></h2></div>'
-        html += createEvent(event[0]);
+        html += '<div class="row text-center">' +
+            '<div class="container text-center">' +
+            '<h3 class="custom_heading align-center">' + person[0].name + "'" + 's organising</h3>' +
+            '</div>'+ '</div>';
+        html += displayEvent(event[0]);
     }
     $('#person').append(html)
-
-
 }
 
+// get matricola of the service to display
 function matricolaToDisplay() {
 
-    console.log("Getting event_id to display");
+    console.log("Getting matricola to display");
     let searchParams = new URLSearchParams(window.location.search);
     console.log(searchParams);
     return parseInt(searchParams.get("id"));
 
 }
 
-function createPerson(person) {
-    return  '<div class="row">' +
+// setting title relative to the person
+function pageTitle(person) {
+    $("#page_title").text("Wild Ocean | " + person.name + ' ' + person.surname);
+}
+
+// orientation info with breadcrumb
+function displayOrientation(person) {
+    return '<ol class="breadcrumb">' +
+        '      <li class="breadcrumb-item">' +
+        '        <a href="crew.html">Crew</a>' +
+        '      </li>' +
+        '      <li class="breadcrumb-item active">' + person.name + ' ' + person.surname + '</li>' +
+        '    </ol>';
+}
+
+// display person information
+function displayPerson(person) {
+
+    return  '<div class="row justify-content-center">' +
         '<div class="col-lg-6">' +
-        '<img class="img-fluid rounded" alt="Missing" src=' + person.img + '>' +
+        '<img class="img-fluid" alt="Missing" src=' + person.img + '>' +
         '</div>' +
-        '<div class="col-lg-6 text-center">'+
+        '<div class="col-lg-6 text-left">'+
         '<h2>' +  person.name + ' ' + person.surname +'</h2>' +
-        '<p>' + person.role + '</p>' +
+        '<p><b>' + person.role + '</b></p>' +
         '<p>' + person.description + ' </p>' +
         '<p>' + person.phone + '</p>' +
         '<p>' + person.mail +' </p>' +
@@ -80,30 +116,47 @@ function createPerson(person) {
         '</div>'
 }
 
-function createService(service) {
-    return ' <div class="col-lg-4 mb-4">\n' +
-    '        <div class="card h-100 text-center">\n' +
-    '          <img class="card-img-top" src=' + service.img[0] + ' alt="Missing">\n' +
-    '          <div class="card-body">\n' +
-    '            <h4 class="card-title">' + service.title +'</h4>\n' +
-    '            <p class="card-text">' + service.short_description +'</p>\n' +
-    '              <a href="service.html?id='+ service.service_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
-    '          </div>\n' +
-    '        </div>\n' +
-    '      </div>'
+// display services in which the person is involved
+function displayPersonServices(person, service) {
+
+    return  '<div class="col-lg-4 mb-4">' +
+            '<div class="card h-100 text-center" style="border-radius: 15px">' +
+            '<img class="card-img-top" src='+ serviceRounded(service.img[0]) + ' ' + 'height="250" style="padding-top: 20px" alt="service_image">' +
+            '<div class="card-body">' +
+            '<h4 class="card-title">' + service.title + '</h4>' +
+            '<p class="card-text">' + service.short_description + '</p>' +
+            '<a href="service.html?id=' + service.service_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
 }
 
-function createEvent(event) {
-    return '<div class="row">' +
-        '      <div class="col-lg-9 text-center">' +
-        '          <h4>' + event.title +'</h4>' +
-        '           <p>' + event.short_description +'</p>' +
+function displayEvent(event) {
+
+    return '<div class="container nopadding"> ' +
+        '<div class="row">' +
+        '      <div class="col-md-7 text-left" style="margin-top: 20px">' +
+                '<div class="item">' +
+        '          <h3 style="color: #0077C0">' + event.title +'</h3>' +
+        '           <p style="margin-top: 20px">' + event.short_description +'</p>' +
+                '</div>' +
+                '<div class="text-left" style="margin-left: 20px; margin-bottom: 70px;">' +
         '           <a href="kot_event.html?id='+ event.event_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+                '</div>'+
         '      </div>' +
-        '      <div class="col-lg-3">' +
-        '         <img class="img-fluid rounded" src='+ event.img + ' alt="Missing">' +
+        '      <div class="col-md-5">' +
+        '         <img class="img-fluid" src="'+ event.img +'" alt="Missing">' +
         '      </div>' +
         '      </div>' +
-        '  </div>'
-
+        '  </div>' +
+        '</div>';
 }
+
+// utils
+function serviceRounded(img) {
+    let img_circle = img.substr(0, img.length-4);
+    img_circle += '_rounded.svg'
+    return img_circle
+}
+

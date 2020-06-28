@@ -2,43 +2,40 @@
 
 $(document).ready( function() {
 
-    getPerson();
-
+    fetchCrew();
 
 });
 
-async function getPerson() {
+async function fetchCrew() {
 
     try {
         fetch("https://wildocean.herokuapp.com/api/v1/person").then(function (response) {
             if (!response.ok) {
                 console.log("HTTPS API Error, status = " + response.status);
+                location.replace("../assets/pages/404.html");
             }
             return response.json();
         }).then(function (json) {
             let html = '<div class="row"> '
             for (let s of json) {
-               let n = s.name
-               let su = s.surname
-               let img = s.img
+                let n = s.name
+                let su = s.surname
+                let img = s.img
                 let mat = s.matricola
                 let img_circle = img.substr(0, 28);
+                img_circle += '_rounded.svg'
+                let role = s.role
+                html += create(img_circle, n, su, role, mat)
                 console.log(img_circle);
-               img_circle += '_rounded.svg'
-               let role = s.role
-                //console.log(img);
-               html += create(img_circle, n, su, role, mat)
-               console.log(img_circle);
 
             }
             html += '</div>'
             $('#people-row').append(html)
-            //console.log(json);
         });
 
     }
     catch (e) {
-        location.replace("./404.html");
+        location.replace("../assets/pages/404.html");
         console.log(e);
     }
 
@@ -56,5 +53,4 @@ async function getPerson() {
           '</div>' +
           '</div>' +
           '</div>';
-
   }

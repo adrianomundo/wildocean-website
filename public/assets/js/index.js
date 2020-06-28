@@ -95,7 +95,7 @@ function displayServices(service) {
           '<div class="container nopadding">' +
               '<hr style="width: 90%; height: 1px; color: #4eb5e5; background-color: #4eb5e5; margin-top: 80px; margin-bottom: 80px">' +
           '</div>' +
-                  '<div class="container nopadding">' +
+        '<div class="container nopadding">' +
               '<div class="row">' +
                   '<div class="col-md-7" style="margin-top: 20px; text-align: left" >' +
                       '<div class="item">' +
@@ -110,7 +110,7 @@ function displayServices(service) {
                       '<img src="'+service_two.img[0].slice(3)+'" class="img-fluid" alt="img_service_2">' +
                   '</div>' +
               '</div>' +
-          '</div>';
+        '</div>';
 
 }
 

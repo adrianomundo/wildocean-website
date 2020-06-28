@@ -84,11 +84,11 @@ function displayServiceSlider(imgArray) {
 
     html += '<div class="carousel-inner" role="listbox">' +
         '<div class="carousel-item active">' +
-        '<img class="img-fluid" src=" ' + imgArray[0] + '" alt="service_first_img">' +
+        '<img class="img-slider" src=" ' + imgArray[0] + '" alt="service_first_img">' +
         '</div>';
     for (let i = 1; i < imgArray.length; i++) {
         html += '<div class="carousel-item">' +
-            '<img class="img-fluid" src="' + imgArray[i] + '" alt="service_second_img">' +
+            '<img class="img-slider" src="' + imgArray[i] + '" alt="service_second_img">' +
             '</div>' +
             '</div>';
     }
