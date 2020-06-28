@@ -125,6 +125,7 @@ function eventToDisplay() {
 }
 
 function correctDate(date) {
+
     return date.substr(0, 10);
 
 }
