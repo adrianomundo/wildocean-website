@@ -42,8 +42,10 @@ async function get() {
         console.log(serv);
         html += createService(serv[0]);
     }
-    html += '<div class="row text-center"><h2><u>' +person[0].name + ap + 's organising</u></h2></div>'
-    html += createEvent(event[0]);
+    if (event.length > 0 ) {
+        html += '<div class="row text-center"><h2><u>' + person[0].name + ap + 's organising</u></h2></div>'
+        html += createEvent(event[0]);
+    }
     $('#person').append(html)
 
 
