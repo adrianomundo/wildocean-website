@@ -27,7 +27,7 @@ async function getPageText(page) {
             $("#build").text(json[9].txt);
             $("#profit").text(json[10].txt);
             $("#impact").text(json[11].txt);
-            console.log(json);
+            //console.log(json);
         });
     }
     catch (e) {

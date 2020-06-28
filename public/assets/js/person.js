@@ -121,7 +121,7 @@ function displayPersonServices(person, service) {
 
     return  '<div class="col-lg-4 mb-4">' +
             '<div class="card h-100 text-center" style="border-radius: 15px">' +
-            '<img class="card-img-top" src='+ serviceRounded(service.img[0]) + ' ' + 'height="250" style="padding-top: 20px" alt="service_image">' +
+            '<img class="card-img-top" src="'+ service.img[0] +'" style="padding-top: 20px" alt="Missing">' +
             '<div class="card-body">' +
             '<h4 class="card-title">' + service.title + '</h4>' +
             '<p class="card-text">' + service.short_description + '</p>' +
@@ -153,10 +153,5 @@ function displayEvent(event) {
         '</div>';
 }
 
-// utils
-function serviceRounded(img) {
-    let img_circle = img.substr(0, img.length-4);
-    img_circle += '_rounded.svg'
-    return img_circle
-}
+
 
