@@ -171,6 +171,7 @@ body {
     text-decoration: none;
     display: inline-block;
     position: relative;
+    font-weight: 600;
 }
 
 .nav-link:hover {
