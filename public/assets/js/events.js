@@ -44,7 +44,7 @@ async function getEvents() {
 }
 
 function create(img, t, d, st, e, l, event_id) {
-    return '<div class="col-lg-4 mb-4" id="event">'+
+    return '<div class="col-lg-4 mb-4" >'+
         '<div class="card h-100 text-center" style="border-radius: 30px>"> ' +
         '<img class="card-img-top" alt="Missing" src='+ img + ' '+ '>' +
         '<div class="card-body">' +
@@ -93,7 +93,7 @@ function correctDate(date) {
      //console.log("Ehi"+ number_of_columns)
      if (number_of_columns)
          for (let i = 0; i < number_of_columns; i++) {
-            row.children[i].remove()
+            row.children[0].remove()
          }
 
 
