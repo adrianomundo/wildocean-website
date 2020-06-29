@@ -12,23 +12,27 @@ async function fetchEvent() {
     let event_id = eventToDisplay();
 
     let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/events/" + event_id));
+    console.log(event_response);
     if (!event_response.ok) {
         console.log("HTTPS API Error, status = " + event_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let event = await event_response.json();
+    if (event.length == 0) {
+        location.replace("../pages/404.html");
+    }
 
     let person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/events/" + event_id + "/person"));
     if (!person_response.ok) {
         console.log("HTTPS API Error, status = " + person_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let person = await person_response.json();
 
     let service_response = (await fetch("https://wildocean.herokuapp.com/api/v1/events/" + event_id + "/service"));
     if (!service_response.ok) {
         console.log("HTTPS API Error, status = " + service_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let service = await service_response.json();
 
@@ -47,17 +51,16 @@ async function fetchEvent() {
         let service_response_new = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + service[0].service_id));
         if (!service_response_new.ok) {
             console.log("HTTPS API Error, status = " + service_response_new.status);
-            location.replace("../assets/pages/404.html");
+            location.replace("../pages/404.html");
         }
         let service_new = await service_response_new.json();
 
         let img_circle_2 = serviceRounded(service_new[0].img[0]);
-        html += displayEventAndService(person[0], service_new[0], img_circle, img_circle_2);
+        html += displayEventAndService(person[0], img_circle, service_new[0], img_circle_2);
     }
     else {
         html += displayEventPeople(person[0], img_circle);
     }
-
 
     //html += displayNavigationItems(event[0]);
 
@@ -91,10 +94,6 @@ function displayOrientation(event) {
         '    </ol>';
 }
 
-function displayTitle() {
-
-}
-
 function displayEvent(event){
     return  '<div class="row justify-content-center">' +
                 '<div class="col-lg-6">' +
@@ -102,11 +101,11 @@ function displayEvent(event){
                 '</div>' +
                 '<div class="col-lg-6 text-left">'+
                     '<h2 style="margin-bottom: 25px; margin-left: 10px; margin-top: 10px">' + event.title +'</h2>' +
-                    '<div class="date">' +'' +
+                    '<div class="date">' +
                         '<i class="fa fa-calendar" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + correctDate(event.date) + '</p>' +
                     '</div>' +
-                    '<div class="hour">' +'' +
+                    '<div class="hour">' +
                         '<i class="fa fa-clock-o" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + event.start_h + ' - ' + event.end_h+ '</p>' +
                     '</div>' +
@@ -114,7 +113,7 @@ function displayEvent(event){
                         '<i class="fa fa-globe" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + event.location + '</p>' +
                     '</div>'+
-                    '<div class="phone">' +'' +
+                    '<div class="phone">' + +
                         '<i class="fa fa-mobile" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + event.phone + '</p>' +
                     '</div>'+
@@ -131,13 +130,14 @@ function displayEvent(event){
             '</div>';
 }
 
-function displayEventAndService(person, service, img_circle, img_circle_2) {
+function displayEventAndService(person, img_circle, service, img_circle_2) {
 
+    let space = "&nbsp";
     return '<div class="container" style="text-align: center">' +
         '<div class="row justify-content-center">' +
                 '<div class="col-lg-4 mb-4">'+
                     '<h2 class="custom_heading align-center">Organiser</h2>' +
-                    '<div class="card text-center" style="border-radius: 15px">' +
+                    '<div class="card text-center" style="border-radius: 15px;">' +
                         '<img class="card-img-top" alt="person_img" src="'+ img_circle +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
                             '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
@@ -148,15 +148,16 @@ function displayEventAndService(person, service, img_circle, img_circle_2) {
                 '</div>' +
                 '<div class="col-lg-4 mb-4">'+
                     '<h2 class="custom_heading align-center">Service</h2>' +
-                    '<div class="card text-center" style="border-radius: 15px>">' +
+                    '<div class="card text-center" style="border-radius: 15px !important;>">' +
                         '<img class="card-img-top" alt="service_img" src="'+ img_circle_2 +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
                             '<h4 class="card-title">'+ service.title + '</h4>' +
+                            '<p class="card-text">'+space+'</p>' +
                             '<a href="service.html?id='+ service.service_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
-           '</div>' +
+        '</div>' +
         '</div>';
 }
 
