@@ -16,6 +16,11 @@ async function fetchPerson() {
         console.log("HTTPS API Error, status = " + person_response.status);
         location.replace("../assets/pages/404.html");
     }
+
+    let all_person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person"))
+    let all_person = await all_person_response.json()
+
+    if (matricola > all_person.length) location.replace("../assets/pages/404.html");
     let person = await person_response.json();
 
     let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
