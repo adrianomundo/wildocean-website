@@ -89,23 +89,23 @@ function loadNavbar() {
 
 function getSub() {
     var title = document.title;
-    if (title == 'About') {
+    if (title == 'Wild Ocean | About') {
         var element = document.getElementById("navAbout");
         element.classList.add("sub");
     }
-    if (title == 'Services' || title == 'Service') {
+    if (title == 'Wild Ocean | Services') {
         var element = document.getElementById("navServices");
         element.classList.add("sub");
     }
-    if (title == 'Crew' || title == 'Person') {
+    if (title == 'Wild Ocean | Crew') {
         var element = document.getElementById("navCrew");
         element.classList.add("sub");
     }
-    if (title == 'Events' || title == 'Event') {
+    if (title == 'Wild Ocean | Events') {
         var element = document.getElementById("navEvents");
         element.classList.add("sub");
     }
-    if (title == 'Contact') {
+    if (title == 'Wild Ocean | Contact') {
         var element = document.getElementById("navContact");
         element.classList.add("sub");
     }
