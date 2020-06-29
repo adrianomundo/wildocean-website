@@ -313,18 +313,6 @@ body {
     .bg-dark {
         background: transparent !important;
     }
-    .nav-link-home {
-        color: white !important;
-        /*      text-shadow: 1px 1px 2px #000000;*/
-    }
-    .navLogoI {
-        content: url("assets/img/logoW.png");
-        width: 100px;
-        height: auto;
-    }
-    .whiteI {
-        color: white !important;
-    }
 }
 
 @media (max-width: 800px){
