@@ -16,7 +16,7 @@ async function fetchService() {
         location.replace("../pages/404.html");
     }
 
-    let all_service_response = (await fetch("https://wildocean.herokuapp.com/api/v1/service"))
+    let all_service_response = (await fetch("https://wildocean.herokuapp.com/api/v1/services"))
     let all_service = await all_service_response.json()
 
     if (service_id > all_service.length) location.replace("../pages/404.html");
