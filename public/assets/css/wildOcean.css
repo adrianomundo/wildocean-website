@@ -43,6 +43,7 @@ h2, h1, h4 {
     transform: translate(0, -50%);
     color: #fff;
     transition: opacity .3s;
+    color: black;
 }
 .scroll a:hover {
     opacity: .5;
@@ -57,8 +58,8 @@ h2, h1, h4 {
     width: 24px;
     height: 24px;
     margin-left: -12px;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-animation: sdb04 2s infinite;
@@ -312,18 +313,6 @@ body {
     }
     .bg-dark {
         background: transparent !important;
-    }
-    .nav-link-home {
-        color: white !important;
-        /*      text-shadow: 1px 1px 2px #000000;*/
-    }
-    .navLogoI {
-        content: url("assets/img/logoW.png");
-        width: 100px;
-        height: auto;
-    }
-    .whiteI {
-        color: white !important;
     }
 }
 

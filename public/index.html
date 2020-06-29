@@ -21,30 +21,30 @@
 
   <!-- NAVBAR -->
   <nav class="navbar fixed-top navbar-expand-custom navbar- bg-dark navbar-light" role="navigation" aria-label="main navigation">
-        <a class="navbar-brand" href="index.html"><img class="navLogo navLogoI" id="logo" src="assets/img/logo.png" alt="Logo" width="100" height="auto"></a>
+        <a class="navbar-brand" href="index.html"><img class="navLogo" id="logo" src="assets/img/logo.png" alt="Logo" width="100" height="auto"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse" id="navbarResponsive">
         <ul class="navbar-nav w-100 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr nav-link-home" href="pages/about.html" style="color:black" >About</a>
+            <a class="nav-link nav-link-ltr" href="pages/about.html" style="color:black" >About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr nav-link-home" href="pages/services.html" style="color:black">Services</a>
+            <a class="nav-link nav-link-ltr" href="pages/services.html" style="color:black">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr nav-link-home" href="pages/crew.html" style="color:black">Crew</a>
+            <a class="nav-link nav-link-ltr" href="pages/crew.html" style="color:black">Crew</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link nav-link-ltr nav-link-home" href="pages/events.html" style="color:black">Events</a>
+            <a class="nav-link nav-link-ltr" href="pages/events.html" style="color:black">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr nav-link-home" href="pages/contact.html" style="color:black">Contact</a>
+            <a class="nav-link nav-link-ltr" href="pages/contact.html" style="color:black">Contact</a>
           </li>
            <li class="nav-item">
                 <form class="form-inline">
-                <i class="fa fa-search whiteI" aria-hidden="true" style="color:black"></i>
+                <i class="fa fa-search" aria-hidden="true" style="color:black"></i>
                 <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
                </form>
           </li>
@@ -157,15 +157,9 @@
   $(window).scroll(function () {
     if($(this).scrollTop() > $('nav').height()){
         $('nav').addClass('scrolled');
-        $('a.nav-link').removeClass('nav-link-home');
-        $('i.fa').removeClass('whiteI');
-        $('img.navLogo').removeClass('navLogoI');
     }
     else {
         $('nav').removeClass('scrolled');
-        $('a.nav-link').addClass('nav-link-home');
-        $('i.fa').addClass('whiteI');
-        $('img.navLogo').addClass('navLogoI');
     }
   });
   </script>
