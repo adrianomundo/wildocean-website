@@ -357,3 +357,10 @@ body {
     border-bottom-color: #0077C0;
 
 }
+
+.count
+{
+  font-size: 85px;
+  font-weight: 600;
+  color: #0077C0;
+}
