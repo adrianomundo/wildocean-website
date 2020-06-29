@@ -52,7 +52,7 @@ function create(img, t, d, st, e, l, event_id) {
         '<p class="card-text">' + d + '</p>' +
         '<p class="card-text">' + st + ' - ' + e + '</p>' +
         '<p class="card-text">' + l + '</p>' +
-        '<a href="kot_event.html?id=' + event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+        '<a href="event.html?id=' + event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -113,14 +113,14 @@ function correctDate(date) {
 
 function createCard(event) {
     return '<div class="col-lg-4 mb-4" id="event">'+
-        '<div class="card h-100 text-center" style="border-radius: 30px>"> ' +
-        '<img class="card-img-top" alt="Missing" src='+ event.img + ' '+ '>' +
+        '<div class="card h-100 text-center" style="border-radius: 15px>"> ' +
+        '<img class="card-img-top" style="border-radius: 15px" alt="Missing" src='+ event.img + ' '+ '>' +
         '<div class="card-body">' +
         '<h4 class="card-title">'+ event.title + '</h4>' +
         '<p class="card-text">' + correctDate(event.date) + '</p>' +
         '<p class="card-text">' + event.start_h + ' - ' + event.end_h + '</p>' +
         '<p class="card-text">' + event.location + '</p>' +
-        '<a href="kot_event.html?id=' + event.event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+        '<a href="event.html?id=' + event.event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
         '</div>' +
         '</div>' +
         '</div>'

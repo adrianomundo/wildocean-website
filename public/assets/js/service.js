@@ -120,9 +120,9 @@ function displayOrientation(service) {
 // service and practical info
 function displayServiceInfo(service) {
     return `<div class="container" id="service_info" style="text-align: center">
-          <h1 class="custom_heading align-center"><b>`+ service.title +`</b></h1>
+          <h1 class="custom_heading align-center">`+ service.title +`</h1>
           <p>`+ service.long_description +`</p>
-          <h2 class="custom_heading align-center"><b>Practical Info</b></h2>
+          <h2 class="custom_heading align-center">Practical Info</h2>
           <p>`+ service.practical_info +`</p>
       </div>`;
 }
@@ -131,7 +131,7 @@ function displayServiceInfo(service) {
 function displayServiceEvent(event) {
 
     return `<div class="container" id="service_event" style="text-align: center">
-          <h2 class="custom_heading align-center"><strong>Featured Event</strong></h2>
+          <h2 class="custom_heading align-center">Featured Event</h2>
           <div class="row" id="featured_event">
               <div class="col-lg-5 text-center">
                   <img class="img-fluid rounded" src="`+ event.img +` " alt="ocean_talk">
@@ -150,13 +150,12 @@ function displayServiceEvent(event) {
 
 function createCrewContainer() {
     return `<div class="container" id="service_crew" style="text-align: center">
-        <h2 class="custom_heading align-center" id="crew" style="text-align: center"><strong>Related Crew</strong></h2>
+        <h2 class="custom_heading align-center" id="crew" style="text-align: center">Related Crew</h2>
     <div class="row justify-content-center" id="crew_row">`;
 }
 
 // related crew
 function displayServiceCrew(people, img_circle) {
-
     return `<div class="col-lg-4 mb-4">
                   <div class="card h-100 text-center" style="border-radius: 15px">
                     <img class="card-img-top" alt="Missing" src="`+ img_circle +`" height="250" style="padding-top: 20px">

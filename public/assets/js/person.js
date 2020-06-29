@@ -45,7 +45,7 @@ async function fetchPerson() {
     let ap = "'";
     html += '<div class="row" style="text-align: center">' +
         '<div class="container" style="text-align: center">' +
-        '<h3 class="custom_heading align-center">' + person[0].name + ap + 's Activities</h3>' +
+        '<h2 class="custom_heading align-center">' + person[0].name + ap + 's Activities</h2>' +
         '</div>' + '</div>';
 
     for (let i = 0; i < services.length; i++) {
@@ -56,13 +56,13 @@ async function fetchPerson() {
             location.replace("../assets/pages/404.html");
         }
         let service = await service_response.json();
-        html += displayPersonServices(person[0], service[0]);
+        html += displayPersonServices(service[0]);
     }
 
     if (event.length > 0 ) {
         html += '<div class="row text-center">' +
             '<div class="container text-center">' +
-            '<h3 class="custom_heading align-center">' + person[0].name + "'" + 's organising</h3>' +
+            '<h2 class="custom_heading align-center">' + person[0].name + "'" + 's organising</h2>' +
             '</div>'+ '</div>';
         html += displayEvent(event[0]);
     }
@@ -96,18 +96,26 @@ function displayOrientation(person) {
 
 // display person information
 function displayPerson(person) {
-
     return  '<div class="row justify-content-center">' +
         '<div class="col-lg-6">' +
-        '<img class="img-fluid" alt="Missing" src=' + person.img + '>' +
+        '<img class="img-fluid" alt="Person_img" src=' + person.img + '>' +
         '</div>' +
         '<div class="col-lg-6 text-left">'+
         '<h2>' +  person.name + ' ' + person.surname +'</h2>' +
         '<p><b>' + person.role + '</b></p>' +
         '<p>' + person.description + ' </p>' +
-        '<p>' + person.phone + '</p>' +
-        '<p>' + person.mail +' </p>' +
-        '<p>' + person.nationality +' </p>' +
+        '<div class="phone">' +'' +
+        '<i class="fa fa-mobile" style="font-size: 15px;"></i>' +
+        '<p style="display: inline-block">' + person.phone + '</p>' +
+        '</div>'+
+        '<div class="mail">' +
+        '<i class="fa fa-envelope-o" style="font-size: 15px;"></i>' +
+        '<p style="display: inline-block">' + person.mail + '</p>' +
+        '</div>'+
+        '<div class="nation">' +
+        '<i class="fa fa-globe" style="font-size: 15px;"></i>' +
+        '<p style="display: inline-block">' + person.nationality + '</p>' +
+        '</div>'+
         '<div  class="fa fa-instagram" ></div>\n' +
         '<div  class="fa fa-facebook"></div>\n' +
         '<div  class="fa fa-twitter"></div>\n' +
@@ -117,11 +125,10 @@ function displayPerson(person) {
 }
 
 // display services in which the person is involved
-function displayPersonServices(person, service) {
-
-    return  '<div class="col-lg-4 mb-4">' +
+function displayPersonServices(service) {
+    return  '<div class="col-lg-5 mb-4">' +
             '<div class="card h-100 text-center" style="border-radius: 15px">' +
-            '<img class="card-img-top" src="'+ service.img[0] +'" style="padding-top: 20px" alt="Missing">' +
+            '<img class="card-img-top" src='+ serviceRounded(service.img[0]) +' '+ 'height="250" style="padding-top: 20px" alt="Missing">' +
             '<div class="card-body">' +
             '<h4 class="card-title">' + service.title + '</h4>' +
             '<p class="card-text">' + service.short_description + '</p>' +
@@ -129,7 +136,6 @@ function displayPersonServices(person, service) {
             '</div>' +
             '</div>' +
             '</div>';
-
 }
 
 function displayEvent(event) {
@@ -153,5 +159,9 @@ function displayEvent(event) {
         '</div>';
 }
 
-
-
+// utils
+function serviceRounded(img) {
+    let img_circle = img.substr(0, img.length-4);
+    img_circle += '_rounded.svg'
+    return img_circle
+}
