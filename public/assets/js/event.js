@@ -86,11 +86,11 @@ function pageTitle(event) {
 
 // display orientation info with breadcrumbs
 function displayOrientation(event) {
-    return '<ol class="breadcrumb" >\n' +
-        '      <li class="breadcrumb-item">\n' +
-        '        <a href="events.html">Events</a>\n' +
-        '      </li>\n' +
-        '      <li class="breadcrumb-item active">' + event.title + '</li>\n' +
+    return '<ol class="breadcrumb">' +
+        '      <li class="breadcrumb-item">' +
+        '        <a href="events.html">Events</a>' +
+        '      </li>' +
+        '      <li class="breadcrumb-item active">' + event.title + '</li>' +
         '    </ol>';
 }
 
@@ -113,7 +113,7 @@ function displayEvent(event){
                         '<i class="fa fa-globe" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + event.location + '</p>' +
                     '</div>'+
-                    '<div class="phone">' + +
+                    '<div class="phone">' +
                         '<i class="fa fa-mobile" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + event.phone + '</p>' +
                     '</div>'+

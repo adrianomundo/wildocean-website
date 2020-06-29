@@ -41,7 +41,7 @@ function displayEvent(event) {
             '<i class="fa fa-globe" style="font-size: 20px;"></i>' +
             '<p style="display: inline-block">'+ event.location + '</p>' +
         '</div>'+
-        '<a href="event.html?id=' + event.event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+        '<a href="event.html?id=' + event.event_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px; font-weight: 600;">FIND OUT MORE</span></a>' +
         '</div>' +
         '</div>' +
         '</div>';

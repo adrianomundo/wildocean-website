@@ -260,6 +260,10 @@ body {
 .item {
     padding: 25px;
 }
+.vl {
+    border-left: 3px solid #4eb5e5;
+    height: 50px;
+}
 
 .row {
     width: 100%;
@@ -278,6 +282,45 @@ body {
     border-color: #0077C0 !important;
     border-radius: 20px;
     width: 150px;
+}
+
+.btn-outline-event:hover, .btn-outline-primary:active {
+    background-color: #0077C0 !important;
+    color: white !important;
+    border-color: #0077C0 !important;
+}
+
+.btn-outline-event {
+    background-color: white !important;
+    color: #0077C0 !important;
+    border-color: #0077C0 !important;
+    border-radius: 10px;
+    border-width: 3px;
+    width: 135px;
+}
+
+.btn-outline-event:hover, .btn-outline-primary:active {
+    background-color: #0077C0 !important;
+    color: white !important;
+    border-color: #0077C0 !important;
+}
+
+.dropdown-event {
+    background-color: white !important;
+    color: #0077C0 !important;
+    width: 135px;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: white;
+    text-decoration: none;
+    background-color: #0077C0;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: white;
+    text-decoration: none;
+    background-color: #0077C0;
 }
 
 .footer-link:hover {

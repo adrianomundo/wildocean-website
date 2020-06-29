@@ -22,104 +22,109 @@
     <!-- NAVIGATION BAR -->
     <div id="navbar"></div>
 
-    <!-- SLIDER + BREADCRUMB SECTION -->
-    <section id="contact" style="margin-top: 101px">
+    <!-- PAGE CONTENT CONTACT -->
+    <section id="contact" style="margin-top: 120px">
         <div class="container" style="text-align: center">
             <h1 class="custom_heading align-center">GET IN TOUCH</h1>
             <h5>We are here to help you!</h5>
         </div>
-    </section>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mb-4">
-                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=45.481026, 9.235305&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <iframe width="100%" height="400px" src="https://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=45.481026, 9.235305&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 text-center" >
+                    <h2 class="custom_heading align-center">FAQs</h2>
+                    <p>Plase note that our offices are currently closed due to government decisions. Plase
+                    click below to find the answers to common problems.</p>
+                    <button type="button" class="btn btn-outline-primary" style="width: 100px !important;" disabled>FAQS</button>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h2 class="custom_heading align-center">CONTACT</h2>
+                    <div class="phone">
+                        <i class="fa fa-phone" style="font-size: 20px;"></i>
+                        <p style="display: inline-block">+39. 02.2399.3617</p>
+                    </div>
+                    <div class="phone">
+                        <i class="fa fa-envelope-o" style="font-size: 20px;"></i>
+                        <p style="display: inline-block">info@wildocean.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h2 class="custom_heading align-center">WRITE TO US</h2>
+                    <div class="phone">
+                        <i class="fa fa-map-marker" style="font-size: 20px;"></i>
+                        <p style="display: inline-block">Via Edoardo Sagrada, 46</p>
+                    </div>
+                    <div class="phone">
+                        <i class="fa fa-globe" style="font-size: 20px;"></i>
+                        <p style="display: inline-block">Milan, Italy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="custom_heading align-center">FOLLOW OUR SOCIAL MEDIA</h2>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <div  class="fa fa-instagram" ></div>
+                    <div  class="fa fa-facebook"></div>
+                    <div  class="fa fa-twitter"></div>
+                    <div  class="fa fa-linkedin"></div>
+                    <div  class="fa fa-youtube"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-      <div class="col-lg-4 text-center" >
-          <h2>FAQS</h2>
-          <p>View our FAQs to find all the answers you need</p>
-           <button type="button" class="btn btn-link" disabled>FAQS</button>
-      </div>
-         <div class="col-lg-4 text-center">
-         <h2>CALL US</h2>
-             <h3>+39.2.2399.3617</h3>
-             <h>Please note, the office is currently closed due to government advice.</h>
-      </div>
-         <div class="col-lg-4 text-center">
-         <h2>WRITE TO US</h2>
-             <p>Via Edoardo Sagrada, 46</p>
-             <p>Milano MI</p>
-      </div>
+    </section>
 
-    </div>
-
-
-      <div class="row">
-           <div class="col-lg-12 text-center">
-             <h2><p>FIND US ON SOCIAL MEDIA</p></h2>
-          </div>
-           <div class="col-lg-12 text-center">
-            <div  class="fa fa-instagram" ></div>
-            <div  class="fa fa-facebook"></div>
-            <div  class="fa fa-twitter"></div>
-            <div  class="fa fa-linkedin"></div>
-            <div  class="fa fa-youtube"></div>
+    <section id="contact_form">
+        <div class="container" style="max-width: 700px">
+            <div class="row text-center">
+                <div class="col-lg-12 mb-4 text-center">
+                    <h2 class="custom_heading align-center">Send us a Message</h2>
+                    <p style="font-weight: 600">Fill in and a member of our friendly Crew will be in touch</p>
+                    <form name="sentMessage" id="contactForm" novalidate style="text-align: center">
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label style="font-weight: 600">Full Name</label>
+                                <input type="text" class="form-control" aria-label="Full name" id="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label style="font-weight: 600">Phone Number</label>
+                                <input type="tel" class="form-control" aria-label="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label style="font-weight: 600">Email Address</label>
+                                <input type="email" class="form-control" aria-label="email" id="email" required data-validation-required-message="Please enter your email address.">
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label style="font-weight: 600">Message</label>
+                                <textarea rows="10" cols="100" class="form-control" aria-label="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            </div>
+                        </div>
+                        <div id="success"></div>
+                        <div class="item"><button type="button" class="btn btn-outline-primary" disabled><span style="font-size: 14px; font-weight: 600">Send Message</span></button></div>
+                    </form>
+                </div>
             </div>
-      </div>
+        </div>
+    </section>
 
-    <!-- Contact Form -->
-    <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <div class="row text-center">
-      <div class="col-lg-12 mb-4">
-        <h2>Send us a Message</h2>
-          <h>Fill in your details and a member of our friendly Crew will be in touch</h>
-        <form name="sentMessage" id="contactForm" novalidate>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Full Name:</label>
-              <input type="text" class="form-control" aria-label="Full name" id="name" required data-validation-required-message="Please enter your name.">
-              <p class="help-block"></p>
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Phone Number:</label>
-              <input type="tel" class="form-control" aria-label="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Email Address:</label>
-              <input type="email" class="form-control" aria-label="email" id="email" required data-validation-required-message="Please enter your email address.">
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Message:</label>
-              <textarea rows="10" cols="100" class="form-control" aria-label="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-            </div>
-          </div>
-          <div id="success"></div>
-          <!-- For success/fail messages -->
-          <div class="item"><button type="button" class="btn btn-outline-primary" disabled><span style="font-size: 14px"><b>Send Message</b></span></button></div>
-        </form>
-      </div>
+    <!-- FOOTER SECTION -->
+    <div id="footer"></div>
 
-    </div>
-    <!-- /.row -->
-
-
-  </div>
-  <!-- /.container -->
-
-  <!-- FOOTER SECTION -->
-  <div id="footer"></div>
-
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/landmarks.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/landmarks.js"></script>
 
 </body>
 
