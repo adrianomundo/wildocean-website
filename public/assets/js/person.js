@@ -14,21 +14,26 @@ async function fetchPerson() {
     let person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola));
     if (!person_response.ok) {
         console.log("HTTPS API Error, status = " + person_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
+
+    let all_person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person"))
+    let all_person = await all_person_response.json()
+
+    if (matricola > all_person.length) location.replace("../pages/404.html");
     let person = await person_response.json();
 
     let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
     if (!event_response.ok) {
         console.log("HTTPS API Error, status = " + event_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let event = await event_response.json();
 
     let services_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/services"));
     if (!services_response.ok) {
         console.log("HTTPS API Error, status = " + services_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let services = await services_response.json();
 
@@ -53,7 +58,7 @@ async function fetchPerson() {
         let service_response = (await fetch("https://wildocean.herokuapp.com/api/v1/services/" + services[i].service_id));
         if (!service_response.ok) {
             console.log("HTTPS API Error, status = " + service_response.status);
-            location.replace("../assets/pages/404.html");
+            location.replace("../pages/404.html");
         }
         let service = await service_response.json();
         html += displayPersonServices(service[0]);
