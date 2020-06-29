@@ -32,7 +32,7 @@ function loadFooter() {
             <div class="col sm-6">
                 <p style="padding: 10px;"><a class="footer-link" href="about.html">About</a></p>
                 <p style="padding: 10px;"><a class="footer-link" href="services.html">Services</a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="crew.html"><b>Crew</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="crew.html">Crew</a></p>
             </div>
             <div class="col sm-6">
                 <p style="padding: 10px;"><a class="footer-link" href="events.html">Events</a></p>
