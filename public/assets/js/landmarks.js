@@ -30,13 +30,13 @@ function loadFooter() {
                 <div  class="fa fa-youtube"></div>
             </div>
             <div class="col sm-6">
-                <p style="padding: 10px;"><a class="footer-link" href="about.html"><b>About</b></a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="services.html"><b>Services</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="about.html">About</a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="services.html">Services</a></p>
                 <p style="padding: 10px;"><a class="footer-link" href="crew.html"><b>Crew</b></a></p>
             </div>
             <div class="col sm-6">
-                <p style="padding: 10px;"><a class="footer-link" href="events.html"><b>Events</b></a></p>
-                <p style="padding: 10px;"><a class="footer-link" href="contact.html"><b>Contact</b></a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="events.html">Events</a></p>
+                <p style="padding: 10px;"><a class="footer-link" href="contact.html">Contact</a></p>
             </div>
             <div class="col sm-6">
                 <p style="padding: 5px;">Privacy Policy</p>
