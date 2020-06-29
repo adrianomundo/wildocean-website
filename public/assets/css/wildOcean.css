@@ -208,11 +208,17 @@ body {
     margin-bottom: 30px;
 }
 
-
+/* responsive for desktop */
+.responsive {
+    width: 100%;
+    height: 100vh;
+}
+/* responsive for mobile
 .responsive {
     width: 100%;
     height: auto;
 }
+*/
 
 /* Style all font awesome icons */
 .fa {
@@ -386,6 +392,11 @@ body {
     content: '<';
     font-size: 55px;
     color: #0077C0;
+}
+
+
+.carousel-background img {
+    max-width: 100%;
 }
 
 /* Style the list */
