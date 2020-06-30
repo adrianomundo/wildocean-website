@@ -101,9 +101,9 @@ function displayOrientation(event) {
     return '<div class="row text-left" style="padding-bottom: 0">' +
     '<ol class="breadcrumb">' +
         '      <li class="breadcrumb-item">' +
-        '        <a href="events.html">Events</a>' +
+        '        <a href="events.html" style="color: black">Events</a>' +
         '      </li>' +
-        '      <li class="breadcrumb-item active">' + event.title + '</li>' +
+        '      <li class="breadcrumb-item active" style="color: #0077C0">' + event.title + '</li>' +
         '    </ol>' +
         '</div>';
 }
@@ -151,20 +151,16 @@ function displayNavigation(event) {
 
     html += '<div class=container style="text-align: left; justify-content: left;">' +
         '<div class="row justify-content-between" style="padding-top: 10px">' +
-        '<div class="col-1">'+
+        '<div class="col-3">'+
         '<a href="event.html?id='+ prev +'" id="prev_link">' +
         '<div class="gt-button prevnext round" id="prev_button">' +
         '<i class="fa fa-arrow-left" style="font-size: 20px;"></i>' +
         '</div></a>' +
         '</div>' +
-        '<div class="col-1">'+ '</div>' +
-        '<div class="col-1">'+ '</div>' +
-        '<div class="col-1">'+ '</div>' +
-        '<div class="col-1">'+ '</div>' +
-        '<div class="col-1">'+
+        '<div class="col-3 text-right">'+
         '<a href="event.html?id='+ next +'" id="next_link">' +
         '<div class="gt-button prevnext round" id="next_button">' +
-        '<i class="fa fa-arrow-right" style="font-size: 20px; margin-left: 2px;"></i>' +
+        '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 6px"></i>' +
         '</div></a>' +
         '</div>' +
         '<div class="col-6 text-right">' + '</div>' +
@@ -183,11 +179,13 @@ function fixNavigationLink(event, max_id) {
 
     if (prev == 0) {
         $("#prev_link").removeAttr("href");
-        //$("#prev_button").css({"background-color": "yellow !important"});
+        $("#prev_button").remove('prevnext').toggleClass('prevnext-disabled');
+
+
     }
     if (event_id == max_id) {
         $("#next_link").removeAttr("href");
-        //$("#next_button").css("background_color", "gray");
+        $("#next_button").remove('prevnext').toggleClass('prevnext-disabled');
 
     }
 }

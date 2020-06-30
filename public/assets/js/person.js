@@ -16,12 +16,16 @@ async function fetchPerson() {
         console.log("HTTPS API Error, status = " + person_response.status);
         location.replace("../pages/404.html");
     }
+    let person = await person_response.json();
 
-    let all_person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person"))
+    let all_person_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person"));
+    if (!all_person_response.ok) {
+        console.log("HTTPS API Error, status = " + all_person_response.status);
+        location.replace("../pages/404.html");
+    }
     let all_person = await all_person_response.json()
 
     if (matricola > all_person.length) location.replace("../pages/404.html");
-    let person = await person_response.json();
 
     let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
     if (!event_response.ok) {
@@ -46,6 +50,7 @@ async function fetchPerson() {
     let html = "";
     html += displayOrientation(person[0]);
     html += displayPerson(person[0]);
+    //html += displayNavigation(person[0]);
 
     let ap = "'";
     html += '<div class="row" style="text-align: center">' +
@@ -71,7 +76,9 @@ async function fetchPerson() {
             '</div>'+ '</div>';
         html += displayEvent(event[0]);
     }
-    $('#person').append(html)
+    $('#person').append(html);
+
+    fixNavigationLink(person[0], all_person.length);
 }
 
 // get matricola of the service to display
@@ -93,17 +100,21 @@ function pageTitle(person) {
 function displayOrientation(person) {
     return '<ol class="breadcrumb">' +
         '      <li class="breadcrumb-item">' +
-        '        <a href="crew.html">Crew</a>' +
+        '        <a href="crew.html" style="color: black">Crew</a>' +
         '      </li>' +
-        '      <li class="breadcrumb-item active">' + person.name + ' ' + person.surname + '</li>' +
+        '      <li class="breadcrumb-item active" style="color: #0077C0">' + person.name + ' ' + person.surname + '</li>' +
         '    </ol>';
 }
 
 // display person information
 function displayPerson(person) {
-    return  '<div class="row justify-content-center">' +
-        '<div class="col-lg-6">' +
-        '<img class="img-fluid" alt="Person_img" src=' + person.img + '>' +
+    let html = '<div class="row justify-content-center">' +
+        '<div class="col-6">' +
+    '<img class="img-fluid" alt="Person_img" src=' + person.img + '>';
+
+    html += displayNavigation(person);
+
+    html +=
         '</div>' +
         '<div class="col-lg-6 text-left">'+
         '<h2>' +  person.name + ' ' + person.surname +'</h2>' +
@@ -127,6 +138,53 @@ function displayPerson(person) {
         '<div  class="fa fa-linkedin"></div>\n' +
         '<div  class="fa fa-youtube"></div>\n' +
         '</div>'
+    return html;
+}
+
+// display gt navigation items
+function displayNavigation(person) {
+
+    let html = "";
+
+    let next = person.matricola + 1;
+    let prev = person.matricola - 1;
+    console.log("prev" + prev + "next" + next);
+
+    html += '<div class=container style="text-align: left; justify-content: left; padding-right: 0; padding-left: 0;">' +
+        '<div class="row justify-content-between" style="margin: 0; padding-left: 0; padding-right: 0;">' +
+        '<div class="col-4">'+
+        '<a href="person.html?id='+ prev +'" id="prev_link">' +
+        '<div class="gt-button prevnext round" id="prev_button">' +
+        '<i class="fa fa-arrow-left" style="font-size: 20px;"></i>' +
+        '</div></a>' +
+        '</div>' +
+        '<div class="col-4 text-right">'+
+        '<a href="person.html?id='+ next +'" id="next_link">' +
+        '<div class="gt-button prevnext round" id="next_button">' +
+        '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 7px"></i>' +
+        '</div></a>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+
+    return html;
+
+}
+
+function fixNavigationLink(person, max_id) {
+
+    let prev = person.matricola - 1;
+
+    if (prev == 0) {
+        $("#prev_link").removeAttr("href");
+        $("#prev_button").remove('prevnext').toggleClass('prevnext-disabled');
+
+    }
+    if (person.matricola == max_id) {
+        $("#next_link").removeAttr("href");
+        $("#next_button").remove('prevnext').toggleClass('prevnext-disabled');
+
+    }
 }
 
 // display services in which the person is involved
@@ -153,7 +211,7 @@ function displayEvent(event) {
         '           <p style="margin-top: 20px">' + event.short_description +'</p>' +
                 '</div>' +
                 '<div class="text-left" style="margin-left: 20px; margin-bottom: 70px;">' +
-        '           <a href="kot_event.html?id='+ event.event_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
+        '           <a href="event.html?id='+ event.event_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
                 '</div>'+
         '      </div>' +
         '      <div class="col-md-5">' +

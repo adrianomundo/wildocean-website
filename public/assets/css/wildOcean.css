@@ -360,6 +360,11 @@ responsive for mobile
     color: white;
 }
 
+.prevnext-disabled {
+    background-color: #2F97EF;
+    color: white;
+}
+
 .round {
     border-radius: 50%;
 }
