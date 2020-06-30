@@ -51,7 +51,7 @@ exports.getEventbyPerson = function(matricola) {
  * returns List
  **/
 exports.getPeople = function(limit,offset) {
-  return sqlDb.select().table("person");
+  return sqlDb.select().table("person").limit(limit).offset(offset);
 };
 
 
@@ -77,27 +77,6 @@ exports.getPersonbyMatricola = function(matricola) {
 exports.getServicesbyPerson = async function(matricola) {
   let services = sqlDb.select("service_id").from("service_person").where("matricola", matricola);
   return sqlDb.select().from("service").whereIn("service_id", services);
-
-  //let services = [];
-  //let services_id = await sqlDb.select("service_id").from("service_person").where("matricola", matricola);
-  //for (let i = 0; i < services_id.length; i++) {
-  //let service = await sqlDb.select().table("service").whereIn("service_id", services_id);
-  //let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service[0].service_id);
-  //let imgArray = [];
-
-  /*for (let j = 0; j < images.length; j++) {
-      imgArray.push(images[j].imgpath);
-    }
-
-    service[0].img = imgArray;
-
-    return service;
-
-
-  //  services.push(service[i]);
-  //}
-  //return services;
-*/
 
 };
 
