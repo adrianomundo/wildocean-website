@@ -36,6 +36,15 @@ async function fetchEvent() {
     }
     let service = await service_response.json();
 
+    let events_response = (await fetch("https://wildocean.herokuapp.com/api/v1/events"));
+    console.log(events_response);
+    if (!events_response.ok) {
+        console.log("HTTPS API Error, status = " + events_response.status);
+        location.replace("../pages/404.html");
+    }
+    let events = await events_response.json();
+    let max_id = events.length;
+
     console.log(event);
     console.log(person);
     console.log(service);
@@ -44,6 +53,7 @@ async function fetchEvent() {
 
     let html = displayOrientation(event[0]);
     html += displayEvent(event[0]);
+    html += displayNavigation(event[0]);
 
     let img_circle = personRounded(person[0].img);
 
@@ -65,6 +75,8 @@ async function fetchEvent() {
     //html += displayNavigationItems(event[0]);
 
     $('#event').append(html)
+    
+    fixNavigationLink(event[0], max_id);
 }
 
 
@@ -86,16 +98,18 @@ function pageTitle(event) {
 
 // display orientation info with breadcrumbs
 function displayOrientation(event) {
-    return '<ol class="breadcrumb">' +
+    return '<div class="row text-left" style="padding-bottom: 0">' +
+    '<ol class="breadcrumb">' +
         '      <li class="breadcrumb-item">' +
         '        <a href="events.html">Events</a>' +
         '      </li>' +
         '      <li class="breadcrumb-item active">' + event.title + '</li>' +
-        '    </ol>';
+        '    </ol>' +
+        '</div>';
 }
 
 function displayEvent(event){
-    return  '<div class="row justify-content-center">' +
+    return  '<div class="row justify-content-center" style="padding-bottom: 10px; padding-top: 10px">' +
                 '<div class="col-lg-6">' +
                     '<img class="img-fluid rounded" alt="Event_img" src=' + event.img + '>' +
                 '</div>' +
@@ -123,11 +137,59 @@ function displayEvent(event){
                     '<div  class="fa fa-linkedin"></div>' +
                     '<div  class="fa fa-youtube"></div>' +
                 '</div>' +
-            '</div>' +
-
-            '<div class=container style="margin-top: 30px; text-align: left; justify-content: left">' +
-                 '<p>' + event.long_description + '</p>' +
             '</div>';
+
+}
+
+function displayNavigation(event) {
+
+    let html = "";
+
+    let event_id = event.event_id;
+    let next = event_id + 1;
+    let prev = event_id - 1;
+
+    html += '<div class=container style="text-align: left; justify-content: left;">' +
+        '<div class="row justify-content-between" style="padding-top: 10px">' +
+        '<div class="col-1">'+
+        '<a href="event.html?id='+ prev +'" id="prev_link">' +
+        '<div class="gt-button prevnext round" id="prev_button">' +
+        '<i class="fa fa-arrow-left" style="font-size: 20px;"></i>' +
+        '</div></a>' +
+        '</div>' +
+        '<div class="col-1">'+ '</div>' +
+        '<div class="col-1">'+ '</div>' +
+        '<div class="col-1">'+ '</div>' +
+        '<div class="col-1">'+ '</div>' +
+        '<div class="col-1">'+
+        '<a href="event.html?id='+ next +'" id="next_link">' +
+        '<div class="gt-button prevnext round" id="next_button">' +
+        '<i class="fa fa-arrow-right" style="font-size: 20px; margin-left: 2px;"></i>' +
+        '</div></a>' +
+        '</div>' +
+        '<div class="col-6 text-right">' + '</div>' +
+        '</div>' +
+        '<p>' + event.long_description + '</p>' +
+        '</div>';
+
+    return html;
+
+}
+
+function fixNavigationLink(event, max_id) {
+
+    let event_id = event.event_id;
+    let prev = event_id - 1;
+
+    if (prev == 0) {
+        $("#prev_link").removeAttr("href");
+        //$("#prev_button").css({"background-color": "yellow !important"});
+    }
+    if (event_id == max_id) {
+        $("#next_link").removeAttr("href");
+        //$("#next_button").css("background_color", "gray");
+
+    }
 }
 
 function displayEventAndService(person, img_circle, service, img_circle_2) {
@@ -180,21 +242,6 @@ function displayEventPeople(person, img_circle) {
             '</div>';
 }
 
-function displayNavigationItems(event) {
-
-    return '<div class="row">\n' +
-    '        <div class="col-lg-6">\n' +
-    '          <ul class="pager">\n' +
-    '            <li class="previous text-left"><a href="event.html?id='+ (event.event_id -1) +'">Previous</a></li>\n' +
-    '          </ul>\n' +
-    '        </div>\n' +
-    '        <div class="col-lg-6">\n' +
-    '          <ul class="pager">\n' +
-    '            <li class="next text-right"><a href="event.html?id='+ (event.event_id +1) +'">Next</a></li>\n' +
-    '          </ul>\n' +
-    '        </div>\n' +
-    '      </div>';
-}
 
 // utils
 function personRounded(img) {
