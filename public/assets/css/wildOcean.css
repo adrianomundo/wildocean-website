@@ -386,6 +386,12 @@ responsive for mobile
     background-color: #2F97EF !important;
 }
 
+.prevnext-disabled {
+    background-color: #2F97EF;
+    color: white;
+>>>>>>> origin/master
+}
+
 .round {
     border-radius: 50%;
 }

@@ -40,7 +40,8 @@
     "role": "CFO",
     "phone": "+39 34145497",
     "mail": "rhea.seehorn@wildocean.com",
-    "nationality": "American"
+    "nationality": "American",
+    "event_id": 9
   },
   {
     "name": "Tuppence",
@@ -50,7 +51,8 @@
     "role": "HR MANAGER",
     "phone": "+39 3487766980",
     "mail": "tuppence.middleton@wildocean.com",
-    "nationality": "English"
+    "nationality": "English",
+    "event_id": 8
   },
   {
     "name": "Aaron",
@@ -60,6 +62,41 @@
     "role": "COMMUNICATIONS AND EXTERNAL AFFAIRS",
     "phone": "+39 356906703",
     "mail": "aaron.paul@wildocean.com",
-    "nationality": "American"
+    "nationality": "American",
+    "event_id": 7
+  },
+  {
+    "name": "Matt",
+    "surname": "LeBlanc",
+    "description": "Hydrodynamics & motion-of-the-ocean expert. Floating & boating enthusiast. Experienced mooring designer, with strings attached",
+    "img": "../assets/img/person/Person7.jpg",
+    "role": "Technology Manager",
+    "phone": "+39 334606703",
+    "mail": "matt.leblanc@wildocean.com",
+    "nationality": "American",
+    "event_id": 6
+  },
+  {
+    "name": "Neil Patrick",
+    "surname": "Harris",
+    "description": "Creative, innovation loving engineer leading the structural team for the pacific system. Experience in structural engineering with a mix of hydrodynamics and coding, previously worked for one of the largest vessels in the offshore industry. Have a passion for the outdoors and always ready for an adventure",
+    "img": "../assets/img/person/Person8.jpg",
+    "role": "Lead Structural & Mechanical Engineer",
+    "phone": "+39 334698236",
+    "mail": "neilpatrick.harris@wildocean.com",
+    "nationality": "American",
+    "event_id": 5
+  },
+  {
+    "name": "Sophie",
+    "surname": "Turner",
+    "description": "Enabling the MT to operate efficiently and effectively, help to secure funding. Over 12 years experience in strategy development and implementation at Deloitte. Proud caretaker of two rescued chinchillas. Known as fervent ‘litterati’",
+    "img": "../assets/img/person/Person9.jpg",
+    "role": "Chief of Staff",
+    "phone": "+39 397598236",
+    "mail": "sophie.turner@wildocean.com",
+    "nationality": "English",
+    "event_id": 4
   }
+
 ]
