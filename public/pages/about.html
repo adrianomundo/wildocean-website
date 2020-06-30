@@ -140,7 +140,7 @@
             </div>
             <div class="col text-center">
                 <div class="item">
-                    <span class="count"><h1 style="font-size: 85px">5000</h1></span>
+                    <span class="count"><h1 style="font-size: 85px">12000</h1></span>
                     <h5>Total of kilograms of plastic picked up from ocean</h5>
                 </div>
             </div>
@@ -176,24 +176,8 @@
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/about.js"></script>
   <script src="../assets/js/landmarks.js"></script>
-  <script>
-$(window).on('scroll', function() {
- if($(this).scrollTop() > $("#value_section").offset().top ){
-   $('.count').each(function () {
-    $(this).prop('Counter',0).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 2000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
-        }
-    });
-  });
- $(window).off('scroll');
- }
-});
-  </script>
+  <script src="../assets/js/script.js"></script>
+
 
 </body>
 

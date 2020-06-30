@@ -20,7 +20,7 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar fixed-top navbar-expand-custom navbar- bg-dark navbar-light" role="navigation" aria-label="main navigation">
+  <nav class="navbar fixed-top navbar-expand-custom navbar- bg-dark navbar-light" role="navigation" aria-label="main navigation" id="index_nav">
         <a class="navbar-brand" href="index.html"><img class="navLogo" id="logo" src="assets/img/logo.png" alt="Logo" width="100" height="auto"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -61,6 +61,10 @@
           </div>
       </div>
   </section>
+
+  <button onclick="topFunction()" class="onTopBtn round" id="onTopBtn">
+   <img src="assets/img/up.png" width="80%" height="auto">
+    </button>
 
   <!-- SUPPORT SECTION -->
   <section id="support">
@@ -153,18 +157,30 @@
 
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script>
-  $(window).scroll(function () {
-    if($(this).scrollTop() > $('nav').height()){
-        $('nav').addClass('scrolled');
-    }
-    else {
-        $('nav').removeClass('scrolled');
-    }
-  });
-  </script>
   <script src="assets/js/index.js"></script>
+  <script src="assets/js/script.js"></script>
 
+    <script>
+//Get the button
+var mybutton = document.getElementById("onTopBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.opacity = "1";
+  } else {
+    mybutton.style.opacity = "0";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 </body>
 
 </html>
