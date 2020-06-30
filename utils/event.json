@@ -1,14 +1,36 @@
 [
   {
-    "title": "Beach Clean",
-    "location": "Holkham beach, UK",
-    "long_description": "Each autumn we brace ourselves against the inevitable mass accumulation of plastic pollution upon our beaches. The combined effects of the sheer volume of plastic entering our oceans each day, the ever strengthening North Atlantic hurricane season and the end of seasonal beach clean operations lead to a ‘Perfect Storm’ of plastic pollution on our beaches. Far from being summer only spaces, our coastal communities enjoy and rely upon their beaches 365 days a year. Taking place from the 17th to the 25th October each year the Beach Clean extends deep into the darker, colder times when, in the absence of summer’s tourist spotlight, the health of our coastlines can slip from the nation’s mind.  It brings those of us who use our beaches year round together; uniting, inspiring and empowering hundreds of coastal communities to take action to remove and recycle many tonnes of marine plastic pollution as we seek to create plastic free coastlines",
-    "short_description": "Each autumn we brace ourselves against the inevitable mass accumulation of plastic pollution upon our beaches.",
-    "img": "../assets/img/event/beach-clean-event.jpg",
+    "title": "Restoring The Gulf of Mexico",
+    "location": "L'Avana, Cuba",
+    "long_description": "The Gulf of Mexico is one of those places—astoundingly beautiful, biodiverse and teeming with life–that captures your heart and your imagination. Whale sharks meander through its waters, bottlenose dolphins jump through its currents and sea turtles nest on its beaches. As one of the most staggeringly productive places on this planet, the Gulf is home to fish, coral, whales, sea turtles, dolphins and thousands of bird species. For nearly 87 million people, the Gulf is home, it’s a way of life and it has its own local cultures and communities. So many people rely on its unique habitats. The course of Gulf history was forever changed with the worst environmental disaster the U.S. has ever seen. The BP Deepwater Horizon oil disaster leaked 210 million gallons of oil and 1.8 million gallons of chemical dispersants into the Gulf, coating, sickening and killing wildlife. The oil disaster also paralyzed the local economy and distressed communities along its shores. The Gulf is now more vulnerable than ever. Today, the Gulf continues to face ongoing threats such as invasive species, extreme storms and flooding, and land loss. Future issues like sea level rise and a growing coastal population add further stress to the people and wildlife who call the Gulf home. Wild Ocean wants help to clean the Gulf.",
+    "short_description": "The Gulf of Mexico is one of those places—astoundingly beautiful, biodiverse and teeming with life–that captures your heart and your imagination.",
+    "img": "../assets/img/event/Restoring-the-gulf-of-mexico-event.jpg",
+    "start_h": "11:00:00",
+    "end_h": "19:00:00",
+    "date": "2020-02-11",
+    "phone": "+394367837457"
+  },
+  {
+    "title": "Digital Ocean School",
+    "location": "At home",
+    "long_description": "Normally, at this time of year we would be getting ready to take school groups to the greatest classroom on Earth; the beach! Since these are not normal times, we thought we would bring Ocean School to you instead. Until the end of July, we will be hosting live lessons on our Facebook and Instagram pages and updating this page every week with new resources to accompany the lessons. Make sure you tune in on Tuesday mornings at 11am on Facebook or 11.30am on Instagram to find out what we’ll be learning about each week and find out what your challenge will be. We’ll be creating new resources each week for Key Stages 1, 2 and 3 so there will be something for everyone aged 5 – 14. \nWe’d absolutely love to see what you get up to so please share your work with us on social media by tagging us @wildocean and using #OceanSchool.",
+    "short_description": "Normally, at this time of year we would be getting ready to take school groups to the greatest classroom on Earth; the beach! Since these are not normal times, we thought we would bring Ocean School to you instead.",
+    "img": "../assets/img/event/Digital-Ocean-School-event.jpg",
+    "start_h": "11:00:00",
+    "end_h": "13:00:00",
+    "date": "2020-04-01",
+    "phone": "+393406756867"
+  },
+  {
+    "title": "Re-invent Plastic",
+    "location": "London, UK",
+    "long_description": "At least every second breath we take comes from the sea. The oceans give us life. In return, we give them plastic. Plastic is a design failure. Once produced, it never dies, and a massive amount of it enters the oceans daily. A lack of imagination got us into this mess. Creativity and collaboration can guide us out. To address the fast-growing threat of marine plastic pollution, Wild Ocean proposes a collaboration space where artists, designers and scientists unleash their creative skills to protect oceans and remote islands, starting with the design of products made from Ocean Plastic — transforming harmful waste into symbols of change. ",
+    "short_description": "At least every second breath we take comes from the sea. The oceans give us life. In return, we give them plastic. Plastic is a design failure.",
+    "img": "../assets/img/event/Re-invent-plastic-event.jpg",
     "start_h": "09:00:00",
-    "end_h": "11:00:00",
-    "date": "2020-10-17",
-    "phone": "+393271877654"
+    "end_h": "18:00:00",
+    "date": "2020-05-03",
+    "phone": "+394367856867"
   },
   {
     "title": "Ocean School",
@@ -33,28 +55,6 @@
     "phone": "+393271877666"
   },
   {
-    "title": "Digital Ocean School",
-    "location": "At home",
-    "long_description": "Normally, at this time of year we would be getting ready to take school groups to the greatest classroom on Earth; the beach! Since these are not normal times, we thought we would bring Ocean School to you instead. Until the end of July, we will be hosting live lessons on our Facebook and Instagram pages and updating this page every week with new resources to accompany the lessons. Make sure you tune in on Tuesday mornings at 11am on Facebook or 11.30am on Instagram to find out what we’ll be learning about each week and find out what your challenge will be. We’ll be creating new resources each week for Key Stages 1, 2 and 3 so there will be something for everyone aged 5 – 14. \nWe’d absolutely love to see what you get up to so please share your work with us on social media by tagging us @wildocean and using #OceanSchool.",
-    "short_description": "Normally, at this time of year we would be getting ready to take school groups to the greatest classroom on Earth; the beach! Since these are not normal times, we thought we would bring Ocean School to you instead.",
-    "img": "../assets/img/event/Digital-Ocean-School-event.jpg",
-    "start_h": "11:00:00",
-    "end_h": "13:00:00",
-    "date": "2020-04-01",
-    "phone": "+393406756867"
-  },
-  {
-    "title": "Re-invent Plastic",
-    "location": "London, UK",
-    "long_description": "At least every second breath we take comes from the sea. The oceans give us life. In return, we give them plastic. Plastic is a design failure. Once produced, it never dies, and a massive amount of it enters the oceans daily. A lack of imagination got us into this mess. Creativity and collaboration can guide us out. To address the fast-growing threat of marine plastic pollution, Wild Ocean proposes a collaboration space where artists, designers and scientists unleash their creative skills to protect oceans and remote islands, starting with the design of products made from Ocean Plastic — transforming harmful waste into symbols of change. ",
-    "short_description": "At least every second breath we take comes from the sea. The oceans give us life. In return, we give them plastic. Plastic is a design failure.",
-    "img": "../assets/img/event/Digital-Ocean-School-event.jpg",
-    "start_h": "09:00:00",
-    "end_h": "18:00:00",
-    "date": "2020-05-03",
-    "phone": "+394367856867"
-  },
-  {
     "title": "Smart Ocean Planning",
     "location": "Washington, US",
     "long_description": "When you close your eyes and picture the ocean, you probably imagine vast, open waters and peaceful solitude. In reality, the ocean is a busier place than you might imagine. It plays an important role in our lives, from recreational activities to thriving coastal economies. Our ocean and coasts provide jobs for 3 million people in coastal communities across the country. Ocean industries such as commercial and recreational fisheries, tourism and recreation, and marine transportation generate hundreds of billions of dollars every year. The ocean is also a bastion of natural beauty, unparalleled in biodiversity. We must protect the ocean’s long-term health, not only for habitat and marine life that depend on it, but for the humans that have relied on its resources for generations. And all of this requires maintaining a healthy ocean ecosystem, even as human demands and stresses to the ocean are increasing. In this world of increasing stresses and demands on our ocean, it is more important than ever to understand how all of these ocean uses interact with each other and the ocean environment, so that we can get ahead of any problems. For these reasons we dedicate talk sessions to make people aware of it.",
@@ -66,26 +66,15 @@
     "phone": "+394367837457"
   },
   {
-    "title": "Restoring The Gulf of Mexico",
-    "location": "L'Avana, Cuba",
-    "long_description": "The Gulf of Mexico is one of those places—astoundingly beautiful, biodiverse and teeming with life–that captures your heart and your imagination. Whale sharks meander through its waters, bottlenose dolphins jump through its currents and sea turtles nest on its beaches. As one of the most staggeringly productive places on this planet, the Gulf is home to fish, coral, whales, sea turtles, dolphins and thousands of bird species. For nearly 87 million people, the Gulf is home, it’s a way of life and it has its own local cultures and communities. So many people rely on its unique habitats. The course of Gulf history was forever changed with the worst environmental disaster the U.S. has ever seen. The BP Deepwater Horizon oil disaster leaked 210 million gallons of oil and 1.8 million gallons of chemical dispersants into the Gulf, coating, sickening and killing wildlife. The oil disaster also paralyzed the local economy and distressed communities along its shores. The Gulf is now more vulnerable than ever. Today, the Gulf continues to face ongoing threats such as invasive species, extreme storms and flooding, and land loss. Future issues like sea level rise and a growing coastal population add further stress to the people and wildlife who call the Gulf home. Wild Ocean wants help to clean the Gulf.",
-    "short_description": "The Gulf of Mexico is one of those places—astoundingly beautiful, biodiverse and teeming with life–that captures your heart and your imagination.",
-    "img": "../assets/img/event/Restoring-the-gulf-of-mexico-event.jpg",
-    "start_h": "11:00:00",
-    "end_h": "19:00:00",
-    "date": "2020-02-11",
-    "phone": "+394367837457"
-  },
-  {
-    "title": "Confronting Ocean Acidification",
-    "location": "New York, US",
-    "long_description": "Oysters. Salmon. Sharks. Lobster. Coral. What do these animals all have in common? They evoke strong images and associations—memories of slurping down your first oyster, wearing your first pearls, the first time you saw a shark or felt inspired by a magnificent coral reef. These animals and their environments are part of the fabric of our lives—whether we live miles from the ocean or whether we are lucky enough to live right by it. They provide important services, from filtering ocean water to being a primary food source for other animals. They provide livelihoods for millions of people around the world, attract tourists and support whole communities. And they also share something troubling in common—they are all at risk from ocean acidification. As more carbon pollution is absorbed by the ocean, our ocean is becoming more acidic. This affects the way animals grow and survive—which of course hurts the animals that eat them and the people who fish for them. This problem is real, and it’s happening now. Wild Ocean faces this topic in dedicated session.",
-    "short_description": "Oysters. Salmon. Sharks. Lobster. Coral. What do these animals all have in common?",
-    "img": "../assets/img/event/Confronting-Ocean-Acidification-event.jpg",
-    "start_h": "13:00:00",
-    "end_h": "17:00:00",
-    "date": "2020-12-15",
-    "phone": "+394367837457"
+    "title": "Beach Clean",
+    "location": "Holkham beach, UK",
+    "long_description": "Each autumn we brace ourselves against the inevitable mass accumulation of plastic pollution upon our beaches. The combined effects of the sheer volume of plastic entering our oceans each day, the ever strengthening North Atlantic hurricane season and the end of seasonal beach clean operations lead to a ‘Perfect Storm’ of plastic pollution on our beaches. Far from being summer only spaces, our coastal communities enjoy and rely upon their beaches 365 days a year. Taking place from the 17th to the 25th October each year the Beach Clean extends deep into the darker, colder times when, in the absence of summer’s tourist spotlight, the health of our coastlines can slip from the nation’s mind.  It brings those of us who use our beaches year round together; uniting, inspiring and empowering hundreds of coastal communities to take action to remove and recycle many tonnes of marine plastic pollution as we seek to create plastic free coastlines",
+    "short_description": "Each autumn we brace ourselves against the inevitable mass accumulation of plastic pollution upon our beaches.",
+    "img": "../assets/img/event/beach-clean-event.jpg",
+    "start_h": "09:00:00",
+    "end_h": "11:00:00",
+    "date": "2020-10-17",
+    "phone": "+393271877654"
   },
   {
     "title": "Confronting Climate Change",
@@ -97,5 +86,16 @@
     "end_h": "19:00:00",
     "date": "2020-11-25",
     "phone": "+39436784585"
+  },
+  {
+    "title": "Confronting Ocean Acidification",
+    "location": "New York, US",
+    "long_description": "Oysters. Salmon. Sharks. Lobster. Coral. What do these animals all have in common? They evoke strong images and associations—memories of slurping down your first oyster, wearing your first pearls, the first time you saw a shark or felt inspired by a magnificent coral reef. These animals and their environments are part of the fabric of our lives—whether we live miles from the ocean or whether we are lucky enough to live right by it. They provide important services, from filtering ocean water to being a primary food source for other animals. They provide livelihoods for millions of people around the world, attract tourists and support whole communities. And they also share something troubling in common—they are all at risk from ocean acidification. As more carbon pollution is absorbed by the ocean, our ocean is becoming more acidic. This affects the way animals grow and survive—which of course hurts the animals that eat them and the people who fish for them. This problem is real, and it’s happening now. Wild Ocean faces this topic in dedicated session.",
+    "short_description": "Oysters. Salmon. Sharks. Lobster. Coral. What do these animals all have in common?",
+    "img": "../assets/img/event/Confronting-Ocean-Acidification-event.jpg",
+    "start_h": "13:00:00",
+    "end_h": "17:00:00",
+    "date": "2020-12-15",
+    "phone": "+394367837457"
   }
 ]
