@@ -16,15 +16,15 @@ let sqlDb = sqlDbFactory({
   ssl: true,
 });
 
-function setupDataLayer() {
+async function setupDataLayer() {
   console.log("Setting up Data Layer");
-  return eventDbSetup(sqlDb) &&
-         personDbSetup(sqlDb) &&
-         serviceDbSetup(sqlDb) &&
-         servicePersonDbSetup(sqlDb) &&
-         serviceImgDbSetup(sqlDb) &&
-         testimonialDbSetup(sqlDb) &&
-         textDbSetup(sqlDb);
+  await eventDbSetup(sqlDb);
+    await     personDbSetup(sqlDb);
+         await serviceDbSetup(sqlDb);
+         await servicePersonDbSetup(sqlDb);
+         await serviceImgDbSetup(sqlDb);
+         await testimonialDbSetup(sqlDb);
+         await textDbSetup(sqlDb);
 }
 
 module.exports = { database: sqlDb, setupDataLayer };
