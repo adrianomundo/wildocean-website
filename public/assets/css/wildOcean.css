@@ -221,19 +221,19 @@ body {
     margin-bottom: 30px;
 }
 
-/*responsive for desktop*/
+/*responsive for desktop
 .responsive {
     width: 100%;
     height: 100vh;
-}
+}*/
 
-/*
-responsive for mobile
+
+/*responsive for mobile*/
 .responsive {
     width: 100%;
     height: auto;
 }
-*/
+
 
 /* Style all font awesome icons */
 .fa {

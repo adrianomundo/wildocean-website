@@ -19,12 +19,12 @@ let sqlDb = sqlDbFactory({
 async function setupDataLayer() {
   console.log("Setting up Data Layer");
   await eventDbSetup(sqlDb);
-    await     personDbSetup(sqlDb);
-         await serviceDbSetup(sqlDb);
-         await servicePersonDbSetup(sqlDb);
-         await serviceImgDbSetup(sqlDb);
-         await testimonialDbSetup(sqlDb);
-         await textDbSetup(sqlDb);
+  await personDbSetup(sqlDb);
+  await serviceDbSetup(sqlDb);
+  await servicePersonDbSetup(sqlDb);
+  await serviceImgDbSetup(sqlDb);
+  await testimonialDbSetup(sqlDb);
+  await textDbSetup(sqlDb);
 }
 
 module.exports = { database: sqlDb, setupDataLayer };
