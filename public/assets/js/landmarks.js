@@ -77,7 +77,7 @@ function loadNavbar() {
            <li class="nav-item">
                 <form class="form-inline">
                 <i class="fa fa-search" aria-hidden="true" style="color:black"></i>
-                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search..." disabled>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search..." aria-label="Search" disabled>
                </form>
           </li>
         </ul>
