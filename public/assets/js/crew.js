@@ -44,7 +44,7 @@ async function fetchCrew() {
 
     $("#page_button_" + (page+1)).toggleClass('disabled');
 
-    shadowHoverCrew();
+    //shadowHoverCrew();
 
 
 }
@@ -64,7 +64,7 @@ function crewPageToDisplay() {
 
 function displayPerson(person, img_circle) {
     return '<div class="col-lg-4 mb-4">'+
-        '<div class="card h-100 text-center" style="border-radius: 15px"> ' +
+        '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0"> ' +
         '<img class="card-img-top" alt="Missing" src='+ img_circle + ' '+ 'height="250" style="padding-top: 20px">' +
         '<div class="card-body">' +
         '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +

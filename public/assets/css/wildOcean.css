@@ -480,3 +480,21 @@ body {
   font-weight: 600;
   color: #0077C0;
 }
+
+.goup {
+    position: relative;
+    -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+    /*box-shadow: 0 3px 20 0px rgba(0, 0, 0, 0.12);*/
+    border-radius: 1.5rem;
+    -webkit-transition: -webkit-transform 0.3s ease 0s;
+    transition: -webkit-transform 0.3s ease 0s;
+    transition: transform 0.3s ease 0s;
+    transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.goup:hover {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-box-shadow: 0 1rem 3rem rgba(31, 45, 61, .125) !important;
+    box-shadow: 0 1rem 3rem rgba(31, 45, 61, .125) !important;
+}

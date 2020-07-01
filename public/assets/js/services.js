@@ -26,7 +26,7 @@ async function fetchServices() {
 
 function displayServiceCard(service) {
 
-    return `<div class="card lg-4 mb-4" style="border-radius: 10px;">
+    return `<div class="card lg-4 mb-4" style="border-radius: 10px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">
               <div class="row no-gutters">
                   <div class="col-md-5">
                       <img src="`+ service.img[0] +`" class="card-img" alt="service_img">

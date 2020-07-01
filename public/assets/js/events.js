@@ -22,7 +22,7 @@ async function fetchEvents() {
     $('#all-events').append(html);
     $('#all_button').prop("disabled", true);
 
-    shadowHover();
+    //shadowHover();
 
 }
 
@@ -48,7 +48,7 @@ function view(type) {
             displayEvents('07');
         }
     }
-    shadowHover();
+    //shadowHover();
 
 }
 
@@ -91,7 +91,7 @@ async function displayEvents(number) {
     }
 
     $('#all-events').append(html);
-    shadowHover();
+    //shadowHover();
 
 }
 
@@ -122,7 +122,7 @@ return `<div class="row" id="month_view">
 
 function displayEventCard(event) {
     return '<div class="col-lg-4 mb-4" >'+
-        '<div class="card h-100 text-center" style="border-radius: 15px !important;>"> ' +
+        '<div class="card h-100 text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0;"> ' +
         '<img class="card-img-top" alt="Missing" src="'+ event.img +'" style="border-top-left-radius: 15px; border-top-right-radius: 15px">' +
         '<div class="card-body">' +
         '<h4 class="card-title">'+ event.title + '</h4>' +
