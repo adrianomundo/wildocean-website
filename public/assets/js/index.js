@@ -83,7 +83,7 @@ function displayServices(service) {
                   '</div>' +
                   '<div class="col-md-7" style="margin-top: 20px;">' +
                      '<div class="item">' +
-                          '<h3 style="color: #0077C0">'+service_one.title+'</h3>' +
+                          '<h3 class="service-link service-link-ltr" style="color: #0077C0">'+service_one.title+'</h3>' +
                           '<p id="text" style="margin-top: 15px">'+service_one.short_description+'</p>' +
                       '</div>' +
                       '<div class="text-left" style="margin-left: 20px">' +
@@ -99,7 +99,7 @@ function displayServices(service) {
               '<div class="row">' +
                   '<div class="col-md-7" style="margin-top: 20px; text-align: left" >' +
                       '<div class="item">' +
-                          '<h3 style="color: #0077C0">'+ service_two.title +'</h3>' +
+                          '<h3 class="service-link service-link-ltr" style="color: #0077C0">'+ service_two.title +'</h3>' +
                           '<p id="text2" style="margin-top: 15px">'+ service_two.short_description +'</p>' +
                       '</div>' +
                       '<div class="text-left" style="margin-left: 20px; margin-bottom: 70px">' +
