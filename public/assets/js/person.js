@@ -50,7 +50,6 @@ async function fetchPerson() {
     let html = "";
     html += displayOrientation(person[0]);
     html += displayPerson(person[0]);
-    //html += displayNavigation(person[0]);
 
     let ap = "'";
     html += '<div class="row" style="text-align: center">' +
@@ -148,20 +147,19 @@ function displayNavigation(person) {
 
     let next = person.matricola + 1;
     let prev = person.matricola - 1;
-    console.log("prev" + prev + "next" + next);
 
     html += '<div class=container style="text-align: left; justify-content: left; padding-right: 0; padding-left: 0;">' +
         '<div class="row justify-content-between" style="margin: 0; padding-left: 0; padding-right: 0;">' +
-        '<div class="col-4">'+
+        '<div class="col-4" style="padding-left: 0;">'+
         '<a href="person.html?id='+ prev +'" id="prev_link">' +
         '<div class="gt-button prevnext round" id="prev_button">' +
-        '<i class="fa fa-arrow-left" style="font-size: 20px;"></i>' +
+        '<i class="fa fa-arrow-left" style="font-size: 20px; padding-right: 6px;"></i>' +
         '</div></a>' +
         '</div>' +
-        '<div class="col-4 text-right">'+
+        '<div class="col-4 text-right" style="padding-right: 0;">'+
         '<a href="person.html?id='+ next +'" id="next_link">' +
         '<div class="gt-button prevnext round" id="next_button">' +
-        '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 7px"></i>' +
+        '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 6px"></i>' +
         '</div></a>' +
         '</div>' +
         '</div>' +

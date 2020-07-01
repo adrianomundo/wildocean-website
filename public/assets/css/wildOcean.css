@@ -392,6 +392,15 @@ body {
     color: white;
 }
 
+.nav_arrow:hover {
+    color: #2F97EF !important;
+}
+
+.nav_arrow_disabled:hover {
+    color: #ffff !important;
+}
+
+
 .onTopBtn {
   opacity: 0;
   position: fixed;

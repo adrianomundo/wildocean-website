@@ -53,7 +53,7 @@ async function fetchEvent() {
 
     let html = displayOrientation(event[0]);
     html += displayEvent(event[0]);
-    html += displayNavigation(event[0]);
+    html += displayEventDescription(event[0]);
 
     let img_circle = personRounded(person[0].img);
 
@@ -71,8 +71,6 @@ async function fetchEvent() {
     else {
         html += displayEventPeople(person[0], img_circle);
     }
-
-    //html += displayNavigationItems(event[0]);
 
     $('#event').append(html)
     
@@ -109,10 +107,14 @@ function displayOrientation(event) {
 }
 
 function displayEvent(event){
-    return  '<div class="row justify-content-center" style="padding-bottom: 10px; padding-top: 10px">' +
+
+    let html =  '<div class="row justify-content-center" style="padding-bottom: 10px; padding-top: 10px">' +
                 '<div class="col-lg-6">' +
-                    '<img class="img-fluid rounded" alt="Event_img" src=' + event.img + '>' +
-                '</div>' +
+        '<img class="img-fluid rounded" alt="Event_img" src=' + event.img + '>';
+
+    html += displayNavigation(event);
+
+    html +=  '</div>' +
                 '<div class="col-lg-6 text-left">'+
                     '<h2 style="margin-bottom: 25px; margin-left: 10px; margin-top: 10px">' + event.title +'</h2>' +
                     '<div class="date">' +
@@ -139,33 +141,39 @@ function displayEvent(event){
                 '</div>' +
             '</div>';
 
+    return html;
 }
+
+function displayEventDescription(event) {
+
+    return '<div class=container style="text-align: center; justify-content: center;">' +
+        '<p>' + event.long_description + '</p>' +
+        '</div>';
+}
+
 
 function displayNavigation(event) {
 
     let html = "";
 
-    let event_id = event.event_id;
-    let next = event_id + 1;
-    let prev = event_id - 1;
+    let next = event.event_id + 1;
+    let prev = event.event_id - 1;
 
     html += '<div class=container style="text-align: left; justify-content: left;">' +
-        '<div class="row justify-content-between" style="padding-top: 10px">' +
-        '<div class="col-3">'+
+        '<div class="row justify-content-between" style="margin: 0; padding-left: 0; padding-right: 0;">' +
+        '<div class="col-4" style="padding-left: 0;">' +
         '<a href="event.html?id='+ prev +'" id="prev_link">' +
         '<div class="gt-button prevnext round" id="prev_button">' +
-        '<i class="fa fa-arrow-left" style="font-size: 20px;"></i>' +
+        '<i class="fa fa-arrow-left" style="font-size: 20px; padding-right: 6px;"></i>' +
         '</div></a>' +
         '</div>' +
-        '<div class="col-3 text-right">'+
+        '<div class="col-4 text-right" style="padding-right: 0;">'+
         '<a href="event.html?id='+ next +'" id="next_link">' +
         '<div class="gt-button prevnext round" id="next_button">' +
         '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 6px"></i>' +
         '</div></a>' +
         '</div>' +
-        '<div class="col-6 text-right">' + '</div>' +
         '</div>' +
-        '<p>' + event.long_description + '</p>' +
         '</div>';
 
     return html;
