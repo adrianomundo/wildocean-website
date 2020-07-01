@@ -21,19 +21,19 @@ async function fetchServices() {
     }
     $("#services").append(html);
     addIcons();
-
+    fadeInScroll();
 }
 
 function displayServiceCard(service) {
 
-    return `<div class="card lg-4 mb-4" style="border-radius: 10px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">
+    return `<div class="card lg-4 mb-4 fadeIn" style="border-radius: 10px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">
               <div class="row no-gutters">
                   <div class="col-md-5">
                       <img src="`+ service.img[0] +`" class="card-img" alt="service_img">
                   </div>
                   <div class="col-md-7">
                       <div class="card-body">
-                          <h2 class="card-title" style="text-align: left; color: #0077C0; margin-bottom: 15px; margin-left: 30px;">`+ service.title +`</h2>
+                          <h2 class="card-title" style="text-align: left; color: #0077C0; margin-bottom: 15px; margin-left: 30px;"><a class="service-link service-link-ltr" style="color: #0077C0" href="service.html?id=`+service.service_id+`">`+ service.title +`</a></h2>
                           <p class="card-text" style="text-align: left; margin-left: 30px;">`+ service.short_description +`</p>
                           <div class="row nopadding" style="margin-top: 0; margin-left: 0">
                               <div class="col-2">
@@ -63,7 +63,18 @@ function addIcons() {
     $("#icon_2_service_3").addClass("fa fa-trash");
     $("#icon_1_service_4").addClass("fa fa-lock");
     $("#icon_2_service_4").addClass("fa fa-snowflake-o");
+}
 
+function fadeInScroll() {
 
+    $(window).scroll( function(){
+        $('.fadeIn').each( function(){
+            let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+            if( bottom_of_window > bottom_of_object ){
+                $(this).animate({'opacity':'1'},500);
+            }
+        });
+    });
 }
 

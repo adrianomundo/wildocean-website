@@ -200,6 +200,35 @@ body {
     width: 85%;
 }
 
+.service-link {
+
+    text-decoration: none !important;
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+}
+
+.service-link::before {
+    transition: 300ms;
+    height: 3px;
+    content: "";
+    position: absolute;
+    background-color: #0077C0;
+}
+
+.service-link-ltr::before {
+    width: 0%;
+    bottom: 0px;
+}
+
+.service-link-ltr:hover::before {
+    width: 100%;
+}
+
+.fadeIn {
+    opacity: 0;
+}
+
 .sub{
     color: #0077C0 !important;
 }
