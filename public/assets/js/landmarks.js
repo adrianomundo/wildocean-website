@@ -5,6 +5,7 @@
 $(document).ready( () => {
 
     loadNavbar();
+    loadLMore();
     loadFooter();
     getSub();
 
@@ -85,6 +86,16 @@ function loadNavbar() {
   </nav>`;
 
     $("#navbar").append(html);
+}
+
+function loadLMore() {
+
+     let html = `<div id="learn_more" class="scroll">
+                    <a href="#lm_scroll"><span></span>LEARN MORE</a>
+                </div>`;
+
+     $("#learnMore").append(html);
+
 }
 
 function getSub() {

@@ -71,6 +71,12 @@ h2, h1, h4 {
     animation: sdb04 2s infinite;
     box-sizing: border-box;
 }
+.anchor {
+    display: block;
+    height: 92px;
+    margin-top: -92px;
+    visibility: hidden;
+}
 @-webkit-keyframes sdb04 {
     0% {-webkit-transform: rotate(-45deg) translate(0, 0);}
     20% {-webkit-transform: rotate(-45deg) translate(-10px, 10px);}
