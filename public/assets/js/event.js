@@ -197,7 +197,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
         '<div class="row justify-content-center">' +
                 '<div class="col-lg-4 mb-4">'+
                     '<h2 class="custom_heading align-center">Organiser</h2>' +
-                    '<div class="card text-center" style="border-radius: 15px;">' +
+                    '<div class="card text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
                         '<img class="card-img-top" alt="person_img" src="'+ img_circle +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
                             '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
@@ -208,7 +208,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
                 '</div>' +
                 '<div class="col-lg-4 mb-4">'+
                     '<h2 class="custom_heading align-center">Service</h2>' +
-                    '<div class="card text-center" style="border-radius: 15px !important;>">' +
+                    '<div class="card text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0 !important;">' +
                         '<img class="card-img-top" alt="service_img" src="'+ img_circle_2 +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
                             '<h4 class="card-title">'+ service.title + '</h4>' +
@@ -227,7 +227,7 @@ function displayEventPeople(person, img_circle) {
         '<h2 class="custom_heading align-center" style="text-align: center">Organiser</h2>' +
             '<div class="row justify-content-center" style="margin-left: 0">' +
                 '<div class="col-lg-4 mb-4">'+
-                        '<div class="card h-100 text-center" style="border-radius: 15px">' +
+                        '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
                             '<img class="card-img-top" alt="person_img" src="'+img_circle+'" height="250" style="padding-top: 20px">' +
                                 '<div class="card-body">' +
                                 '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +

@@ -109,7 +109,7 @@ function displayOrientation(person) {
 // display person information
 function displayPerson(person) {
     let html = '<div class="row justify-content-center">' +
-        '<div class="col-6">' +
+        '<div class="col-lg-6">' +
     '<img class="img-fluid" alt="Person_img" src=' + person.img + '>';
 
     html += displayNavigation(person);
@@ -190,7 +190,7 @@ function fixNavigationLink(person, max_id) {
 // display services in which the person is involved
 function displayPersonServices(service) {
     return  '<div class="col-lg-5 mb-4">' +
-            '<div class="card h-100 text-center" style="border-radius: 15px">' +
+            '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
             '<img class="card-img-top" src='+ serviceRounded(service.img[0]) +' '+ 'height="250" style="padding-top: 20px" alt="Missing">' +
             '<div class="card-body">' +
             '<h4 class="card-title">' + service.title + '</h4>' +
