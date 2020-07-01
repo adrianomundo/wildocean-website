@@ -22,6 +22,8 @@ async function fetchEvents() {
     $('#all-events').append(html);
     $('#all_button').prop("disabled", true);
 
+    shadowHover();
+
 }
 
 function view(type) {
@@ -46,6 +48,8 @@ function view(type) {
             displayEvents('07');
         }
     }
+    shadowHover();
+
 }
 
 function getMonth(month) {
@@ -86,7 +90,9 @@ async function displayEvents(number) {
             '</div>';
     }
 
-    $('#all-events').append(html)
+    $('#all-events').append(html);
+    shadowHover();
+
 }
 
 function monthView() {
@@ -146,6 +152,17 @@ function checkMonth(event, number) {
     console.log(number);
     if (month1 === number || number === "00") return 1;
     else return 0;
+}
+
+function shadowHover() {
+
+    $(".card").hover( function() {
+            $(this).addClass('shadow-lg').css('cursor','pointer');
+        }, function() {
+            $(this).removeClass('shadow-lg');
+        }
+    );
+
 }
 
 // utils

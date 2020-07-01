@@ -22,7 +22,6 @@ async function fetchServices() {
     $("#services").append(html);
     addIcons();
 
-
 }
 
 function displayServiceCard(service) {
@@ -67,3 +66,4 @@ function addIcons() {
 
 
 }
+

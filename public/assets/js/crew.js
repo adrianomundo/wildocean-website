@@ -44,6 +44,9 @@ async function fetchCrew() {
 
     $("#page_button_" + (page+1)).toggleClass('disabled');
 
+    shadowHoverCrew();
+
+
 }
 
 function crewPageToDisplay() {
@@ -91,6 +94,16 @@ function displayNavigationPages(pages_num) {
     return html;
 }
 
+function shadowHoverCrew() {
+
+    $(".card").hover( function() {
+            $(this).addClass('shadow-lg').css('cursor','pointer');
+        }, function() {
+            $(this).removeClass('shadow-lg');
+        }
+    );
+
+}
 
 /*function displayNavigationPages(pages_num) {
 
