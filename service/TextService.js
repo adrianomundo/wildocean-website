@@ -45,6 +45,7 @@ exports.getTextOfPage = function(page) {
  * returns List
  **/
 exports.getTexts = function(limit, offset) {
-  return sqlDb.select().table("text");
+  if (!offset) offset = 0;
+  return sqlDb.select().table("text").limit(limit).offset(offset);
 };
 

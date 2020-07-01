@@ -8,21 +8,54 @@ $(document).ready( function() {
 
 async function fetchCrew() {
 
+    let page = crewPageToDisplay();
+    console.log(page);
+
     let people_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person"));
     if (!people_response.ok) {
         console.log("HTTPS API Error, status = " + people_response.status);
-        location.replace("../assets/pages/404.html");
+        //location.replace("../pages/404.html");
     }
     let people = await people_response.json();
 
-    let html = '<div class="row">';
-    for (let i = 0; i < people.length; i++) {
-        let img_circle = personRounded(people[i].img);
-        html += displayPerson(people[i], img_circle);
-    }
+    let people_number = people.length;
+    let people_per_page = 6;
+    let pages_number = Math.ceil(people_number / people_per_page);
 
+    let html = '<div class="row">';
+
+    let offset = page * people_per_page;
+    let people_page_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person?" + "limit=" + people_per_page + "&offset=" + offset));
+    if (!people_page_response.ok) {
+        console.log("HTTPS API Error, status = " + people_page_response.status);
+        //location.replace("../pages/404.html");
+    }
+    let people_page = await people_page_response.json();
+
+    for (let i = 0; i < people_page.length; i++) {
+        let img_circle = personRounded(people_page[i].img);
+        html += displayPerson(people_page[i], img_circle);
+    }
     html += '</div>'
-    $('#people-row').append(html)
+
+    html += displayNavigationPages(pages_number);
+
+    $('#people-row').append(html);
+
+    $("#page_button_" + (page+1)).toggleClass('disabled');
+
+}
+
+function crewPageToDisplay() {
+
+    console.log("Getting page to display");
+    let searchParams = new URLSearchParams(window.location.search);
+    let page_number = parseInt(searchParams.get("page"));
+    if (isNaN(page_number)) {
+        page_number = 1;
+    }
+    console.log(page_number);
+    return page_number - 1;
 
 }
 
@@ -40,6 +73,43 @@ function displayPerson(person, img_circle) {
         '</div>' +
         '</div>';
 }
+
+function displayNavigationPages(pages_num) {
+
+    let html = '<div class="row justify-content-end" style="text-align: right; padding-right: 35px; padding-top: 0" >' +
+                    '<nav aria-label="crew_pages">' +
+                        '<ul class="pagination pagination-md">';
+    for (let i = 1; i <= pages_num; i++) {
+        if (i == 1) {
+            html += '<li class="page-item" id="page_button_1"><a class="page-link" id="page_link_1" style="color: #0077C0" href="crew.html">'+ i +'</a></li>';
+        }
+        else {
+            html += '<li class="page-item" id="page_button_'+ i +'"><a class="page-link" id="page_link_'+ i +'" style="color: #0077C0" href="crew.html?page='+ i +'">'+ i +'</a></li>';
+        }
+    }
+    html += '</ul>' + '</nav>' + '</div>';
+    return html;
+}
+
+
+/*function displayNavigationPages(pages_num) {
+
+    let html = "";
+
+    html += '<div class="row justify-content-end" style="text-align: right; padding-right: 35px; padding-top: 0" >' +
+        '<nav aria-label="crew_pages">' +
+        '  <ul class="pagination pagination-md">' +
+        '    <li class="page-item disabled">' +
+        '      <a class="page-link" href="#" tabindex="-1">1</a>' +
+        '    </li>' +
+        '    <li class="page-item"><a class="page-link" style="color: #0077C0" href="#">2</a></li>' +
+        '    <li class="page-item"><a class="page-link" style="color: #0077C0" href="#">3</a></li>' +
+        '  </ul>' +
+        '</nav>' +
+        '</div>';
+
+    return html;
+}*/
 
 // utils
 function personRounded(img) {

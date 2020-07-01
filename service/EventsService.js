@@ -51,7 +51,8 @@ exports.getEventbyId = function(event_id) {
  * returns List
  **/
 exports.getEvents = function(limit, offset) {
-  return sqlDb.select().table("event");
+  if (!offset) offset = 0;
+  return sqlDb.select().table("event").limit(limit).offset(offset);
 };
 
 

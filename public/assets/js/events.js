@@ -11,7 +11,7 @@ async function fetchEvents() {
     let events_response = (await fetch("https://wildocean.herokuapp.com/api/v1/events"));
     if (!events_response.ok) {
         console.log("HTTPS API Error, status = " + events_response.status);
-        location.replace("../assets/pages/404.html");
+        location.replace("../pages/404.html");
     }
     let events = await events_response.json();
 

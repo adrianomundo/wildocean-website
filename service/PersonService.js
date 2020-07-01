@@ -51,6 +51,7 @@ exports.getEventbyPerson = function(matricola) {
  * returns List
  **/
 exports.getPeople = function(limit,offset) {
+  if (!offset) offset = 0;
   return sqlDb.select().table("person").limit(limit).offset(offset);
 };
 

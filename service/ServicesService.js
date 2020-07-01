@@ -120,8 +120,8 @@ exports.getServicebyId = async function (service_id) {
  * returns List
  **/
 exports.getServices = async function(limit, offset) {
-
-  let service = await sqlDb.select().table("service");
+  if (!offset) offset = 0;
+  let service = await sqlDb.select().table("service").limit(limit).offset(offset);
   for (let i = 0; i < service.length; i++) {
     let images = await sqlDb.select("imgpath").from("service_img").where("service_id", service[i].service_id);
     let imgArray = [];

@@ -62,5 +62,8 @@ function addIcons() {
     $("#icon_2_service_2").addClass("fa fa-life-ring");
     $("#icon_1_service_3").addClass("fa fa-tint");
     $("#icon_2_service_3").addClass("fa fa-trash");
+    $("#icon_1_service_4").addClass("fa fa-lock");
+    $("#icon_2_service_4").addClass("fa fa-snowflake-o");
+
 
 }
