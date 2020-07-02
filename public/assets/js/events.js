@@ -177,7 +177,7 @@ function displayEventCard(event) {
         '<div class="card h-100 text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0;"> ' +
         '<img class="card-img-top" alt="'+event.title+ ' " src="'+ event.img +'" style="border-top-left-radius: 15px; border-top-right-radius: 15px">' +
         '<div class="card-body">' +
-        '<h4 class="card-title">'+ event.title + '</h4>' +
+        '<h4 class="card-title m4_text" style="color: #0077C0">'+ event.title + '</h4>' +
         '<div class="date_event">' +
         '<i class="fa fa-calendar" style="font-size: 20px;"></i>' +
         '<p style="display: inline-block">' + event.date.substr(0, 10) + '</p>' +

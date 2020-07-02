@@ -210,7 +210,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
                     '<div class="card text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
                         '<img class="card-img-top" alt="person_img" src="'+ img_circle +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
-                            '<h2 class="card-title m4_text">'+ person.name + ' '+ person.surname + '</h2>' +
+                            '<h2 class="card-title m4_text" style="color: #0077C0">'+ person.name + ' '+ person.surname + '</h2>' +
                             '<p class="card-text">' + person.role + '</p>' +
                             '<a href="person.html?id='+ person.matricola +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>SEE MORE</b></span></a>' +
                         '</div>' +
@@ -221,7 +221,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
                     '<div class="card text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0 !important;">' +
                         '<img class="card-img-top" alt="service_img" src="'+ img_circle_2 +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
-                            '<h2 class="card-title m4_text">'+ service.title + '</h2>' +
+                            '<h2 class="card-title m4_text" style="color: #0077C0">'+ service.title + '</h2>' +
                             '<p class="card-text">'+space+'</p>' +
                             '<a href="service.html?id='+ service.service_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
                         '</div>' +
@@ -240,7 +240,7 @@ function displayEventPeople(person, img_circle) {
                         '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
                             '<img class="card-img-top" alt="person_img" src="'+img_circle+'" height="250" style="padding-top: 20px">' +
                                 '<div class="card-body">' +
-                                '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
+                                '<h2 class="card-title m4_text" style="color: #0077C0">'+ person.name + ' '+ person.surname + '</h2>' +
                                 '<p class="card-text">' + person.role + '</p>' +
                                 '<a href="person.html?id='+ person.matricola +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>SEE MORE</b></span></a>' +
                                 '</div>' +
