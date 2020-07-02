@@ -242,6 +242,21 @@ body {
     width: 85%;
 }
 
+.navbar-toggler{
+outline:none !important;
+transition: background-color .3s ease-out;
+}
+
+.navbar-toggler:hover {
+ transition: background-color .3s ease-out;
+ background-color: rgba(0,119,192,.10) !important;
+}
+
+.navbar-toggler:active {
+ transition: background-color .3s ease-out;
+ background-color: rgba(0,119,192,.30) !important;
+}
+
 .service-link {
 
     text-decoration: none !important;
