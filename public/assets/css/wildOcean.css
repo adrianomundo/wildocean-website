@@ -14,6 +14,11 @@ h2, h1, h4 {
     font-weight: 600;
 }
 
+.m5_text {
+    font-weight: 500;
+    font-size: 18px;
+}
+
 .sliderScroll a {
     position: absolute;
     bottom: 30px;
@@ -79,7 +84,7 @@ h2, h1, h4 {
     transform: translate(0, -50%);
     color: #fff;
     transition: opacity .3s;
-    color: black;
+    color: transparent;
 /*
     background-color: rgba(255,255,255,.20);
     border-radius: 10%;
@@ -99,8 +104,8 @@ h2, h1, h4 {
     width: 24px;
     height: 24px;
     margin-left: -12px;
-    border-left: 3px solid #000000;
-    border-bottom: 3px solid #000000;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-animation: sdb04 2s infinite;
@@ -250,7 +255,9 @@ transition: background-color .3s ease-out;
 .navbar-toggler:active {
  background-color: rgba(0,119,192,.15) !important;
 }
-
+.label{
+    display: none;
+}
 .service-link {
 
     text-decoration: none !important;

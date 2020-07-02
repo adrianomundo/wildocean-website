@@ -17,7 +17,7 @@ function loadFooter() {
     <div class="container-full" >
         <div class="row">
             <div class="col md-6">
-                <img src="../assets/img/logo.png" alt="Logo"  width="110" height="100">
+                <img src="../assets/img/logo.png" alt="LogoFoot"  width="110" height="100">
             </div>
             <div class="col md-6">
                 <p><span style="font-size: 13px">Via Edoardo Sagrada,46</span></p>
@@ -54,7 +54,7 @@ function loadFooter() {
 function loadNavbar() {
 
     let html = `<nav class="navbar fixed-top navbar-expand-custom navbar- bg-white navbar-light" role="navigation" aria-label="main navigation">
-        <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" alt="Logo" width="100px" height="auto"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" alt="LogoNav" width="100px" height="auto"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
