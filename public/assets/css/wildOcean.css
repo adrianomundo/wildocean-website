@@ -9,7 +9,7 @@ html {
     text-align: center;
 }
 
-h2, h1, h4 {
+h2, h1, h3 {
     color:  #0077C0 !important;
     font-weight: 600;
 }
@@ -33,7 +33,7 @@ h2, h1, h4 {
     transform: translate(0, -50%);
     color: #fff;
     transition: opacity .3s;
-    color: black;
+    color: transparent;
     /*
         background-color: rgba(255,255,255,.20);
         border-radius: 10%;
@@ -412,9 +412,9 @@ transition: background-color .3s ease-out;
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-    color: white;
+    color: white !important;
     text-decoration: none;
-    background-color: #0077C0;
+    background-color: #0077C0 !important;
 }
 
 .dropdown-item.active, .dropdown-item:active {

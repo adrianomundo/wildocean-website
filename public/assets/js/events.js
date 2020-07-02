@@ -63,18 +63,18 @@ function monthView() {
         aria-haspopup="true" aria-expanded="false" style="font-size: 17px;
         font-weight: 600;">MONTH</button>
         <div class="dropdown-menu" style="color: #0077C0">
-        <a class="dropdown-item" onclick="getMonth('01')" href="#01">January</a>
-        <a class="dropdown-item" onclick="getMonth('02')" href="#02">February</a>
-        <a class="dropdown-item" onclick="getMonth('03')" href="#03">March</a>
-        <a class="dropdown-item" onclick="getMonth('04')" href="#04">April</a>
-        <a class="dropdown-item" onclick="getMonth('05')" href="#05">May</a>
-        <a class="dropdown-item" onclick="getMonth('06')" href="#06">June</a>
-        <a class="dropdown-item" onclick="getMonth('07')" href="#07">July</a>
-        <a class="dropdown-item" onclick="getMonth('08')" href="#08">August</a>
-        <a class="dropdown-item" onclick="getMonth('09')" href="#09">September</a>
-        <a class="dropdown-item" onclick="getMonth('10')" href="#10">October</a>
-        <a class="dropdown-item" onclick="getMonth('11')" href="#11">November</a>
-        <a class="dropdown-item" onclick="getMonth('12')" href="#12">December</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('01')" >January</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('02')" >February</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('03')" >March</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('04')" >April</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('05')" >May</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('06')" >June</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('07')" >July</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('08')" >August</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('09')" >September</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('10')" >October</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('11')" >November</a>
+        <a class="dropdown-item" style="color: black" onclick="getMonth('12')" >December</a>
         </div>
         </div>
         <div class="col-xs-1 text-right" style="padding-right: 15px;">
@@ -175,7 +175,7 @@ function displayEventCard(event) {
 
     return '<div class="col-lg-4 mb-4" >'+
         '<div class="card h-100 text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0;"> ' +
-        '<img class="card-img-top" alt="Missing" src="'+ event.img +'" style="border-top-left-radius: 15px; border-top-right-radius: 15px">' +
+        '<img class="card-img-top" alt="'+event.title+ ' " src="'+ event.img +'" style="border-top-left-radius: 15px; border-top-right-radius: 15px">' +
         '<div class="card-body">' +
         '<h4 class="card-title">'+ event.title + '</h4>' +
         '<div class="date_event">' +

@@ -116,7 +116,7 @@ function displayEvent(event){
 
     html +=  '</div>' +
                 '<div class="col-lg-6 text-left">'+
-                    '<h2 style="margin-bottom: 25px; margin-left: 10px; margin-top: 10px">' + event.title +'</h2>' +
+                    '<h1 style="margin-bottom: 25px; margin-left: 10px; margin-top: 10px">' + event.title +'</h1>' +
                     '<div class="date">' +
                         '<i class="fa fa-calendar" style="font-size: 20px;"></i>' +
                         '<p style="display: inline-block">' + correctDate(event.date) + '</p>' +
@@ -165,12 +165,14 @@ function displayNavigation(event) {
         '<a href="event.html?id='+ prev +'" id="prev_link">' +
         '<div class="gt-button prevnext round" id="prev_button">' +
         '<i class="fa fa-arrow-left" style="font-size: 20px; padding-right: 6px;"></i>' +
+        '<span class="label">NavPrevButton</span>' +
         '</div></a>' +
         '</div>' +
         '<div class="col-4 text-right" style="padding-right: 0;">'+
         '<a href="event.html?id='+ next +'" id="next_link">' +
         '<div class="gt-button prevnext round" id="next_button">' +
         '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 6px"></i>' +
+        '<span class="label">NavNextButton</span>' +
         '</div></a>' +
         '</div>' +
         '</div>' +
@@ -208,7 +210,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
                     '<div class="card text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
                         '<img class="card-img-top" alt="person_img" src="'+ img_circle +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
-                            '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
+                            '<h2 class="card-title m4_text">'+ person.name + ' '+ person.surname + '</h2>' +
                             '<p class="card-text">' + person.role + '</p>' +
                             '<a href="person.html?id='+ person.matricola +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>SEE MORE</b></span></a>' +
                         '</div>' +
@@ -219,7 +221,7 @@ function displayEventAndService(person, img_circle, service, img_circle_2) {
                     '<div class="card text-center goup" style="border-radius: 15px !important; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0 !important;">' +
                         '<img class="card-img-top" alt="service_img" src="'+ img_circle_2 +'" height="250" style="padding-top: 20px">' +
                         '<div class="card-body">' +
-                            '<h4 class="card-title">'+ service.title + '</h4>' +
+                            '<h2 class="card-title m4_text">'+ service.title + '</h2>' +
                             '<p class="card-text">'+space+'</p>' +
                             '<a href="service.html?id='+ service.service_id +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
                         '</div>' +

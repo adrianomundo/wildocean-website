@@ -79,7 +79,7 @@ function displayServices(service) {
     return '<div class="container nopadding" style="text-align: left">' +
               '<div class="row">' +
                   '<div class="col-md-5">' +
-                      '<img class="img-fluid" alt="img_service_2" src="'+service_one.img[0].slice(3)+'">' +
+                      '<img class="img-fluid" alt="'+service.title+ '" src="'+service_one.img[0].slice(3)+'">' +
                   '</div>' +
                   '<div class="col-md-7" style="margin-top: 20px;">' +
                      '<div class="item">' +

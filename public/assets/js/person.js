@@ -116,7 +116,7 @@ function displayPerson(person) {
     html +=
         '</div>' +
         '<div class="col-lg-6 text-left">'+
-        '<h2>' +  person.name + ' ' + person.surname +'</h2>' +
+        '<h1>' +  person.name + ' ' + person.surname +'</h1>' +
         '<p><b>' + person.role + '</b></p>' +
         '<p>' + person.description + ' </p>' +
         '<div class="phone">' +'' +
@@ -154,12 +154,14 @@ function displayNavigation(person) {
         '<a href="person.html?id='+ prev +'" id="prev_link">' +
         '<div class="gt-button prevnext round" id="prev_button">' +
         '<i class="fa fa-arrow-left" style="font-size: 20px; padding-right: 6px;"></i>' +
+        '<span class="label">NavPrevButton</span>' +
         '</div></a>' +
         '</div>' +
         '<div class="col-4 text-right" style="padding-right: 0;">'+
         '<a href="person.html?id='+ next +'" id="next_link">' +
         '<div class="gt-button prevnext round" id="next_button">' +
         '<i class="fa fa-arrow-right" style="font-size: 20px; padding-left: 6px"></i>' +
+        '<span class="label">NavNextButton</span>' +
         '</div></a>' +
         '</div>' +
         '</div>' +
@@ -189,9 +191,9 @@ function fixNavigationLink(person, max_id) {
 function displayPersonServices(service) {
     return  '<div class="col-lg-5 mb-4">' +
             '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0">' +
-            '<img class="card-img-top" src='+ serviceRounded(service.img[0]) +' '+ 'height="250" style="padding-top: 20px" alt="Missing">' +
+            '<img class="card-img-top" src='+ serviceRounded(service.img[0]) +' '+ 'height="250" style="padding-top: 20px" alt="'+ service.title + service.service_id + '">' +
             '<div class="card-body">' +
-            '<h4 class="card-title">' + service.title + '</h4>' +
+            '<h2 class="card-title" style="font-size: 24px">' + service.title + '</h2>' +
             '<p class="card-text">' + service.short_description + '</p>' +
             '<a href="service.html?id=' + service.service_id + '" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
             '</div>' +
@@ -213,7 +215,7 @@ function displayEvent(event) {
                 '</div>'+
         '      </div>' +
         '      <div class="col-md-5">' +
-        '         <img class="img-fluid" src="'+ event.img +'" alt="Missing">' +
+        '         <img class="img-fluid" src="'+ event.img +'" alt="'+ event.title +'">' +
         '      </div>' +
         '      </div>' +
         '  </div>' +

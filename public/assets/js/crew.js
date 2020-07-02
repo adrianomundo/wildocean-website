@@ -65,9 +65,9 @@ function crewPageToDisplay() {
 function displayPerson(person, img_circle) {
     return '<div class="col-lg-4 mb-4">'+
         '<div class="card h-100 text-center goup" style="border-radius: 15px; -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12); border: 0"> ' +
-        '<img class="card-img-top" alt="Missing" src='+ img_circle + ' '+ 'height="250" style="padding-top: 20px">' +
+        '<img class="card-img-top" alt="'+ person.name + person.surname + '" src='+ img_circle + ' '+ 'height="250" style="padding-top: 20px">' +
         '<div class="card-body">' +
-        '<h4 class="card-title">'+ person.name + ' '+ person.surname + '</h4>' +
+        '<h2 class="card-title" style="font-size: 24px">'+ person.name + ' '+ person.surname + '</h2>' +
         '<p class="card-text">' + person.role + '</p>' +
         '<div class="text-center" style="margin-top: 20px;">' +
         '<a href="person.html?id='+ person.matricola +'" class="btn btn-outline-primary" role="button"><span style="font-size: 14px"><b>FIND OUT MORE</b></span></a>' +
