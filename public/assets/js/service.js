@@ -110,7 +110,7 @@ function displayServiceSlider(imgArray) {
         '<a class="carousel-control-next" href="#carousel_service" role="button" data-slide="next">' +
         '<span class="carousel-control-next-icon" aria-hidden="true"></span>' +
         '<span class="sr-only">Next</span>' +
-        '</a>' + '</div>';
+        '</a>' + '</div>' + '<section id="lm_scroll" class="anchor"></section>';
     return html;
 }
 
