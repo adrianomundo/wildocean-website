@@ -512,6 +512,9 @@ body {
     .scroll a {
       display: inline-block;
     }
+    .sliderScroll a {
+        left: 47.5%;
+    }
     #home-im1 {
     width: 85%;
     }
@@ -532,6 +535,9 @@ body {
     }
     #home-text1 {
       padding-top: 10px;
+    }
+    .sliderScroll a {
+        left: 40%;
     }
 }
 
