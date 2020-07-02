@@ -54,8 +54,8 @@
 
   <!-- HOME SLIDER SECTION -->
   <section id="home">
-      <div class="bg">
-          <img src="assets/img/Home.jpg" alt="Home" class="responsive">
+      <div class="bg imgbox">
+          <img src="assets/img/Home.jpg" alt="Home" class="responsive center-fit">
           <div id="learnMore"></div>
       </div>
   </section>
@@ -74,7 +74,7 @@
               <div class="col-lg-6">
                   <img src="assets/img/home-image2.jpg" alt="work" class="responsive"  id="home-im1">
               </div>
-              <div class="col-lg-6 text-center" style="padding-top: 200px">
+              <div class="col-lg-6 text-center" id="home-text1">
                   <div class="container">
                       <div class="item">
                           <h2 class="custom_heading align-center">SUPPORT OUR WORK</h2>
@@ -165,27 +165,6 @@
   <script src="assets/js/landmarks.js"></script>
   <script src="assets/js/script.js"></script>
 
-    <script>
-//Get the button
-var mybutton = document.getElementById("onTopBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.opacity = "1";
-  } else {
-    mybutton.style.opacity = "0";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
 </body>
 
 </html>

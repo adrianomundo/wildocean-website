@@ -91,13 +91,13 @@ function displayServiceSlider(imgArray) {
     html += '<div class="carousel-inner" role="listbox">' +
         '<div class="carousel-item active">' +
         //<div class="carousel-background"><img src="assets/img/intro-carousel/1.jpg" alt=""></div>
-        '<div class="carousel-background"><img src=" ' + imgArray[0] + '" alt="service_first_img" alt=""></div>' +
+        '<div class="carousel-background imgbox"><img src=" ' + imgArray[0] + '" alt="service_first_img" alt="" class="responsive center-fit"></div>' +
         //'<img class="img-slider" src=" ' + imgArray[0] + '" alt="service_first_img">' +
         '</div>';
     for (let i = 1; i < imgArray.length; i++) {
         html += '<div class="carousel-item">' +
             //'<img class="img-slider" src="' + imgArray[i] + '" alt="service_second_img">' +
-            '<div class="carousel-background"><img src=" ' + imgArray[i] + '" alt="service_first_img" alt=""></div>' +
+            '<div class="carousel-background imgbox"><img src=" ' + imgArray[i] + '" alt="service_first_img" alt="" class="responsive center-fit"></div>' +
             '</div>' +
             '</div>';
     }

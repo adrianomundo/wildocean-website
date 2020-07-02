@@ -10,7 +10,6 @@ $(document).ready( () => {
     if (title == 'Wild Ocean | About') {
     numbCounter();
     }
-//    upButton();
 
 });
 
@@ -49,22 +48,22 @@ $(window).on('scroll', function() {
 
 }
 
-//function upButton() {
-//
-//var mybutton = $("#onTopBtn");
-//
-//$(window).onscroll(function() {
-//
-//  if (document.body.scrollTop > $("#learn_more").offset().top || document.documentElement.scrollTop > $("#learn_more").offset().top) {
-//    mybutton.style.display = "block";
-//  } else {
-//    mybutton.style.display = "none";
-//  }
-//})
-//
-//}
-//
-//function topFunction() {
-//  document.body.scrollTop = 0;
-//  document.documentElement.scrollTop = 0;
-//}
+//goes on top of the page
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+//effect of the scroll-up blue button
+var mybutton = document.getElementById("onTopBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.opacity = "1";
+  } else {
+    mybutton.style.opacity = "0";
+  }
+}
