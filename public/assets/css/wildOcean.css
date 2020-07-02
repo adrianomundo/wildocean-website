@@ -244,12 +244,11 @@ body {
 
 .navbar-toggler{
 outline:none !important;
-background-color: rgba(0,119,192,.15) !important;
 transition: background-color .3s ease-out;
 }
 
 .navbar-toggler:active {
- background-color: rgba(0,119,192,.35) !important;
+ background-color: rgba(0,119,192,.15) !important;
 }
 
 .service-link {
