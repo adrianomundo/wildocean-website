@@ -101,7 +101,9 @@ function displayServiceSlider(imgArray) {
             '</div>' +
             '</div>';
     }
-    html += '<a class="carousel-control-prev" href="#carousel_service" role="button" data-slide="prev">' +
+    html += '<div id="learn_more" class="sliderScroll">' + '<a href="#lm_scroll">' +
+        '<span></span>' + 'LEARN MORE</a>' + '</div>'+
+        '<a class="carousel-control-prev" href="#carousel_service" role="button" data-slide="prev">' +
         '<span class="carousel-control-prev-icon" aria-hidden="true"></span>' +
         '<span class="sr-only">Previous</span>' +
         '</a>' +
