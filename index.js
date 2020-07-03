@@ -43,6 +43,12 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the static assets 
   app.use(serveStatic(__dirname + "/public"));
 
+  // Set a redirect from backend swagger ui to docs
+  app.use('/backend/swaggerui', function redirect(req, res, next) {
+      res.writeHead(301, {Location: "/docs"});
+      res.end();
+  });
+
   // Set the cross origin
   app.use(function(req, res, next) {
       res.setHeader("Access-Control-Allow-Origin", "*");
