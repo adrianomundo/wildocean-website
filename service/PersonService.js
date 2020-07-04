@@ -53,6 +53,7 @@ exports.getEventbyPerson = function(matricola) {
 exports.getPeople = function(limit,offset) {
   if (!offset) offset = 0;
   return sqlDb.select().table("person").limit(limit).offset(offset);
+
 };
 
 
@@ -64,7 +65,11 @@ exports.getPeople = function(limit,offset) {
  * returns Person
  **/
 exports.getPersonbyMatricola = function(matricola) {
-  return sqlDb.select().table("person").where("matricola", matricola);
+  let response = sqlDb.select().table("person").where("matricola", matricola);
+  if (response.length > 0) {
+    return response
+  }
+  else respondWithCode(404, "People not found")
 };
 
 
