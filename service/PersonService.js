@@ -64,10 +64,10 @@ exports.getPeople = function(limit,offset) {
  * matricola Long matricola  of the person to return
  * returns Person
  **/
-exports.getPersonbyMatricola = function(matricola) {
-  let response = sqlDb.select().table("person").where("matricola", matricola);
+exports.getPersonbyMatricola = async function(matricola) {
+  let response = await sqlDb.select().table("person").where("matricola", matricola);
   if (response.length > 0) {
-    return response
+    return response;
   }
   else respondWithCode(404, "People not found")
 };
