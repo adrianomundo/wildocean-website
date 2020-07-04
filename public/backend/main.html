@@ -1,0 +1,118 @@
+<h1 id="documentation-of-the-backend-part">Documentation of the Backend part</h1>
+<blockquote>
+<p>Deliverable D1</p>
+</blockquote>
+<h2 id="general-group-information">General group information</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Member n.</th>
+<th align="left">Role</th>
+<th align="left">First name</th>
+<th align="left">Last Name</th>
+<th align="left">Matricola</th>
+<th align="left">Email address</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">administrator</td>
+<td align="left">Dario</td>
+<td align="left">Miceli</td>
+<td align="left">928262</td>
+<td align="left">dario.miceli@mail.polimi.it</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">member</td>
+<td align="left">Adriano</td>
+<td align="left">Mundo</td>
+<td align="left">944684</td>
+<td align="left">adriano.mundo@mail.polimi.it</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">member</td>
+<td align="left">Salvatore</td>
+<td align="left">Fadda</td>
+<td align="left">944786</td>
+<td align="left">dario.miceli@mail.polimi.it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="links-to-other-deliverables">Links to other deliverables</h2>
+<ul>
+<li>Deliverable D0: the web application is accessible at <a href="https://wildocean.herokuapp.com">this address</a>.</li>
+<li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://wildocean.herokuapp.com/backend/spec.yaml">this address</a>.</li>
+<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https://wildocean.herokuapp.com/backend/swaggerui">this address</a>.</li>
+<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://wildocean.com/backend/app.zip">this address</a>.</li>
+<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/dariomiceli3/WildOcean">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors.</li>
+</ul>
+<h2 id="specification">Specification</h2>
+<h3 id="web-architecture">Web Architecture</h3>
+<p>The application was designed with a three tier architecturec, composed of a Presentation Tier, an Application Tier and a Data Tier which represent the three main actors of our architecture; they interact each other as shown in the picture below.</p>
+<p>The Presentation Tier shows all the information to the user as HTML pages (static or dynamic). All the pages are rendered client side since they use an API schema.<br />The Application Tier interacts between the two responding to request to API endpoint received by the client and retrieving data from the database.<br />The Data Tier represents the DBMS and the storage part, in our case implemented with PostgreSQL.</p>
+<div class="figure">
+<img src="3_tier.png" alt="Three tier architecture" /><p class="caption">Three tier architecture</p>
+</div>
+<h3 id="api">API</h3>
+<h4 id="rest-compliance">REST compliance</h4>
+<p>We developed our RESTful API in compliance with the REST Architectural Constraints: - Client-server architecture: everything is based on the separation of concerns; therefore, the client can interact with the server through the public endpoints and they can be deployed on different machines because they work independently. - Statelessness: no client context is stored on the server between requests and each request from any client contains all the information necessary to serve the request. No state information are saved. - Cacheability: it has not been implemented a caching mechanism, everything that is cached depend upon thr browser. - Code on demand: the server serve the request of the client responding with static data available in the DB as JSON files. - Uniform Interface: it is fundamental as decouples the architecture; individual resources are identified in requests using URI. The resources are separated from the representation returned to the client. The server send its data in form of JSON files without exposing the internal representation. Each message includes enough information to describe how to process the message.</p>
+<h4 id="openapi-resource-models">OpenAPI Resource models</h4>
+<ul>
+<li>Events: it is the representation of an event organized by the association. It is represented by the ID, title, location, date, time, short and long description, the contact phone and the url of the associated image</li>
+<li>Person: it is the representation of a person which is part of the association. It is represented by the matricola code, name, surname, a description, role, phone, mail, nationality,url of the associated image and the ID of the event which is organising.</li>
+<li>Services: it is the representation of a service provided by the association. It is represented by the ID, title, pratical information, a short and long description, the event ID of the associated event and a list of the images' url</li>
+<li>Testimonials: it is the representation of a testimonial of the association. It is represented by the name, surname of the testimonial and his/her review.</li>
+<li>Text: it is the representation of a text of the website, identified by page, section and the txt</li>
+</ul>
+<h3 id="data-model">Data model</h3>
+<p>In this section there are the representation of the ER diagram and the Logical Design used in our application.</p>
+<div class="figure">
+<img src="er_design.png" alt="ER" /><p class="caption">ER</p>
+</div>
+<div class="figure">
+<img src="logic_design.png" alt="Logical design" /><p class="caption">Logical design</p>
+</div>
+<p>There's a 1 to 1 correspondence between the OpenaAPI Data Models and the relation tables of our database, except for the list of images' url of services which are stored in a different table.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="tools-used">Tools used</h3>
+<h4 id="environment">Environment</h4>
+<ul>
+<li><p>Node.js: open source and cross-platform JavaScript runtime env built on Chrome V8 JS Engine. It executes code outside of a web browser and it was used for the back-end of the project.</p></li>
+<li><p>Heroku: cloud environment for hosting our web application and database remotely.</p></li>
+</ul>
+<h4 id="tools">Tools</h4>
+<ul>
+<li><p>Webstorm and Database Tools: powerful IDE by JetBrains for development of web application. It supports the development of front-end and back-end. It was mainly used for the back-end development because of the support for Node.js and for the use of Database Tools and SQL Plugin which help to directly connect to the PostgreSQL Database on Heroku.</p></li>
+<li><p>Brackets: IDE for web-development, it was used for the front-end development for taking advantage of the Live Preview feature which enable to concurrently modify code and rendered pages.</p></li>
+<li><p>Swagger Editor: open source editor for OpenAPI-based APIs. It is very friendly and easy to create OpenAPI specification with support for Swagger 2.0 and OpenAPI 3.0. It was used to design our APIs with version 2.0.</p></li>
+</ul>
+<h4 id="languages">Languages</h4>
+<ul>
+<li>JavaScript for Back-End</li>
+<li>HTML, CSS, JavaScript for Front-End</li>
+</ul>
+<h4 id="frameworks-and-libraries">Frameworks and Libraries</h4>
+<ul>
+<li>Knex.js: query builder for the most famous DBMS designed to be flexible, portable and fun to use.<br /></li>
+<li>Serve-Static: Node.js library for serving static content over HTTP</li>
+<li>Jquery: JavaScript library for front-end scripting</li>
+<li>Bootstap: front-end framework for front-end respnsive layout development</li>
+</ul>
+<h3 id="discussion">Discussion</h3>
+<p>We started realizing our application from designing the OpenAPI specification with the Swagger Editor. Then, we used the swagger generated node-js server for controllers and services.<br />The controllers are the same generated from the swagger while the services have been modified in order to communicate with the DBMS through Knex.js. Here, we implemented all the queries which retrieve data directly from the database. All the designed endpoints were tested both manually and with swaggerUI. We used async-awaits for services.</p>
+<p>As mentioned before, the application is divided in three layers: Presentation, Application and Data. The presentation layer is implemented by the front-end that has static HTML pages which use API to retrieve data. The Application layer is implemented by the back-end and finally the data layer is implemented by the database, which is seprated from the server. For the data layer we used a RDBMS, PostgreSQL.</p>
+<h2 id="other-information">Other information</h2>
+<h3 id="task-assignment">Task assignment</h3>
+<p>We divided the workload among all the team members.</p>
+<p>Dario Miceli - Design: contributed to IDM models, ER and Logic schema, scenarios, wireframes.<br />- Front-End: implemented HTML pages, jQuery and AJAX dynamic content. - Back-End: openAPI specification.</p>
+<p>Adriano Mundo - Design: contributed to IDM models, ER, wireframes and mockups. - Front-End: implemented jQuery and AJAX dynamic content, styling of the website. - Back-End: openAPI specification, node.js services and query implementation, DB manteinance.</p>
+<p>Salvatore Fadda - Design: contributed to IDM models, wireframes, mockups, scenarios. - Front-End: implemented HTML pages, styling of the website, shared content between pages. - Back-End: openAPI specification.</p>
+<h3 id="analysis-of-existing-api">Analysis of existing API</h3>
+<p>Before this project, just one the team member developed the back-end part of a web application during another university course, but he was not aware of the Swagger Editor tool which is very interesting. We started designing our API taking inspiration from the lecture in a first attempt, then we studied <a href="https://idratherbewriting.com/learnapidoc/pubapis_openapi_tutorial_overview.html">this guide</a> and finally we analysed the existing API of <a href="https://www.eventbrite.com/platform/api#/reference/online-event-page">eventbrite</a> because we noticed that their API specification are RESTful compliant and are very structured in a clear way.</p>
+<h3 id="learning-outcome">Learning outcome</h3>
+<p>Dario Miceli learned how APIs work, how to evaluate website usability and how to design them, how to model the structure of a website through formal schemas. He also learnt from scratch HTML, CSS, Javascript, jquery and asyncrhonous programming.</p>
+<p>Adriano Mundo learned how APIs work, how to design responsive and usable website, how to mdoel them. He deepened his previous background on HTML, CSS and learned from scratch JS, jquery and asynchornous programming and how to impelement a back-end server with node.js and a DB, both in localhost and on cloud platform with postegreSQL. He discovered Knex.js for accessing the database.</p>
+<p>Salvatore Fadda learned how APIs work, how to design responsive website and how to write technical documentation for a website. He learned how back-end works in order to serve front-end static content and HTML, CSS from scratch. He was previous acquainted with Javascript that he studied more in depth with also jQuery and how to deal with asynchronous programming.</p>
