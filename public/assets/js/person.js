@@ -25,7 +25,7 @@ async function fetchPerson() {
     }
     let all_person = await all_person_response.json()
 
-    if (matricola > all_person.length) location.replace("../pages/404.html");
+    if (matricola > all_person.length || matricola == 0) location.replace("../pages/404.html");
 
     let event_response = (await fetch("https://wildocean.herokuapp.com/api/v1/person/" + matricola + "/event"));
     if (!event_response.ok) {

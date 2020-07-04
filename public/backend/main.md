@@ -6,9 +6,9 @@
 
 | Member n. | Role          | First name | Last Name | Matricola | Email address   |
 | --------- | ------------- | ---------- | --------- | --------- | --------------- |
-| 1 | administrator | Dario | Miceli | 928262 | dario.miceli@mail.polimi.it |
+| 1 | administrator | Dario | Miceli Pranio | 928262 | dario.miceli@mail.polimi.it |
 | 2 | member | Adriano | Mundo | 944684 | adriano.mundo@mail.polimi.it |
-| 3 | member | Salvatore | Fadda | 944786 | dario.miceli@mail.polimi.it |
+| 3 | member | Salvatore | Fadda | 944786 | salvatore.fadda@mail.polimi.it |
 
 ## Links to other deliverables
 
@@ -167,16 +167,16 @@ we noticed that their API specification are RESTful compliant and are very struc
 
 ### Learning outcome
 
-Dario Miceli learned how APIs work, how to evaluate website usability and how to design them, how to model
+Dario Miceli learnt how APIs work, how to evaluate website usability and how to design them, how to model
 the structure of a website through formal schemas. He also learnt from scratch HTML, CSS, Javascript, jquery and
 asyncrhonous programming. 
 
-Adriano Mundo learned how APIs work, how to design responsive and usable website, how to mdoel them. He deepened 
-his previous background on HTML, CSS and learned from scratch JS, jquery and asynchornous programming
-and how to impelement a back-end server with node.js and a DB, both in localhost and on cloud platform with postegreSQL. He discovered Knex.js for
-accessing the database. 
+Adriano Mundo learnt how APIs work, how to design responsive and usable website, how to mdoel them. He deepened 
+his previous background on HTML, CSS and learnt from scratch JS, jquery and asynchornous programming
+and how to implement a back-end server with node.js and a DB, both in localhost and on cloud platform with postegreSQL. 
+He discovered Knex.js for writing queries to access the database. 
 
-Salvatore Fadda learned how APIs work, how to design responsive website and how to write technical documentation
-for a website. He learned how back-end works in order to serve front-end static content and HTML, CSS from scratch.
-He was previous acquainted with Javascript that he studied more in depth with also jQuery and how to deal with
+Salvatore Fadda learnt how APIs work, how to design responsive website and how to write technical documentation
+for a website. He learnt how back-end works in order to serve front-end static content and HTML, CSS from scratch.
+He was previous acquainted with Javascript that he studied more in depth with jQuery while also learning how to deal with
 asynchronous programming. 
