@@ -70,7 +70,7 @@ exports.getPersonbyMatricola = async function(matricola) {
   if (response.length > 0) {
     return response;
   }
-  else respondWithCode(404, "People not found")
+  else throw {code: 404};
 };
 
 
