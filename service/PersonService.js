@@ -67,10 +67,9 @@ exports.getPeople = function(limit,offset) {
  **/
 exports.getPersonbyMatricola = async function(matricola) {
   let response = await sqlDb.select().table("person").where("matricola", matricola);
-  if (response.length > 0) {
-    return response;
+  if (!response) {
+    throw {code: 404};
   }
-  else throw {code: 404};
 };
 
 
