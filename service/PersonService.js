@@ -65,11 +65,12 @@ exports.getPeople = function(limit,offset) {
  * matricola Long matricola  of the person to return
  * returns Person
  **/
-exports.getPersonbyMatricola = async function(matricola) {
-  let response = await sqlDb.select().table("person").where("matricola", matricola);
-  if (!response) {
+exports.getPersonbyMatricola = function(matricola) {
+  return sqlDb.select().table("person").where("matricola", matricola);
+  /*if (!response) {
+    console.log("sono qui;")
     throw {code: 404};
-  }
+  }*/
 };
 
 
