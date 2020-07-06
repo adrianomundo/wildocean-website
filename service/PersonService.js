@@ -67,10 +67,6 @@ exports.getPeople = function(limit,offset) {
  **/
 exports.getPersonbyMatricola = function(matricola) {
   return sqlDb.select().table("person").where("matricola", matricola);
-  /*if (!response) {
-    console.log("sono qui;")
-    throw {code: 404};
-  }*/
 };
 
 
